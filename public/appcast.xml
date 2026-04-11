@@ -6,6 +6,34 @@
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
         <item>
+            <title>Version 0.2.2</title>
+            <pubDate>Sat, 11 Apr 2026 19:12:42 +1000</pubDate>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[<p>Fix crash on first launch</p>]]></description>
+            <enclosure
+                url="https://github.com/bluedusk/xisland/releases/download/v0.2.2/xIsland.zip"
+                sparkle:version="680"
+                sparkle:shortVersionString="0.2.2"
+                sparkle:edSignature="lCso5s5hkqmXx2ync+PjGsgu4iA1shlg5CnSLvj9aLuetQfwqy5pKsOMRmHLsZrtCJaggn0kWJMGjQBvk0BADw=="
+                length="7165465"
+                type="application/octet-stream"
+            />
+        </item>
+        <item>
+            <title>Version 0.2.1</title>
+            <pubDate>Sat, 11 Apr 2026 19:08:22 +1000</pubDate>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[<p>Fix crash on first launch</p>]]></description>
+            <enclosure
+                url="https://github.com/bluedusk/xisland/releases/download/v0.2.1/xIsland.zip"
+                sparkle:version="678"
+                sparkle:shortVersionString="0.2.1"
+                sparkle:edSignature="wxUOMfEPzYMvHSowBD43HogXFyuDAY4TGHZcHlsMuW9nsNPL3yrwrs6BfafLQIsdx92quoM984LFWorvuT54Bg=="
+                length="7163548"
+                type="application/octet-stream"
+            />
+        </item>
+        <item>
             <title>Version 0.2.0</title>
             <pubDate>Sat, 11 Apr 2026 16:49:35 +1000</pubDate>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
