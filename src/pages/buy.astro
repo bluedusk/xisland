@@ -17,8 +17,7 @@ const jsonLd = {
   },
 };
 
-// Replace with your real LemonSqueezy checkout URL
-const checkoutUrl = 'https://xisland.lemonsqueezy.com/buy/placeholder';
+const checkoutUrl = 'https://appstore-pro.lemonsqueezy.com/checkout/buy/fe5cffa7-063a-4c1b-a4e8-7894f033e37a';
 ---
 
 <BaseLayout
@@ -63,7 +62,7 @@ const checkoutUrl = 'https://xisland.lemonsqueezy.com/buy/placeholder';
   <Footer />
 </BaseLayout>
 
-<script src="https://app.lemonsqueezy.com/js/lemon.js" defer></script>
+<script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
 
 <script define:vars={{ checkoutUrl }}>
   document.getElementById('btn-buy').addEventListener('click', () => {
