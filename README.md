@@ -1,31 +1,15 @@
-# xisland.app
+# xisland
 
-Landing page for [xisland](https://xisland.app) — dynamic island for your coding agent.
+Dynamic island for your coding agent.
+
+xisland is a macOS companion that lives in your notch. It monitors your AI coding agents — Claude Code, Codex, Gemini CLI, OpenCode — and lets you approve, answer, and jump back without switching windows.
+
+By developers, for developers.
+
+[xisland.app](https://xisland.app)
 
 ## Feedback
 
-Got a feature request, bug report, or suggestion? [Open an issue](https://github.com/bluedusk/xisland/issues).
+Found a bug? Have a feature request? Want to tell us something? [Open an issue](https://github.com/bluedusk/xisland/issues).
 
-## Stack
-
-- [Astro](https://astro.build) — static site generator
-- [Press Start 2P](https://fonts.google.com/specimen/Press+Start+2P) + [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono)
-- Cloudflare Pages
-
-## Commands
-
-| Command | Action |
-|:--|:--|
-| `pnpm install` | Install dependencies |
-| `pnpm dev` | Dev server at `localhost:4321` |
-| `pnpm build` | Build to `./dist/` |
-| `pnpm preview` | Preview build locally |
-| `pnpm ship` | Build + deploy to Cloudflare Pages |
-
-## Deploy
-
-```sh
-pnpm ship
-```
-
-Deploys to Cloudflare Pages via wrangler. Requires `wrangler login` first.
+We read every one.
