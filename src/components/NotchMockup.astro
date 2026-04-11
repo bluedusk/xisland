@@ -1,5 +1,6 @@
 <section class="mockup">
   <div class="container">
+    <div class="frame">
     <div class="screen" id="demo-screen">
       <div class="wallpaper"></div>
 
@@ -328,6 +329,7 @@
         </div>
       </div>
     </div>
+    </div>
 
     <div class="indicator">
       <span class="label pixel" id="demo-label">idle</span>
@@ -503,32 +505,50 @@
 
 <style>
   .mockup {
-    padding: 0 0 60px;
+    padding: 0 0 40px;
     margin-top: -20px;
+  }
+
+  .frame {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 10px 10px 0;
+    background: #0a0a0a;
+    border-radius: 18px 18px 0 0;
+    box-shadow:
+      0 20px 80px rgba(0, 0, 0, 0.6),
+      inset 0 0.5px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+  }
+
+  .frame::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(to bottom, transparent, var(--bg));
+    pointer-events: none;
+    z-index: 20;
   }
 
   .screen {
     position: relative;
-    max-width: 740px;
-    margin: 0 auto;
-    aspect-ratio: 16 / 10;
-    border-radius: var(--radius);
+    border-radius: 8px 8px 0 0;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow:
-      0 1px 0 rgba(255, 255, 255, 0.05) inset,
-      0 40px 100px -20px rgba(0, 0, 0, 0.9),
-      0 0 60px -10px var(--green-dim);
+    height: 460px;
   }
 
   .wallpaper {
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(ellipse at 30% 20%, #1a1040 0%, transparent 50%),
-      radial-gradient(ellipse at 70% 60%, #0a2040 0%, transparent 50%),
-      radial-gradient(ellipse at 50% 40%, #1a0a30 0%, transparent 60%),
-      linear-gradient(180deg, #0c0c18 0%, #0a0a14 100%);
+      radial-gradient(ellipse at 25% 15%, #2a1858 0%, transparent 45%),
+      radial-gradient(ellipse at 75% 55%, #0e2848 0%, transparent 45%),
+      radial-gradient(ellipse at 50% 35%, #1e0e38 0%, transparent 55%),
+      radial-gradient(ellipse at 60% 80%, #0a1828 0%, transparent 50%),
+      linear-gradient(180deg, #100818 0%, #080810 100%);
   }
 
   /* Menu bar */
@@ -838,12 +858,12 @@
      DOCK
      ============================================= */
   .dock {
-    position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%);
-    display: flex; gap: 6px; padding: 4px 8px;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 14px;
-    backdrop-filter: blur(20px);
+    position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%);
+    display: flex; gap: 4px; padding: 4px 8px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    backdrop-filter: blur(30px);
   }
   .dock-item {
     width: 36px; height: 36px;
