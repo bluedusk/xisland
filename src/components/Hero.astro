@@ -1,0 +1,277 @@
+---
+const agents = ['Claude Code', 'Codex', 'Gemini CLI', 'OpenCode'];
+---
+
+<section class="hero">
+  <div class="hero-bg">
+    <div class="light-cone"></div>
+    <div class="grid-pattern"></div>
+    <div class="scanlines"></div>
+  </div>
+
+  <div class="container hero-content">
+    <div class="badge">
+      <span class="badge-dot"></span>
+      macOS native
+    </div>
+
+    <h1>
+      <span class="line">Dynamic Island</span>
+      <span class="line dim">for your</span>
+      <span class="line agent-line"><span class="agent" id="agent-cycle">{agents[0]}</span><span class="cursor">_</span></span>
+    </h1>
+
+    <p class="tagline">By <span class="highlight">developers</span>, for <span class="highlight">developers</span>.</p>
+
+    <p class="sub">
+      Stay in flow while your agents keep working.<br/>
+      Monitor, approve, and jump back — right from the notch.
+    </p>
+
+    <div class="ctas">
+      <a href="https://github.com/bluedusk/xisland/releases" class="btn-dl" target="_blank" rel="noopener">
+        <svg width="14" height="14" viewBox="0 0 16 16" shape-rendering="crispEdges">
+          <rect x="7" y="2" width="2" height="7" fill="currentColor"/>
+          <rect x="5" y="7" width="2" height="2" fill="currentColor"/>
+          <rect x="9" y="7" width="2" height="2" fill="currentColor"/>
+          <rect x="3" y="9" width="2" height="2" fill="currentColor"/>
+          <rect x="11" y="9" width="2" height="2" fill="currentColor"/>
+          <rect x="2" y="11" width="12" height="2" fill="currentColor"/>
+        </svg>
+        Download for Free
+      </a>
+      <a href="#features" class="btn-ghost">Learn More</a>
+    </div>
+  </div>
+</section>
+
+<script define:vars={{ agents }}>
+  const el = document.getElementById('agent-cycle');
+  if (el) {
+    let i = 0;
+    setInterval(() => {
+      i = (i + 1) % agents.length;
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(6px)';
+      setTimeout(() => {
+        el.textContent = agents[i];
+        el.style.transform = 'translateY(-6px)';
+        requestAnimationFrame(() => {
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0)';
+        });
+      }, 250);
+    }, 2600);
+  }
+</script>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .light-cone {
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 900px;
+    height: 700px;
+    background: radial-gradient(
+      ellipse 50% 50% at 50% 0%,
+      rgba(61, 220, 132, 0.18) 0%,
+      rgba(61, 220, 132, 0.05) 50%,
+      transparent 75%
+    );
+  }
+
+  .grid-pattern {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 32px 32px;
+    mask-image: radial-gradient(ellipse 60% 50% at 50% 40%, black 0%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 40%, black 0%, transparent 70%);
+  }
+
+  .scanlines {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(0, 0, 0, 0.06) 3px,
+      rgba(0, 0, 0, 0.06) 4px
+    );
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 160px 0 100px;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 8px;
+    color: var(--text-2);
+    padding: 6px 16px;
+    border: 1px solid var(--border-2);
+    border-radius: 100px;
+    margin-bottom: 40px;
+    letter-spacing: 0.05em;
+  }
+
+  .badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 8px var(--green-glow);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    50% { opacity: 0.4; }
+  }
+
+  h1 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 36px;
+  }
+
+  .line {
+    display: block;
+    font-size: clamp(22px, 4.5vw, 38px);
+    line-height: 1.4;
+    color: var(--text);
+  }
+
+  .line.dim {
+    color: var(--text-3);
+    font-size: clamp(16px, 3vw, 26px);
+  }
+
+  .agent-line {
+    color: var(--green);
+    min-height: 1.4em;
+    text-shadow: 0 0 40px var(--green-glow);
+  }
+
+  .agent {
+    display: inline-block;
+    transition: opacity 0.25s, transform 0.25s;
+  }
+
+  .cursor {
+    animation: blink 1s step-end infinite;
+    color: var(--green);
+    opacity: 0.7;
+  }
+
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+
+  .tagline {
+    font-size: 10px;
+    color: var(--text-3);
+    letter-spacing: 0.08em;
+    margin-bottom: 20px;
+  }
+
+  .highlight {
+    color: var(--green);
+    text-shadow: 0 0 12px var(--green-dim);
+  }
+
+  .sub {
+    font-family: var(--mono);
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--text-2);
+    max-width: 500px;
+    margin: 0 auto 44px;
+  }
+
+  .ctas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+
+  .btn-dl {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 32px;
+    background: var(--green);
+    color: var(--bg);
+    font-family: var(--pixel);
+    font-size: 10px;
+    border-radius: var(--radius-sm);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+
+  .btn-dl:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px var(--green-glow);
+  }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 28px;
+    color: var(--text-2);
+    font-family: var(--pixel);
+    font-size: 10px;
+    border: 1px solid var(--border-2);
+    border-radius: var(--radius-sm);
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--text-3);
+    color: var(--text);
+  }
+
+  @media (max-width: 768px) {
+    .hero-content {
+      padding: 120px 0 80px;
+    }
+
+    .sub { font-size: 12px; }
+
+    .ctas {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .btn-dl, .btn-ghost {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>

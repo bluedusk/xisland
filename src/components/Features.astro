@@ -1,0 +1,196 @@
+---
+const features = [
+  {
+    title: 'Monitor',
+    desc: 'Every agent session at a glance. Status, progress, what they\'re up to — all from your notch.',
+    // Pixel eye icon
+    icon: `<svg width="32" height="32" viewBox="0 0 16 16" shape-rendering="crispEdges">
+      <rect x="4" y="5" width="8" height="1" fill="var(--green)"/>
+      <rect x="3" y="6" width="1" height="4" fill="var(--green)"/>
+      <rect x="12" y="6" width="1" height="4" fill="var(--green)"/>
+      <rect x="4" y="10" width="8" height="1" fill="var(--green)"/>
+      <rect x="6" y="7" width="4" height="2" fill="var(--green)"/>
+      <rect x="7" y="6" width="2" height="4" fill="var(--green)"/>
+    </svg>`,
+  },
+  {
+    title: 'Approve',
+    desc: 'Intercept file edits, commands, and deletions before they run. You stay in control.',
+    // Pixel shield icon
+    icon: `<svg width="32" height="32" viewBox="0 0 16 16" shape-rendering="crispEdges">
+      <rect x="4" y="2" width="8" height="1" fill="var(--green)"/>
+      <rect x="3" y="3" width="1" height="6" fill="var(--green)"/>
+      <rect x="12" y="3" width="1" height="6" fill="var(--green)"/>
+      <rect x="4" y="9" width="1" height="2" fill="var(--green)"/>
+      <rect x="11" y="9" width="1" height="2" fill="var(--green)"/>
+      <rect x="5" y="11" width="1" height="1" fill="var(--green)"/>
+      <rect x="10" y="11" width="1" height="1" fill="var(--green)"/>
+      <rect x="6" y="12" width="4" height="1" fill="var(--green)"/>
+      <rect x="7" y="6" width="2" height="4" fill="var(--green)"/>
+      <rect x="6" y="7" width="4" height="2" fill="var(--green)"/>
+    </svg>`,
+  },
+  {
+    title: 'Answer',
+    desc: 'Your agent has a question. Answer from a popup, no window switching required.',
+    // Pixel chat bubble icon
+    icon: `<svg width="32" height="32" viewBox="0 0 16 16" shape-rendering="crispEdges">
+      <rect x="3" y="3" width="10" height="1" fill="var(--green)"/>
+      <rect x="2" y="4" width="1" height="6" fill="var(--green)"/>
+      <rect x="13" y="4" width="1" height="6" fill="var(--green)"/>
+      <rect x="3" y="10" width="10" height="1" fill="var(--green)"/>
+      <rect x="4" y="11" width="1" height="1" fill="var(--green)"/>
+      <rect x="3" y="12" width="1" height="1" fill="var(--green)"/>
+      <rect x="5" y="6" width="2" height="2" fill="var(--green)"/>
+      <rect x="8" y="6" width="2" height="2" fill="var(--green)"/>
+      <rect x="11" y="6" width="1" height="2" fill="var(--green)"/>
+    </svg>`,
+  },
+  {
+    title: 'Jump',
+    desc: 'One click to return to the right terminal, right tab, right session. 7 terminals supported.',
+    // Pixel arrow/jump icon
+    icon: `<svg width="32" height="32" viewBox="0 0 16 16" shape-rendering="crispEdges">
+      <rect x="7" y="2" width="2" height="2" fill="var(--green)"/>
+      <rect x="5" y="4" width="2" height="2" fill="var(--green)"/>
+      <rect x="9" y="4" width="2" height="2" fill="var(--green)"/>
+      <rect x="7" y="6" width="2" height="6" fill="var(--green)"/>
+      <rect x="4" y="12" width="8" height="2" fill="var(--green)"/>
+    </svg>`,
+  },
+  {
+    title: 'Keyboard First',
+    desc: 'Full keyboard support with vim-style navigation. hjkl to move, enter to act. No mouse needed.',
+    // Pixel keyboard icon
+    icon: `<svg width="32" height="32" viewBox="0 0 16 16" shape-rendering="crispEdges">
+      <rect x="1" y="4" width="14" height="1" fill="var(--green)"/>
+      <rect x="0" y="5" width="1" height="7" fill="var(--green)"/>
+      <rect x="15" y="5" width="1" height="7" fill="var(--green)"/>
+      <rect x="1" y="12" width="14" height="1" fill="var(--green)"/>
+      <rect x="2" y="6" width="2" height="2" fill="var(--green)"/>
+      <rect x="5" y="6" width="2" height="2" fill="var(--green)"/>
+      <rect x="8" y="6" width="2" height="2" fill="var(--green)"/>
+      <rect x="11" y="6" width="2" height="2" fill="var(--green)"/>
+      <rect x="4" y="9" width="8" height="2" fill="var(--green)"/>
+    </svg>`,
+  },
+  {
+    title: 'Native Swift',
+    desc: 'Built in Swift with SwiftUI + AppKit. No Electron. Runs light, stays fast, feels right.',
+    // Pixel apple/mac icon
+    icon: `<svg width="32" height="32" viewBox="0 0 16 16" shape-rendering="crispEdges">
+      <rect x="6" y="2" width="4" height="2" fill="var(--green)"/>
+      <rect x="4" y="4" width="8" height="2" fill="var(--green)"/>
+      <rect x="3" y="6" width="10" height="2" fill="var(--green)"/>
+      <rect x="3" y="8" width="10" height="2" fill="var(--green)"/>
+      <rect x="4" y="10" width="8" height="2" fill="var(--green)"/>
+      <rect x="5" y="12" width="2" height="2" fill="var(--green)"/>
+      <rect x="9" y="12" width="2" height="2" fill="var(--green)"/>
+    </svg>`,
+  },
+];
+---
+
+<section class="features section" id="features">
+  <div class="container">
+    <div class="features-header">
+      <h2>Every agent, one glance.</h2>
+      <p class="features-sub">See what matters. Act when needed. Skip the noise.</p>
+    </div>
+
+    <div class="grid">
+      {features.map((f) => (
+        <div class="card">
+          <div class="card-icon" set:html={f.icon} />
+          <h3>{f.title}</h3>
+          <p>{f.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .features {
+    background: var(--bg-2);
+    border-top: 1px solid var(--border);
+  }
+
+  .features-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .features-header h2 {
+    font-size: clamp(14px, 2.5vw, 20px);
+    color: var(--text);
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+
+  .features-sub {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--text-3);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border-2);
+    border: 1px solid var(--border-2);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .card {
+    padding: 36px 28px;
+    background: var(--bg);
+    transition: background 0.25s;
+  }
+
+  .card:hover {
+    background: var(--bg-elevated);
+  }
+
+  .card-icon {
+    margin-bottom: 20px;
+    opacity: 0.8;
+    transition: opacity 0.2s, filter 0.2s;
+  }
+
+  .card:hover .card-icon {
+    opacity: 1;
+    filter: drop-shadow(0 0 4px var(--green-glow));
+  }
+
+  h3 {
+    font-size: 11px;
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+
+  p {
+    font-family: var(--mono);
+    font-size: 12px;
+    line-height: 1.7;
+    color: var(--text-2);
+  }
+
+  @media (max-width: 768px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+
+    .card {
+      padding: 24px 20px;
+    }
+  }
+</style>

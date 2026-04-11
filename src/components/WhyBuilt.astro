@@ -1,0 +1,132 @@
+<section class="why section">
+  <div class="container">
+    <h2>Why I built it.<br/><span class="dim">Why you shouldn't.</span></h2>
+
+    <div class="columns">
+      <div class="col">
+        <h3>
+          <svg width="20" height="20" viewBox="0 0 16 16" shape-rendering="crispEdges">
+            <rect x="7" y="1" width="2" height="2" fill="var(--green)"/>
+            <rect x="6" y="3" width="4" height="2" fill="var(--green)"/>
+            <rect x="7" y="5" width="2" height="4" fill="var(--green)"/>
+            <rect x="4" y="9" width="8" height="2" fill="var(--green)"/>
+            <rect x="5" y="11" width="2" height="4" fill="var(--green)"/>
+            <rect x="9" y="11" width="2" height="4" fill="var(--green)"/>
+          </svg>
+          Why I built it
+        </h3>
+        <ul>
+          <li>I work with Claude, Codex, and other agents 10+ hours a day. 10+ sessions open at once. I needed something that actually keeps up.</li>
+          <li>I want tools that fit how I work — fast, keyboard-driven, no friction. If it slows me down, I won't use it.</li>
+          <li>I use this thing all day. The DX has to be good because I'm the one suffering when it's not.</li>
+          <li>I choose what to support carefully. Some tools claim to support every agent and terminal under the sun. None of them do it well. I'd rather do fewer things perfectly.</li>
+        </ul>
+      </div>
+
+      <div class="col col-dont">
+        <h3>
+          <svg width="20" height="20" viewBox="0 0 16 16" shape-rendering="crispEdges">
+            <rect x="3" y="3" width="2" height="2" fill="var(--orange)"/>
+            <rect x="11" y="3" width="2" height="2" fill="var(--orange)"/>
+            <rect x="5" y="5" width="2" height="2" fill="var(--orange)"/>
+            <rect x="9" y="5" width="2" height="2" fill="var(--orange)"/>
+            <rect x="7" y="7" width="2" height="2" fill="var(--orange)"/>
+            <rect x="5" y="9" width="2" height="2" fill="var(--orange)"/>
+            <rect x="9" y="9" width="2" height="2" fill="var(--orange)"/>
+            <rect x="3" y="11" width="2" height="2" fill="var(--orange)"/>
+            <rect x="11" y="11" width="2" height="2" fill="var(--orange)"/>
+          </svg>
+          Why you shouldn't
+        </h3>
+        <ul>
+          <li>It's free. I spend hours every day on this and burnt out my Claude Max plan doing it. You don't have to.</li>
+          <li>It's actually really hard. Even with Opus 4.6, agents are terrible at Swift compared to other languages. Integrating with different agents and terminals is a pain in the ass.</li>
+          <li>If you still want to build your own — go ahead and have fun. I mean it.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .why {
+    border-top: 1px solid var(--border);
+    background: var(--bg-2);
+  }
+
+  h2 {
+    text-align: center;
+    font-size: clamp(14px, 2.5vw, 20px);
+    color: var(--text);
+    line-height: 1.6;
+    margin-bottom: 48px;
+  }
+
+  .dim {
+    color: var(--text-3);
+  }
+
+  .columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .col {
+    border: 1px solid var(--border-2);
+    border-radius: var(--radius);
+    padding: 32px;
+    background: var(--bg);
+  }
+
+  h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    color: var(--text);
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  li {
+    font-family: var(--mono);
+    font-size: 12px;
+    line-height: 1.7;
+    color: var(--text-2);
+    padding-left: 16px;
+    position: relative;
+  }
+
+  li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 4px;
+    height: 4px;
+    background: var(--green);
+  }
+
+  .col-dont li::before {
+    background: var(--orange);
+  }
+
+  @media (max-width: 768px) {
+    .columns {
+      grid-template-columns: 1fr;
+    }
+
+    .col {
+      padding: 24px;
+    }
+  }
+</style>

@@ -11,6 +11,10 @@ importers:
       astro:
         specifier: ^6.1.5
         version: 6.1.5(rollup@4.60.1)
+    devDependencies:
+      '@fontsource/press-start-2p':
+        specifier: ^5.2.7
+        version: 5.2.7
 
 packages:
 
@@ -216,6 +220,9 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
+
+  '@fontsource/press-start-2p@5.2.7':
+    resolution: {integrity: sha512-ezSxYRchANoteja170ZHh2Tt4oejmVEvX42VFPOVVvERSZ68pcuZFjbhHfrK/sNjYmaGg656y7B3431ojO9PCQ==}
 
   '@img/colour@1.1.0':
     resolution: {integrity: sha512-Td76q7j57o/tLVdgS746cYARfSyxk8iEfRxewL9h4OMzYhbW4TAcppl0mT4eyqXddh6L/jwoM75mo7ixa/pCeQ==}
@@ -1549,6 +1556,8 @@ snapshots:
 
   '@esbuild/win32-x64@0.27.7':
     optional: true
+
+  '@fontsource/press-start-2p@5.2.7': {}
 
   '@img/colour@1.1.0':
     optional: true

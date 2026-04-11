@@ -1,7 +1,8 @@
 {
-  "name": "xisland-temp",
+  "name": "xisland-web",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.1.0",
+  "homepage": "https://xisland.app",
   "engines": {
     "node": ">=22.12.0"
   },
@@ -9,9 +10,13 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "ship": "astro build && npx wrangler pages deploy dist --project-name=xisland-web",
     "astro": "astro"
   },
   "dependencies": {
     "astro": "^6.1.5"
+  },
+  "devDependencies": {
+    "@fontsource/press-start-2p": "^5.2.7"
   }
 }

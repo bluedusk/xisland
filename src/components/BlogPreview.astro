@@ -1,0 +1,73 @@
+---
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+const latest = posts[0];
+---
+
+{latest && (
+  <section class="section">
+    <div class="container">
+      <a href={`/blog/${latest.id}`} class="preview">
+        <span class="preview-badge">new post</span>
+        <span class="preview-title">{latest.data.title}</span>
+        <!-- Pixel arrow right -->
+        <svg class="preview-arrow" width="14" height="14" viewBox="0 0 16 16" shape-rendering="crispEdges">
+          <rect x="2" y="7" width="8" height="2" fill="currentColor"/>
+          <rect x="8" y="5" width="2" height="2" fill="currentColor"/>
+          <rect x="10" y="3" width="2" height="2" fill="currentColor"/>
+          <rect x="10" y="11" width="2" height="2" fill="currentColor"/>
+          <rect x="8" y="9" width="2" height="2" fill="currentColor"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+)}
+
+<style>
+  .preview {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 24px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--bg-elevated);
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .preview:hover {
+    border-color: var(--border-2);
+    background: var(--bg-card);
+  }
+
+  .preview-badge {
+    font-size: 8px;
+    color: var(--green);
+    flex-shrink: 0;
+  }
+
+  .preview-title {
+    flex: 1;
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--text-2);
+  }
+
+  .preview:hover .preview-title {
+    color: var(--text);
+  }
+
+  .preview-arrow {
+    color: var(--text-3);
+    flex-shrink: 0;
+    transition: transform 0.2s, color 0.2s;
+  }
+
+  .preview:hover .preview-arrow {
+    transform: translateX(3px);
+    color: var(--green);
+  }
+</style>

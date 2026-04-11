@@ -1,43 +1,38 @@
-# Astro Starter Kit: Minimal
+# xisland.app
+
+Landing page for [xisland](https://xisland.app) — dynamic island for your coding agent.
+
+## Stack
+
+- [Astro](https://astro.build) — static site generator
+- [Press Start 2P](https://fonts.google.com/specimen/Press+Start+2P) + [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono)
+- Cloudflare Pages
+
+## Commands
+
+| Command | Action |
+|:--|:--|
+| `pnpm install` | Install dependencies |
+| `pnpm dev` | Dev server at `localhost:4321` |
+| `pnpm build` | Build to `./dist/` |
+| `pnpm preview` | Preview build locally |
+| `pnpm ship` | Build + deploy to Cloudflare Pages |
+
+## Structure
+
+```
+src/
+  components/   # Nav, Hero, NotchMockup, Modes, Features, etc.
+  layouts/      # BaseLayout, BlogPost
+  pages/        # index, blog/
+  blog/         # Markdown blog posts
+  styles/       # Global CSS
+```
+
+## Deploy
 
 ```sh
-pnpm create astro@latest -- --template minimal
+pnpm ship
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Deploys to Cloudflare Pages via wrangler. Requires `wrangler login` first.

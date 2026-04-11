@@ -1,0 +1,580 @@
+<section class="mockup">
+  <div class="container">
+    <div class="screen" id="demo-screen">
+      <div class="wallpaper"></div>
+
+      <!-- Menu bar -->
+      <div class="bar">
+        <div class="bar-l">
+          <svg width="10" height="12" viewBox="0 0 10 12" fill="rgba(255,255,255,0.8)">
+            <path d="M7.5 6c0-1 .5-1.8 1.4-2.3-.5-.8-1.3-1.2-2.3-1.3-1 0-2 .6-2.3.6s-1.2-.5-2-.5A3.3 3.3 0 000 6.2c0 .7.1 1.4.4 2.2.3 1 1.5 3.3 2.7 3.3.7 0 1.1-.5 2-.5s1.3.5 2.1.5c1.2 0 2.2-2.1 2.6-3.1-1.6-.8-2.3-2.6-2.3-2.6zM6.2 1c.7-.8.6-1 .6-1s-.9 0-1.7.7c-.8.7-.7 1.5-.7 1.5s1 .1 1.8-1.2z"/>
+          </svg>
+          <span class="bar-bold">xisland</span>
+          <span>File</span><span>Edit</span><span>View</span><span>Help</span>
+        </div>
+        <div class="notch"><div class="cam"></div></div>
+        <div class="bar-r"><span>Fri 4:32 PM</span></div>
+      </div>
+
+      <!-- Island -->
+      <div class="island" id="island">
+        <!-- compact -->
+        <div class="layer active" data-layer="compact">
+          <div class="compact-inner">
+            <svg class="pet" width="20" height="12" viewBox="0 0 10 6" shape-rendering="crispEdges">
+              <rect x="1" y="1" width="1" height="1" fill="#4ade80"/>
+              <rect x="4" y="1" width="1" height="1" fill="#4ade80"/>
+              <rect x="0" y="2" width="6" height="1" fill="#22c55e"/>
+              <rect x="1" y="2" width="1" height="1" fill="#000"/>
+              <rect x="4" y="2" width="1" height="1" fill="#000"/>
+              <rect x="0" y="3" width="6" height="1" fill="#22c55e"/>
+              <rect x="1" y="4" width="2" height="1" fill="#22c55e"/>
+              <rect x="4" y="4" width="2" height="1" fill="#22c55e"/>
+            </svg>
+            <span class="compact-task">fix auth bug</span>
+            <span class="compact-count">3</span>
+          </div>
+        </div>
+
+        <!-- overview -->
+        <div class="layer" data-layer="overview">
+          <div class="sess sess-hero">
+            <svg class="sess-pet" width="14" height="14" viewBox="0 0 8 6" shape-rendering="crispEdges">
+              <rect x="1" y="1" width="1" height="1" fill="#60a5fa"/>
+              <rect x="4" y="1" width="1" height="1" fill="#60a5fa"/>
+              <rect x="0" y="2" width="6" height="1" fill="#3b82f6"/>
+              <rect x="1" y="2" width="1" height="1" fill="#000"/>
+              <rect x="4" y="2" width="1" height="1" fill="#000"/>
+              <rect x="0" y="3" width="6" height="1" fill="#3b82f6"/>
+              <rect x="1" y="4" width="2" height="1" fill="#3b82f6"/>
+              <rect x="4" y="4" width="2" height="1" fill="#3b82f6"/>
+            </svg>
+            <div class="sess-info">
+              <div class="sess-r1">
+                <span class="sess-name">fix auth bug</span>
+                <span class="sess-tag">Claude</span>
+                <span class="sess-tag">Ghostty</span>
+                <span class="sess-dur">27m</span>
+              </div>
+              <div class="sess-you">You: fix the auth bug in middleware</div>
+              <div class="sess-status" style="color:#3b82f6">Writing middleware.ts</div>
+            </div>
+          </div>
+          <div class="sess sess-mini">
+            <div class="sess-dot" style="background:#3b82f6"></div>
+            <span class="sess-name">backend server</span>
+            <span class="sess-tag">Codex</span><span class="sess-tag">iTerm2</span>
+            <span class="sess-dur">1h</span>
+          </div>
+          <div class="sess sess-mini">
+            <div class="sess-dot" style="background:#22c55e"></div>
+            <span class="sess-name">optimize queries</span>
+            <span class="sess-tag">Gemini</span><span class="sess-tag">Terminal</span>
+            <span class="sess-dur">5h</span>
+          </div>
+        </div>
+
+        <!-- approval -->
+        <div class="layer" data-layer="approval">
+          <div class="appr-head">
+            <div class="appr-dot"></div>
+            <span>Permission Request</span>
+          </div>
+          <div class="appr-tool">
+            <span class="appr-warn">⚠</span>
+            <span class="appr-action">Edit</span>
+            <span class="appr-path">src/auth/middleware.ts</span>
+          </div>
+          <div class="appr-diff">
+            <div class="diff-line diff-ctx"><span class="diff-ln">12</span>const verify = (token) =&gt;</div>
+            <div class="diff-line diff-del"><span class="diff-ln">13</span>- jwt.verify(token);</div>
+            <div class="diff-line diff-add"><span class="diff-ln">13</span>+ if (!token) throw new</div>
+            <div class="diff-line diff-add"><span class="diff-ln">14</span>+   AuthError('missing');</div>
+          </div>
+          <div class="appr-btns">
+            <button class="btn-deny">Deny <kbd>⌘N</kbd></button>
+            <button class="btn-allow" id="btn-allow">Allow <kbd>⌘Y</kbd></button>
+          </div>
+        </div>
+
+        <!-- approved (brief confirmation) -->
+        <div class="layer" data-layer="approved">
+          <div class="approved-inner">
+            <svg class="pet" width="20" height="12" viewBox="0 0 10 6" shape-rendering="crispEdges">
+              <rect x="1" y="1" width="1" height="1" fill="#4ade80"/>
+              <rect x="4" y="1" width="1" height="1" fill="#4ade80"/>
+              <rect x="0" y="2" width="6" height="1" fill="#22c55e"/>
+              <rect x="1" y="2" width="1" height="1" fill="#000"/>
+              <rect x="4" y="2" width="1" height="1" fill="#000"/>
+              <rect x="0" y="3" width="6" height="1" fill="#22c55e"/>
+              <rect x="1" y="4" width="2" height="1" fill="#22c55e"/>
+              <rect x="4" y="4" width="2" height="1" fill="#22c55e"/>
+            </svg>
+            <span class="approved-text">Allowed</span>
+            <span class="approved-check">✓</span>
+          </div>
+        </div>
+
+        <!-- ask -->
+        <div class="layer" data-layer="ask">
+          <div class="ask-head">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="#22d3ee" opacity="0.9"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            <span>Claude asks</span>
+          </div>
+          <div class="ask-q">Which deployment target?</div>
+          <div class="ask-opts">
+            <button class="ask-opt" id="ask-opt-0"><span class="ask-num">⌘1</span><span>Production</span></button>
+            <button class="ask-opt"><span class="ask-num">⌘2</span><span>Staging</span></button>
+            <button class="ask-opt"><span class="ask-num">⌘3</span><span>Local only</span></button>
+          </div>
+        </div>
+
+        <!-- answered (brief confirmation) -->
+        <div class="layer" data-layer="answered">
+          <div class="approved-inner">
+            <svg class="pet" width="20" height="12" viewBox="0 0 10 6" shape-rendering="crispEdges">
+              <rect x="1" y="1" width="1" height="1" fill="#22d3ee"/>
+              <rect x="4" y="1" width="1" height="1" fill="#22d3ee"/>
+              <rect x="0" y="2" width="6" height="1" fill="#06b6d4"/>
+              <rect x="1" y="2" width="1" height="1" fill="#000"/>
+              <rect x="4" y="2" width="1" height="1" fill="#000"/>
+              <rect x="0" y="3" width="6" height="1" fill="#06b6d4"/>
+              <rect x="1" y="4" width="2" height="1" fill="#06b6d4"/>
+              <rect x="4" y="4" width="2" height="1" fill="#06b6d4"/>
+            </svg>
+            <span class="approved-text">Production</span>
+            <span class="approved-check" style="color:#22d3ee">✓</span>
+          </div>
+        </div>
+
+        <!-- jump (highlighted session) -->
+        <div class="layer" data-layer="jump">
+          <div class="sess sess-hero sess-highlight">
+            <svg class="sess-pet" width="14" height="14" viewBox="0 0 8 6" shape-rendering="crispEdges">
+              <rect x="1" y="1" width="1" height="1" fill="#4ade80"/>
+              <rect x="4" y="1" width="1" height="1" fill="#4ade80"/>
+              <rect x="0" y="2" width="6" height="1" fill="#22c55e"/>
+              <rect x="1" y="2" width="1" height="1" fill="#000"/>
+              <rect x="4" y="2" width="1" height="1" fill="#000"/>
+              <rect x="0" y="3" width="6" height="1" fill="#22c55e"/>
+              <rect x="1" y="4" width="2" height="1" fill="#22c55e"/>
+              <rect x="4" y="4" width="2" height="1" fill="#22c55e"/>
+            </svg>
+            <div class="sess-info">
+              <div class="sess-r1">
+                <span class="sess-name">fix auth bug</span>
+                <span class="sess-tag">Claude</span>
+                <span class="sess-tag">Ghostty</span>
+                <span class="sess-dur">28m</span>
+              </div>
+              <div class="sess-you">Task completed</div>
+              <div class="sess-status" style="color:#22c55e">✓ Done — click to jump</div>
+            </div>
+          </div>
+          <div class="sess sess-mini">
+            <div class="sess-dot" style="background:#3b82f6"></div>
+            <span class="sess-name">backend server</span>
+            <span class="sess-tag">Codex</span><span class="sess-tag">iTerm2</span>
+            <span class="sess-dur">1h</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dock -->
+      <div class="dock">
+        <div class="dock-item">
+          <svg width="28" height="28" viewBox="0 0 10 8" shape-rendering="crispEdges">
+            <rect x="2" y="0" width="1" height="1" fill="#4ade80"/>
+            <rect x="7" y="0" width="1" height="1" fill="#4ade80"/>
+            <rect x="1" y="1" width="8" height="1" fill="#22c55e"/>
+            <rect x="2" y="1" width="1" height="1" fill="#000"/>
+            <rect x="7" y="1" width="1" height="1" fill="#000"/>
+            <rect x="0" y="2" width="10" height="3" fill="#22c55e"/>
+            <rect x="1" y="5" width="3" height="2" fill="#22c55e"/>
+            <rect x="6" y="5" width="3" height="2" fill="#22c55e"/>
+          </svg>
+          <div class="dock-dot"></div>
+        </div>
+        <div class="dock-item">
+          <div class="dock-icon term-icon"><span>&gt;_</span></div>
+        </div>
+        <div class="dock-item">
+          <div class="dock-icon finder-icon"><span class="finder-face"></span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="indicator">
+      <span class="label pixel" id="demo-label">idle</span>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Queue-based cinematic animation system
+  const queue = [];
+  let timer = null;
+  const island = document.getElementById('island');
+  const labelEl = document.getElementById('demo-label');
+
+  const sizes = {
+    compact:  { w: 200, h: 32,  r: 20 },
+    overview: { w: 380, h: 155, r: 14 },
+    approval: { w: 360, h: 210, r: 14 },
+    approved: { w: 240, h: 36,  r: 18 },
+    ask:      { w: 330, h: 155, r: 14 },
+    answered: { w: 240, h: 36,  r: 18 },
+    jump:     { w: 380, h: 120, r: 14 },
+  };
+
+  const glows = {
+    compact:  'rgba(34,197,94,0.08)',
+    overview: 'rgba(59,130,246,0.08)',
+    approval: 'rgba(249,115,22,0.12)',
+    approved: 'rgba(34,197,94,0.15)',
+    ask:      'rgba(6,182,212,0.12)',
+    answered: 'rgba(6,182,212,0.15)',
+    jump:     'rgba(34,197,94,0.12)',
+  };
+
+  function step(fn, delay) {
+    queue.push({ fn, delay });
+  }
+
+  function showLayer(name) {
+    document.querySelectorAll('.layer').forEach(l => l.classList.remove('active'));
+    const el = document.querySelector(`[data-layer="${name}"]`);
+    if (el) el.classList.add('active');
+    const s = sizes[name];
+    island.style.width = s.w + 'px';
+    island.style.height = s.h + 'px';
+    island.style.borderRadius = s.r + 'px';
+    island.style.boxShadow = `0 4px 24px rgba(0,0,0,0.5), 0 0 20px ${glows[name]}, 0 0 0 0.5px rgba(255,255,255,0.06)`;
+  }
+
+  function setLabel(text) {
+    if (labelEl) labelEl.textContent = text;
+  }
+
+  function highlightBtn(id) {
+    const btn = document.getElementById(id);
+    if (btn) {
+      btn.style.transform = 'scale(1.05)';
+      btn.style.filter = 'brightness(1.3)';
+      setTimeout(() => {
+        btn.style.transform = '';
+        btn.style.filter = '';
+      }, 400);
+    }
+  }
+
+  // Build the cinematic sequence
+  function buildSequence() {
+    // 1. Compact idle
+    step(() => { showLayer('compact'); setLabel('idle'); }, 2000);
+
+    // 2. Expand to overview
+    step(() => { showLayer('overview'); setLabel('sessions'); }, 2500);
+
+    // 3. Approval comes in
+    step(() => { showLayer('approval'); setLabel('approval'); }, 3000);
+
+    // 4. User clicks Allow
+    step(() => { highlightBtn('btn-allow'); }, 800);
+
+    // 5. Collapse to approved confirmation
+    step(() => { showLayer('approved'); setLabel('allowed'); }, 1200);
+
+    // 6. Back to compact
+    step(() => { showLayer('compact'); setLabel('idle'); }, 1800);
+
+    // 7. Question comes in
+    step(() => { showLayer('ask'); setLabel('question'); }, 2800);
+
+    // 8. User picks option 1
+    step(() => { highlightBtn('ask-opt-0'); }, 800);
+
+    // 9. Collapse to answered confirmation
+    step(() => { showLayer('answered'); setLabel('answered'); }, 1200);
+
+    // 10. Back to compact briefly
+    step(() => { showLayer('compact'); setLabel('idle'); }, 1500);
+
+    // 11. Task done — jump view
+    step(() => { showLayer('jump'); setLabel('done — jump'); }, 2500);
+
+    // 12. Back to compact, loop
+    step(() => { showLayer('compact'); setLabel('idle'); }, 2000);
+  }
+
+  function run() {
+    if (queue.length === 0) buildSequence();
+    const next = queue.shift();
+    if (next) {
+      next.fn();
+      timer = setTimeout(run, next.delay);
+    }
+  }
+
+  // Start after a brief pause
+  setTimeout(run, 1000);
+</script>
+
+<style>
+  .mockup {
+    padding: 0 0 60px;
+    margin-top: -20px;
+  }
+
+  .screen {
+    position: relative;
+    max-width: 740px;
+    margin: 0 auto;
+    aspect-ratio: 16 / 10;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.05) inset,
+      0 40px 100px -20px rgba(0, 0, 0, 0.9),
+      0 0 60px -10px var(--green-dim);
+  }
+
+  .wallpaper {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 30% 20%, #1a1040 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 60%, #0a2040 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 40%, #1a0a30 0%, transparent 60%),
+      linear-gradient(180deg, #0c0c18 0%, #0a0a14 100%);
+  }
+
+  .bar {
+    position: relative;
+    display: flex; justify-content: space-between; align-items: center;
+    height: 26px; padding: 0 12px;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(20px);
+    font-family: var(--mono); font-size: 11px;
+    color: rgba(255, 255, 255, 0.65);
+    z-index: 2;
+  }
+
+  .bar-l, .bar-r { display: flex; align-items: center; gap: 10px; }
+  .bar-bold { font-weight: 600; }
+
+  .notch {
+    position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    width: 130px; height: 26px;
+    background: #000; border-radius: 0 0 14px 14px;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 10;
+  }
+
+  .cam {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: #1a1a2e;
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.05);
+  }
+
+  /* Island */
+  .island {
+    position: absolute;
+    top: 30px; left: 50%; transform: translateX(-50%);
+    width: 200px; height: 32px;
+    background: #000;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    z-index: 9;
+    overflow: hidden;
+    transition:
+      width 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.1),
+      height 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.1),
+      border-radius 0.4s ease-out,
+      box-shadow 0.4s ease-out;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.5), 0 0 0 0.5px rgba(255,255,255,0.06);
+  }
+
+  .layer {
+    position: absolute; inset: 0;
+    padding: 8px 12px;
+    opacity: 0; transform: scale(0.96);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    pointer-events: none;
+    font-family: var(--mono); font-size: 11px;
+  }
+
+  .layer.active {
+    opacity: 1; transform: scale(1);
+    pointer-events: auto;
+  }
+
+  /* Compact */
+  .compact-inner, .approved-inner {
+    display: flex; align-items: center; gap: 8px;
+    height: 100%; padding: 0 4px;
+  }
+  .compact-task { color: rgba(255,255,255,0.5); font-size: 10px; flex: 1; }
+  .compact-count {
+    font-size: 10px; color: rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.08);
+    padding: 1px 6px; border-radius: 8px;
+  }
+  .pet { flex-shrink: 0; }
+
+  /* Approved/Answered confirmation */
+  .approved-text { color: rgba(255,255,255,0.6); font-size: 10px; flex: 1; }
+  .approved-check { color: var(--green); font-size: 12px; }
+
+  /* Sessions */
+  .sess { display: flex; align-items: flex-start; gap: 8px; padding: 6px 4px; }
+  .sess-hero { border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 8px; }
+  .sess-highlight {
+    background: rgba(34,197,94,0.06);
+    border-radius: 8px;
+    border-bottom-color: rgba(34,197,94,0.1);
+  }
+  .sess-mini { align-items: center; padding: 5px 4px; }
+  .sess-pet { flex-shrink: 0; margin-top: 2px; }
+  .sess-info { flex: 1; min-width: 0; }
+  .sess-r1 { display: flex; align-items: center; gap: 6px; margin-bottom: 3px; }
+  .sess-name { font-size: 10px; color: #fff; font-weight: 500; }
+  .sess-tag {
+    font-size: 8px; color: rgba(255,255,255,0.35);
+    background: rgba(255,255,255,0.06);
+    padding: 1px 5px; border-radius: 3px;
+  }
+  .sess-dur { font-size: 9px; color: rgba(255,255,255,0.25); margin-left: auto; }
+  .sess-you { font-size: 9px; color: rgba(255,255,255,0.35); margin-bottom: 2px; }
+  .sess-status { font-size: 9px; }
+  .sess-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+
+  /* Approval */
+  .appr-head {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 10px; color: rgba(255,255,255,0.7); margin-bottom: 8px;
+  }
+  .appr-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--orange);
+    box-shadow: 0 0 6px rgba(255,138,80,0.4);
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+  @keyframes pulse { 50% { opacity: 0.4; } }
+
+  .appr-tool {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 10px; margin-bottom: 6px;
+  }
+  .appr-warn { color: var(--orange); }
+  .appr-action { color: var(--green); font-weight: 500; }
+  .appr-path { color: rgba(255,255,255,0.35); }
+
+  .appr-diff {
+    background: rgba(255,255,255,0.03); border-radius: 6px;
+    padding: 4px 0; margin-bottom: 8px; font-size: 9px; overflow: hidden;
+  }
+  .diff-line {
+    padding: 1px 8px; display: flex; gap: 8px;
+    font-family: var(--mono); white-space: nowrap;
+  }
+  .diff-ln { color: rgba(255,255,255,0.15); min-width: 16px; text-align: right; }
+  .diff-ctx { color: rgba(255,255,255,0.3); }
+  .diff-del { color: #f87171; background: rgba(248,113,113,0.06); }
+  .diff-add { color: #4ade80; background: rgba(74,222,128,0.06); }
+
+  .appr-btns { display: flex; gap: 6px; justify-content: flex-end; }
+  .appr-btns button {
+    font-family: var(--mono); font-size: 10px;
+    padding: 4px 10px; border: none; border-radius: 6px;
+    cursor: default; display: flex; align-items: center; gap: 4px;
+    transition: transform 0.2s, filter 0.2s;
+  }
+  .appr-btns kbd { font-family: var(--mono); font-size: 8px; opacity: 0.5; }
+  .btn-deny { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.5); }
+  .btn-allow { background: var(--green); color: #000; }
+
+  /* Ask */
+  .ask-head {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 10px; color: #22d3ee; margin-bottom: 8px;
+  }
+  .ask-q {
+    font-size: 12px; color: rgba(255,255,255,0.8);
+    margin-bottom: 10px; line-height: 1.4;
+  }
+  .ask-opts { display: flex; flex-direction: column; gap: 4px; }
+  .ask-opt {
+    display: flex; align-items: center; gap: 8px;
+    font-family: var(--mono); font-size: 10px;
+    padding: 5px 8px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 6px;
+    color: rgba(255,255,255,0.6);
+    cursor: default;
+    transition: transform 0.2s, filter 0.2s, background 0.15s, border-color 0.15s;
+  }
+  .ask-opt:hover {
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(34,211,238,0.3);
+  }
+  .ask-num { font-size: 9px; color: rgba(255,255,255,0.25); min-width: 20px; }
+
+  /* Dock */
+  .dock {
+    position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%);
+    display: flex; gap: 6px; padding: 4px 8px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    backdrop-filter: blur(20px);
+  }
+  .dock-item {
+    width: 36px; height: 36px;
+    display: flex; align-items: center; justify-content: center;
+    position: relative; border-radius: 8px;
+    transition: transform 0.2s;
+  }
+  .dock-item:hover { transform: scale(1.15) translateY(-4px); }
+  .dock-dot {
+    position: absolute; bottom: -4px; left: 50%; transform: translateX(-50%);
+    width: 3px; height: 3px; border-radius: 50%;
+    background: rgba(255,255,255,0.4);
+  }
+  .dock-icon {
+    width: 32px; height: 32px; border-radius: 7px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--mono); font-size: 12px; font-weight: 600;
+  }
+  .term-icon {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.7);
+  }
+  .finder-icon {
+    background: linear-gradient(135deg, #2196F3 0%, #1565C0 100%);
+  }
+  .finder-face {
+    width: 16px; height: 18px;
+    border: 2px solid rgba(255,255,255,0.8);
+    border-radius: 3px; display: block;
+  }
+
+  /* Indicator */
+  .indicator {
+    display: flex; align-items: center; justify-content: center;
+    margin-top: 16px;
+  }
+  .label {
+    font-size: 8px; color: var(--text-3);
+    letter-spacing: 0.1em;
+  }
+
+  @media (max-width: 768px) {
+    .bar span:not(.bar-bold) { display: none; }
+    .bar-r span:last-child { display: inline; }
+    .island { transform: translateX(-50%) scale(0.85); transform-origin: top center; }
+  }
+</style>

@@ -1,0 +1,227 @@
+<section class="modes section">
+  <div class="container">
+    <h2>Two modes. As you wish.</h2>
+    <p class="modes-sub">Choose your style. Switch anytime.</p>
+
+    <div class="mode-cards">
+      <!-- Notch mode -->
+      <div class="mode-card">
+        <div class="mode-preview notch-preview">
+          <div class="preview-bar">
+            <div class="preview-notch">
+              <div class="preview-cam"></div>
+            </div>
+          </div>
+          <div class="preview-island notch-island">
+            <span class="pi-dot"></span>
+            <span class="pi-text">claude code</span>
+            <span class="pi-status">running</span>
+          </div>
+        </div>
+        <div class="mode-info">
+          <h3>
+            <!-- Pixel notch icon -->
+            <svg width="20" height="20" viewBox="0 0 16 16" shape-rendering="crispEdges">
+              <rect x="0" y="0" width="5" height="2" fill="var(--green)"/>
+              <rect x="11" y="0" width="5" height="2" fill="var(--green)"/>
+              <rect x="5" y="0" width="6" height="4" fill="var(--text-3)"/>
+              <rect x="0" y="2" width="16" height="2" fill="var(--green)" opacity="0.3"/>
+            </svg>
+            Notch
+          </h3>
+          <p>Lives in the macOS notch. Expands when your agent needs attention. Collapses when it doesn't.</p>
+        </div>
+      </div>
+
+      <!-- Pill mode -->
+      <div class="mode-card">
+        <div class="mode-preview pill-preview">
+          <div class="preview-bar">
+            <div class="preview-notch">
+              <div class="preview-cam"></div>
+            </div>
+          </div>
+          <div class="preview-island pill-island">
+            <span class="pi-dot green"></span>
+            <span class="pi-text">codex</span>
+            <span class="pi-status">3 tasks</span>
+          </div>
+        </div>
+        <div class="mode-info">
+          <h3>
+            <!-- Pixel pill icon -->
+            <svg width="20" height="20" viewBox="0 0 16 16" shape-rendering="crispEdges">
+              <rect x="3" y="6" width="10" height="4" fill="var(--green)"/>
+              <rect x="2" y="7" width="1" height="2" fill="var(--green)"/>
+              <rect x="13" y="7" width="1" height="2" fill="var(--green)"/>
+            </svg>
+            Pill
+          </h3>
+          <p>Floating pill anywhere on your menu bar. Compact, always visible, out of the way.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .modes {
+    border-top: 1px solid var(--border);
+  }
+
+  h2 {
+    text-align: center;
+    font-size: clamp(14px, 2.5vw, 20px);
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+
+  .modes-sub {
+    text-align: center;
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--text-3);
+    margin-bottom: 48px;
+  }
+
+  .mode-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .mode-card {
+    border: 1px solid var(--border-2);
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--bg);
+    transition: border-color 0.25s;
+  }
+
+  .mode-card:hover {
+    border-color: var(--green-dim);
+  }
+
+  /* Preview area */
+  .mode-preview {
+    position: relative;
+    background: #0a0a0c;
+    height: 160px;
+    overflow: hidden;
+  }
+
+  .preview-bar {
+    height: 22px;
+    background: rgba(30, 30, 30, 0.8);
+    position: relative;
+  }
+
+  .preview-notch {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 22px;
+    background: #000;
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .preview-cam {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #1a1a1e;
+  }
+
+  .preview-island {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #000;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--pixel);
+    font-size: 7px;
+    padding: 8px 14px;
+  }
+
+  .notch-island {
+    top: 28px;
+    border-radius: 14px;
+    min-width: 200px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  .pill-island {
+    top: 32px;
+    border-radius: 20px;
+    min-width: 160px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  .pi-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--orange);
+    box-shadow: 0 0 6px rgba(255, 138, 80, 0.4);
+    flex-shrink: 0;
+    animation: dot-pulse 2s ease-in-out infinite;
+  }
+
+  .pi-dot.green {
+    background: var(--green);
+    box-shadow: 0 0 6px var(--green-glow);
+  }
+
+  @keyframes dot-pulse {
+    50% { opacity: 0.4; }
+  }
+
+  .pi-text {
+    color: #fff;
+    flex: 1;
+  }
+
+  .pi-status {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 6px;
+  }
+
+  /* Info area */
+  .mode-info {
+    padding: 24px;
+  }
+
+  .mode-info h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    color: var(--text);
+    margin-bottom: 10px;
+  }
+
+  .mode-info p {
+    font-family: var(--mono);
+    font-size: 12px;
+    line-height: 1.7;
+    color: var(--text-2);
+  }
+
+  @media (max-width: 640px) {
+    .mode-cards {
+      grid-template-columns: 1fr;
+    }
+
+    .mode-preview {
+      height: 120px;
+    }
+  }
+</style>

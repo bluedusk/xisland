@@ -1,0 +1,134 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  pubDate: Date;
+  author: string;
+}
+
+const { title, pubDate, author } = Astro.props;
+const dateStr = pubDate.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric',
+});
+---
+
+<BaseLayout title={`${title} — xisland`}>
+  <article>
+    <header>
+      <a href="/blog" class="back">
+        <!-- Pixel left arrow -->
+        <svg width="10" height="10" viewBox="0 0 16 16" shape-rendering="crispEdges">
+          <rect x="6" y="2" width="2" height="2" fill="currentColor"/>
+          <rect x="4" y="4" width="2" height="2" fill="currentColor"/>
+          <rect x="2" y="6" width="2" height="4" fill="currentColor"/>
+          <rect x="4" y="10" width="2" height="2" fill="currentColor"/>
+          <rect x="6" y="12" width="2" height="2" fill="currentColor"/>
+          <rect x="4" y="7" width="10" height="2" fill="currentColor"/>
+        </svg>
+        back
+      </a>
+      <h1>{title}</h1>
+      <div class="meta">
+        <span>{author}</span>
+        <span class="sep">/</span>
+        <time datetime={pubDate.toISOString()}>{dateStr}</time>
+      </div>
+    </header>
+    <div class="content">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  article {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 120px 24px 80px;
+  }
+
+  header {
+    margin-bottom: 48px;
+  }
+
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 9px;
+    color: var(--text-3);
+    margin-bottom: 32px;
+    transition: color 0.2s;
+  }
+
+  .back:hover {
+    color: var(--green);
+  }
+
+  h1 {
+    font-size: clamp(14px, 3vw, 20px);
+    line-height: 1.5;
+    color: var(--text);
+    margin-bottom: 16px;
+  }
+
+  .meta {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-3);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .sep { opacity: 0.3; }
+
+  .content {
+    font-family: var(--mono);
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--text-2);
+  }
+
+  .content :global(h2) {
+    font-family: var(--pixel);
+    font-size: 13px;
+    color: var(--text);
+    margin-top: 48px;
+    margin-bottom: 16px;
+  }
+
+  .content :global(p) {
+    margin-bottom: 20px;
+  }
+
+  .content :global(a) {
+    color: var(--green);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+
+  .content :global(code) {
+    font-size: 13px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    padding: 1px 5px;
+    border-radius: 4px;
+    color: var(--text);
+  }
+
+  .content :global(strong) {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  @media (max-width: 640px) {
+    article {
+      padding: 100px 16px 60px;
+    }
+  }
+</style>

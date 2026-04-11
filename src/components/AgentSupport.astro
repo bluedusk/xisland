@@ -1,0 +1,208 @@
+---
+const agents = [
+  {
+    name: 'Claude Code',
+    org: 'Anthropic',
+    // Pixel "C" icon
+    icon: `<svg width="18" height="18" viewBox="0 0 16 16" shape-rendering="crispEdges">
+      <rect x="4" y="2" width="8" height="2" fill="var(--green)"/>
+      <rect x="2" y="4" width="2" height="8" fill="var(--green)"/>
+      <rect x="4" y="12" width="8" height="2" fill="var(--green)"/>
+      <rect x="12" y="4" width="2" height="2" fill="var(--green)"/>
+      <rect x="12" y="10" width="2" height="2" fill="var(--green)"/>
+    </svg>`,
+  },
+  {
+    name: 'Codex',
+    org: 'OpenAI',
+    // Pixel "O" icon
+    icon: `<svg width="18" height="18" viewBox="0 0 16 16" shape-rendering="crispEdges">
+      <rect x="4" y="2" width="8" height="2" fill="var(--green)"/>
+      <rect x="2" y="4" width="2" height="8" fill="var(--green)"/>
+      <rect x="12" y="4" width="2" height="8" fill="var(--green)"/>
+      <rect x="4" y="12" width="8" height="2" fill="var(--green)"/>
+    </svg>`,
+  },
+  {
+    name: 'OpenCode',
+    org: 'Community',
+    // Pixel "<>" icon
+    icon: `<svg width="18" height="18" viewBox="0 0 16 16" shape-rendering="crispEdges">
+      <rect x="4" y="3" width="2" height="2" fill="var(--green)"/>
+      <rect x="2" y="5" width="2" height="2" fill="var(--green)"/>
+      <rect x="0" y="7" width="2" height="2" fill="var(--green)"/>
+      <rect x="2" y="9" width="2" height="2" fill="var(--green)"/>
+      <rect x="4" y="11" width="2" height="2" fill="var(--green)"/>
+      <rect x="10" y="3" width="2" height="2" fill="var(--green)"/>
+      <rect x="12" y="5" width="2" height="2" fill="var(--green)"/>
+      <rect x="14" y="7" width="2" height="2" fill="var(--green)"/>
+      <rect x="12" y="9" width="2" height="2" fill="var(--green)"/>
+      <rect x="10" y="11" width="2" height="2" fill="var(--green)"/>
+    </svg>`,
+  },
+  {
+    name: 'Gemini CLI',
+    org: 'Google',
+    // Pixel "G" icon
+    icon: `<svg width="18" height="18" viewBox="0 0 16 16" shape-rendering="crispEdges">
+      <rect x="4" y="2" width="10" height="2" fill="var(--green)"/>
+      <rect x="2" y="4" width="2" height="8" fill="var(--green)"/>
+      <rect x="4" y="12" width="10" height="2" fill="var(--green)"/>
+      <rect x="12" y="8" width="2" height="4" fill="var(--green)"/>
+      <rect x="8" y="8" width="4" height="2" fill="var(--green)"/>
+    </svg>`,
+  },
+];
+
+const terminals = [
+  'Terminal.app', 'Ghostty', 'iTerm2', 'WezTerm', 'Kaku', 'Cmux', 'Warp',
+];
+---
+
+<section class="support section">
+  <div class="container">
+    <h2>Powerfully compatible.</h2>
+    <p class="support-sub">Plug in and go.</p>
+
+    <div class="agents">
+      {agents.map((a) => (
+        <div class="agent">
+          <div class="agent-icon" set:html={a.icon} />
+          <div class="agent-info">
+            <span class="agent-name">{a.name}</span>
+            <span class="agent-org">{a.org}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="terminals">
+      <span class="t-label">Terminals</span>
+      <div class="t-list">
+        {terminals.map((t) => (
+          <span class="t-tag">{t}</span>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .support {
+    text-align: center;
+    border-top: 1px solid var(--border);
+  }
+
+  h2 {
+    font-size: clamp(14px, 2.5vw, 20px);
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+
+  .support-sub {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--text-3);
+    margin-bottom: 40px;
+  }
+
+  .agents {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border-2);
+    border: 1px solid var(--border-2);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 36px;
+  }
+
+  .agent {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 22px 20px;
+    background: var(--bg);
+    transition: background 0.25s;
+    text-align: left;
+  }
+
+  .agent:hover {
+    background: var(--bg-elevated);
+  }
+
+  .agent-icon {
+    flex-shrink: 0;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+  }
+
+  .agent:hover .agent-icon {
+    opacity: 1;
+  }
+
+  .agent-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .agent-name {
+    font-size: 9px;
+    color: var(--text);
+  }
+
+  .agent-org {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-3);
+  }
+
+  .terminals {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .t-label {
+    font-size: 9px;
+    color: var(--text-3);
+    letter-spacing: 0.05em;
+  }
+
+  .t-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .t-tag {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-2);
+    padding: 6px 14px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-2);
+    border-radius: 6px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .t-tag:hover {
+    border-color: var(--green-dim);
+    color: var(--text);
+  }
+
+  @media (max-width: 768px) {
+    .agents {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .agents {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

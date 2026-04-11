@@ -1,0 +1,87 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #0c0c0c;
+  --bg-2: #101012;
+  --bg-elevated: #161618;
+  --bg-card: #1a1a1e;
+  --text: #eaeaea;
+  --text-2: #aaa;
+  --text-3: #666;
+  --green: #3ddc84;
+  --green-dim: rgba(61, 220, 132, 0.15);
+  --green-glow: rgba(61, 220, 132, 0.3);
+  --orange: #ff8a50;
+  --red: #ff5555;
+  --border: rgba(255, 255, 255, 0.09);
+  --border-2: rgba(255, 255, 255, 0.16);
+
+  --pixel: 'Press Start 2P', monospace;
+  --mono: 'JetBrains Mono', 'SF Mono', 'Menlo', monospace;
+
+  --radius: 16px;
+  --radius-sm: 10px;
+}
+
+html {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--pixel);
+  font-size: 14px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: var(--green);
+  color: var(--bg);
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Section spacing */
+.section {
+  padding: 80px 0;
+}
+
+/* Pixel grid background pattern */
+.pixel-grid {
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+@media (max-width: 768px) {
+  html { font-size: 12px; }
+  .section { padding: 60px 0; }
+  .container { padding: 0 16px; }
+}
