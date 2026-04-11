@@ -306,28 +306,6 @@
         </div>
       </div>
 
-      <!-- Dock -->
-      <div class="dock">
-        <div class="dock-item">
-          <svg width="28" height="28" viewBox="0 0 10 8" shape-rendering="crispEdges">
-            <rect x="2" y="0" width="1" height="1" fill="#4ade80"/>
-            <rect x="7" y="0" width="1" height="1" fill="#4ade80"/>
-            <rect x="1" y="1" width="8" height="1" fill="#22c55e"/>
-            <rect x="2" y="1" width="1" height="1" fill="#000"/>
-            <rect x="7" y="1" width="1" height="1" fill="#000"/>
-            <rect x="0" y="2" width="10" height="3" fill="#22c55e"/>
-            <rect x="1" y="5" width="3" height="2" fill="#22c55e"/>
-            <rect x="6" y="5" width="3" height="2" fill="#22c55e"/>
-          </svg>
-          <div class="dock-dot"></div>
-        </div>
-        <div class="dock-item">
-          <div class="dock-icon term-icon"><span>&gt;_</span></div>
-        </div>
-        <div class="dock-item">
-          <div class="dock-icon finder-icon"><span class="finder-face"></span></div>
-        </div>
-      </div>
     </div>
     </div>
 
@@ -418,12 +396,12 @@
 
   const sizes = {
     compact:  { w: 200, h: 32 },
-    sessions: { w: 420, h: 280 },
-    approval: { w: 420, h: 320 },
+    sessions: { w: 440, h: 355 },
+    approval: { w: 440, h: 290 },
     approved: { w: 240, h: 36 },
-    question: { w: 420, h: 320 },
+    question: { w: 440, h: 430 },
     answered: { w: 240, h: 36 },
-    done:     { w: 420, h: 220 },
+    done:     { w: 440, h: 258 },
   };
 
   function step(fn, delay) {
@@ -510,7 +488,7 @@
   }
 
   .frame {
-    max-width: 900px;
+    max-width: 1040px;
     margin: 0 auto;
     padding: 10px 10px 0;
     background: #0a0a0a;
@@ -537,7 +515,7 @@
     position: relative;
     border-radius: 8px 8px 0 0;
     overflow: hidden;
-    height: 460px;
+    height: 540px;
   }
 
   .wallpaper {
@@ -852,49 +830,6 @@
     font-family: 'SF Mono', monospace; font-size: 10px;
     background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 3px;
     color: rgba(255,255,255,0.6);
-  }
-
-  /* =============================================
-     DOCK
-     ============================================= */
-  .dock {
-    position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%);
-    display: flex; gap: 4px; padding: 4px 8px;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 16px;
-    backdrop-filter: blur(30px);
-  }
-  .dock-item {
-    width: 36px; height: 36px;
-    display: flex; align-items: center; justify-content: center;
-    position: relative; border-radius: 8px;
-    transition: transform 0.2s;
-  }
-  .dock-item:hover { transform: scale(1.15) translateY(-4px); }
-  .dock-dot {
-    position: absolute; bottom: -4px; left: 50%; transform: translateX(-50%);
-    width: 3px; height: 3px; border-radius: 50%;
-    background: rgba(255,255,255,0.4);
-  }
-  .dock-icon {
-    width: 32px; height: 32px; border-radius: 7px;
-    display: flex; align-items: center; justify-content: center;
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
-    font-size: 12px; font-weight: 600;
-  }
-  .term-icon {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-    border: 1px solid rgba(255,255,255,0.1);
-    color: rgba(255,255,255,0.7);
-  }
-  .finder-icon {
-    background: linear-gradient(135deg, #2196F3 0%, #1565C0 100%);
-  }
-  .finder-face {
-    width: 16px; height: 18px;
-    border: 2px solid rgba(255,255,255,0.8);
-    border-radius: 3px; display: block;
   }
 
   /* Indicator */
