@@ -2,6 +2,10 @@
 
 Landing page for [xisland](https://xisland.app) — dynamic island for your coding agent.
 
+## Feedback
+
+Got a feature request, bug report, or suggestion? [Open an issue](https://github.com/bluedusk/xisland/issues).
+
 ## Stack
 
 - [Astro](https://astro.build) — static site generator
@@ -17,17 +21,6 @@ Landing page for [xisland](https://xisland.app) — dynamic island for your codi
 | `pnpm build` | Build to `./dist/` |
 | `pnpm preview` | Preview build locally |
 | `pnpm ship` | Build + deploy to Cloudflare Pages |
-
-## Structure
-
-```
-src/
-  components/   # Nav, Hero, NotchMockup, Modes, Features, etc.
-  layouts/      # BaseLayout, BlogPost
-  pages/        # index, blog/
-  blog/         # Markdown blog posts
-  styles/       # Global CSS
-```
 
 ## Deploy
 
