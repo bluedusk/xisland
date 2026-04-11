@@ -4,6 +4,13 @@
     <div class="screen" id="demo-screen">
       <div class="wallpaper"></div>
 
+      <!-- Fake cursor -->
+      <div class="cursor" id="cursor">
+        <svg width="16" height="20" viewBox="0 0 16 20" fill="none">
+          <path d="M1 1L1 15L5 11L9 19L11 18L7 10L13 10L1 1Z" fill="white" stroke="black" stroke-width="1"/>
+        </svg>
+      </div>
+
       <!-- Menu bar -->
       <div class="bar">
         <div class="bar-l">
@@ -428,6 +435,37 @@
     if (labelEl) labelEl.textContent = text;
   }
 
+  const cursor = document.getElementById('cursor');
+  const screen = document.getElementById('demo-screen');
+
+  function moveCursor(x, y, duration = 800) {
+    if (!cursor) return;
+    cursor.style.display = 'block';
+    cursor.style.transition = `left ${duration}ms cubic-bezier(0.25, 0.1, 0.25, 1), top ${duration}ms cubic-bezier(0.25, 0.1, 0.25, 1)`;
+    cursor.style.left = x + 'px';
+    cursor.style.top = y + 'px';
+  }
+
+  function clickCursor() {
+    if (!cursor) return;
+    cursor.classList.add('clicking');
+    setTimeout(() => cursor.classList.remove('clicking'), 300);
+  }
+
+  function hideCursor() {
+    if (cursor) cursor.style.display = 'none';
+  }
+
+  function moveToEl(id, duration = 800) {
+    const el = document.getElementById(id);
+    if (!el || !screen) return;
+    const elRect = el.getBoundingClientRect();
+    const screenRect = screen.getBoundingClientRect();
+    const x = (elRect.left + elRect.width / 2 - screenRect.left);
+    const y = (elRect.top + elRect.height / 2 - screenRect.top);
+    moveCursor(x, y, duration);
+  }
+
   function highlightEl(id) {
     const el = document.getElementById(id);
     if (el) {
@@ -443,30 +481,41 @@
 
   // Build cinematic sequence
   function buildSequence() {
-    // 1. Compact idle
-    step(() => { showLayer('compact'); setLabel('idle'); }, 2000);
-    // 2. Session list
-    step(() => { showLayer('sessions'); setLabel('sessions'); }, 3000);
-    // 3. Approval
-    step(() => { showLayer('approval'); setLabel('approval'); }, 3000);
-    // 4. Highlight approve button
-    step(() => { highlightEl('btn-approve'); }, 800);
-    // 5. Approved confirmation
-    step(() => { showLayer('approved'); setLabel('allowed'); }, 1200);
-    // 6. Compact
+    // Start: cursor resting at bottom-right area
+    step(() => { showLayer('compact'); setLabel('idle'); moveCursor(500, 400); }, 1500);
+    // Move cursor to notch to click
+    step(() => { moveCursor(440, 26, 600); }, 800);
+    // Click to open sessions
+    step(() => { clickCursor(); }, 300);
+    step(() => { showLayer('sessions'); setLabel('sessions'); }, 2500);
+    // Approval comes in — cursor drifts aside
+    step(() => { showLayer('approval'); setLabel('approval'); moveCursor(520, 200, 400); }, 2000);
+    // Move cursor to Approve button
+    step(() => { moveToEl('btn-approve', 700); }, 900);
+    // Click approve
+    step(() => { clickCursor(); highlightEl('btn-approve'); }, 800);
+    // Approved
+    step(() => { showLayer('approved'); setLabel('allowed'); moveCursor(480, 300, 500); }, 1200);
+    // Compact
     step(() => { showLayer('compact'); setLabel('idle'); }, 1500);
-    // 7. Question
-    step(() => { showLayer('question'); setLabel('question'); }, 3000);
-    // 8. Highlight option 1
-    step(() => { highlightEl('q-opt-0'); }, 800);
-    // 9. Answered confirmation
-    step(() => { showLayer('answered'); setLabel('answered'); }, 1200);
-    // 10. Compact
+    // Question comes in
+    step(() => { showLayer('question'); setLabel('question'); moveCursor(520, 180, 400); }, 2000);
+    // Move cursor to option 1
+    step(() => { moveToEl('q-opt-0', 700); }, 900);
+    // Click option
+    step(() => { clickCursor(); highlightEl('q-opt-0'); }, 800);
+    // Answered
+    step(() => { showLayer('answered'); setLabel('answered'); moveCursor(460, 350, 500); }, 1200);
+    // Compact
     step(() => { showLayer('compact'); setLabel('idle'); }, 1500);
-    // 11. Done / jump
-    step(() => { showLayer('done'); setLabel('done'); }, 2500);
-    // 12. Compact, loop
-    step(() => { showLayer('compact'); setLabel('idle'); }, 2000);
+    // Done — jump view
+    step(() => { showLayer('done'); setLabel('done'); }, 2000);
+    // Move cursor to the done session row
+    step(() => { moveCursor(400, 60, 600); }, 800);
+    // Click
+    step(() => { clickCursor(); }, 500);
+    // Back to compact, hide cursor
+    step(() => { showLayer('compact'); setLabel('idle'); hideCursor(); }, 2000);
   }
 
   function run() {
@@ -515,6 +564,29 @@
     border-radius: 8px 8px 0 0;
     overflow: hidden;
     height: 620px;
+    cursor: none;
+  }
+
+  .cursor {
+    position: absolute;
+    left: 500px;
+    top: 400px;
+    z-index: 50;
+    pointer-events: none;
+    display: none;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.5));
+    transition: left 0.8s cubic-bezier(0.25, 0.1, 0.25, 1),
+                top 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+
+  .cursor.clicking {
+    animation: click-effect 0.3s ease;
+  }
+
+  @keyframes click-effect {
+    0% { transform: scale(1); }
+    40% { transform: scale(0.8); }
+    100% { transform: scale(1); }
   }
 
   .wallpaper {
