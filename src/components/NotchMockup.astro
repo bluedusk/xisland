@@ -518,7 +518,11 @@
     step(() => { showLayer('compact'); setLabel('idle'); hideCursor(); }, 2000);
   }
 
+  let isVisible = false;
+  let isPageVisible = true;
+
   function run() {
+    if (!isVisible || !isPageVisible) return;
     if (queue.length === 0) buildSequence();
     const next = queue.shift();
     if (next) {
@@ -527,7 +531,32 @@
     }
   }
 
-  setTimeout(run, 1000);
+  function pause() {
+    clearTimeout(timer);
+    timer = null;
+  }
+
+  function resume() {
+    if (!timer && isVisible && isPageVisible) {
+      timer = setTimeout(run, 500);
+    }
+  }
+
+  // Only animate when mockup is in viewport
+  const mockupEl = document.querySelector('.mockup');
+  if (mockupEl) {
+    const obs = new IntersectionObserver((entries) => {
+      isVisible = entries[0].isIntersecting;
+      if (isVisible) resume(); else pause();
+    }, { threshold: 0.1 });
+    obs.observe(mockupEl);
+  }
+
+  // Pause when tab is hidden
+  document.addEventListener('visibilitychange', () => {
+    isPageVisible = !document.hidden;
+    if (isPageVisible && isVisible) resume(); else pause();
+  });
 </script>
 
 <style>
