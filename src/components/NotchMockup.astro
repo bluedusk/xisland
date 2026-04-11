@@ -483,14 +483,13 @@
 
 <style>
   .mockup {
-    padding: 0 0 40px;
-    margin-top: -20px;
+    padding: 40px 0 40px;
   }
 
   .frame {
-    max-width: 1040px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 10px 10px 0;
+    padding: 12px 12px 0;
     background: #0a0a0a;
     border-radius: 18px 18px 0 0;
     box-shadow:
@@ -515,7 +514,7 @@
     position: relative;
     border-radius: 8px 8px 0 0;
     overflow: hidden;
-    height: 540px;
+    height: 620px;
   }
 
   .wallpaper {
@@ -562,7 +561,9 @@
      ============================================= */
   .island {
     position: absolute;
-    top: 0; left: 50%; transform: translateX(-50%);
+    top: 0; left: 50%;
+    transform: translateX(-50%) scale(0.78);
+    transform-origin: top center;
     width: 200px; height: 32px;
     background: #000;
     border: 1px solid rgba(255,255,255,0.06);
