@@ -21,161 +21,286 @@
         <!-- compact -->
         <div class="layer active" data-layer="compact">
           <div class="compact-inner">
-            <svg class="pet" width="20" height="12" viewBox="0 0 10 6" shape-rendering="crispEdges">
-              <rect x="1" y="1" width="1" height="1" fill="#4ade80"/>
-              <rect x="4" y="1" width="1" height="1" fill="#4ade80"/>
-              <rect x="0" y="2" width="6" height="1" fill="#22c55e"/>
-              <rect x="1" y="2" width="1" height="1" fill="#000"/>
-              <rect x="4" y="2" width="1" height="1" fill="#000"/>
-              <rect x="0" y="3" width="6" height="1" fill="#22c55e"/>
-              <rect x="1" y="4" width="2" height="1" fill="#22c55e"/>
-              <rect x="4" y="4" width="2" height="1" fill="#22c55e"/>
-            </svg>
-            <span class="compact-task">fix auth bug</span>
-            <span class="compact-count">3</span>
+            <canvas class="mascot-compact" id="mascot-compact" width="8" height="8"></canvas>
+            <div class="compact-dot" id="compact-dot"></div>
+            <span class="compact-count" id="compact-count">3</span>
           </div>
         </div>
 
-        <!-- overview -->
-        <div class="layer" data-layer="overview">
-          <div class="sess sess-hero">
-            <svg class="sess-pet" width="14" height="14" viewBox="0 0 8 6" shape-rendering="crispEdges">
-              <rect x="1" y="1" width="1" height="1" fill="#60a5fa"/>
-              <rect x="4" y="1" width="1" height="1" fill="#60a5fa"/>
-              <rect x="0" y="2" width="6" height="1" fill="#3b82f6"/>
-              <rect x="1" y="2" width="1" height="1" fill="#000"/>
-              <rect x="4" y="2" width="1" height="1" fill="#000"/>
-              <rect x="0" y="3" width="6" height="1" fill="#3b82f6"/>
-              <rect x="1" y="4" width="2" height="1" fill="#3b82f6"/>
-              <rect x="4" y="4" width="2" height="1" fill="#3b82f6"/>
-            </svg>
-            <div class="sess-info">
-              <div class="sess-r1">
-                <span class="sess-name">fix auth bug</span>
-                <span class="sess-tag">Claude</span>
-                <span class="sess-tag">Ghostty</span>
-                <span class="sess-dur">27m</span>
-              </div>
-              <div class="sess-you">You: fix the auth bug in middleware</div>
-              <div class="sess-status" style="color:#3b82f6">Writing middleware.ts</div>
+        <!-- sessions -->
+        <div class="layer" data-layer="sessions">
+          <div class="panel-header">
+            <div class="header-usage">
+              <span class="u-label">Cl</span>&nbsp;<span class="u-val grn">77%</span>
+              <span class="u-sep">/</span><span class="u-val red">0%</span>
+              <span class="u-sep">|</span>
+              <span class="u-label">Cx</span>&nbsp;<span class="u-val grn">98%</span>
+            </div>
+            <div class="header-controls">
+              <div class="hdr-icon active"><svg viewBox="0 0 24 24"><path d="M17 4v7l2 3v2h-6v5l-1 1-1-1v-5H5v-2l2-3V4c0-1.1.9-2 2-2h6c1.1 0 2 .9 2 2z"/></svg></div>
+              <div class="hdr-icon"><svg viewBox="0 0 24 24"><path d="M14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77zM3 9v6h4l5 5V4L7 9H3z"/></svg></div>
+              <div class="hdr-icon"><svg viewBox="0 0 24 24"><path d="M12.34 2.02C6.59 1.82 2 6.42 2 12c0 5.52 4.48 10 10 10 3.71 0 6.93-2.02 8.66-5.02-7.51-.25-12.09-8.43-8.32-14.96z"/></svg></div>
+              <div class="hdr-icon"><svg viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.31.06-.63.06-.94 0-.31-.02-.63-.06-.94l2.03-1.58a.49.49 0 00.12-.61l-1.92-3.32a.49.49 0 00-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.48.48 0 00-.48-.41h-3.84a.48.48 0 00-.48.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96a.49.49 0 00-.59.22L2.74 8.87a.48.48 0 00.12.61l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94l-2.03 1.58a.49.49 0 00-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.48-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6A3.6 3.6 0 1115.6 12 3.6 3.6 0 0112 15.6z"/></svg></div>
             </div>
           </div>
-          <div class="sess sess-mini">
-            <div class="sess-dot" style="background:#3b82f6"></div>
-            <span class="sess-name">backend server</span>
-            <span class="sess-tag">Codex</span><span class="sess-tag">iTerm2</span>
-            <span class="sess-dur">1h</span>
-          </div>
-          <div class="sess sess-mini">
-            <div class="sess-dot" style="background:#22c55e"></div>
-            <span class="sess-name">optimize queries</span>
-            <span class="sess-tag">Gemini</span><span class="sess-tag">Terminal</span>
-            <span class="sess-dur">5h</span>
+          <div class="session-list">
+            <!-- Row 1: active blue -->
+            <div class="s-row">
+              <div class="brand">
+                <canvas class="mascot" id="sess-m1" width="8" height="8"></canvas>
+                <div class="sbar blue"></div>
+              </div>
+              <div class="s-body">
+                <div class="s-top">
+                  <span class="s-name">open-vibe-island</span>
+                  <div class="badges">
+                    <span class="b claude">Claude</span>
+                    <span class="b term">Ghostty</span>
+                    <span class="b time">&lt;1m</span>
+                  </div>
+                </div>
+                <div class="s-prompt"><span class="you">You: </span>just use gh command to manage</div>
+                <div class="s-activity">Here's what <code>./scripts/release.sh</code> does:...</div>
+              </div>
+            </div>
+            <!-- Row 2: active blue -->
+            <div class="s-row">
+              <div class="brand">
+                <canvas class="mascot" id="sess-m2" width="8" height="8"></canvas>
+                <div class="sbar blue"></div>
+              </div>
+              <div class="s-body">
+                <div class="s-top">
+                  <span class="s-name">open-vibe-island</span>
+                  <div class="badges">
+                    <span class="b claude">Claude</span>
+                    <span class="b term">Ghostty</span>
+                    <span class="b time">&lt;1m</span>
+                  </div>
+                </div>
+                <div class="s-prompt"><span class="you">You: </span>fix but lab can stay</div>
+                <div class="s-activity">Done. Four fixes:...</div>
+              </div>
+            </div>
+            <!-- Row 3: done green -->
+            <div class="s-row">
+              <div class="brand">
+                <canvas class="mascot" id="sess-m3" width="8" height="8"></canvas>
+                <div class="sbar green-dim"></div>
+              </div>
+              <div class="s-body">
+                <div class="s-top">
+                  <span class="s-name">x-island-web</span>
+                  <div class="badges">
+                    <span class="b claude">Claude</span>
+                    <span class="b term">Ghostty</span>
+                    <span class="b time">10m</span>
+                  </div>
+                </div>
+                <div class="s-prompt"><span class="you">You: </span>we need targeted keywords</div>
+                <div class="s-activity grn">All verified. Here's what was changed:...</div>
+              </div>
+            </div>
+            <!-- Row 4: idle -->
+            <div class="s-row">
+              <div class="idle-dot"></div>
+              <div class="s-body">
+                <div class="s-top">
+                  <span class="s-name dim">open-vibe-island</span>
+                  <div class="badges">
+                    <span class="b claude">Claude</span>
+                    <span class="b term">Ghostty</span>
+                    <span class="b time">1h</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- approval -->
         <div class="layer" data-layer="approval">
-          <div class="appr-head">
-            <div class="appr-dot"></div>
-            <span>Permission Request</span>
-          </div>
-          <div class="appr-tool">
-            <span class="appr-warn">⚠</span>
-            <span class="appr-action">Edit</span>
-            <span class="appr-path">src/auth/middleware.ts</span>
-          </div>
-          <div class="appr-diff">
-            <div class="diff-line diff-ctx"><span class="diff-ln">12</span>const verify = (token) =&gt;</div>
-            <div class="diff-line diff-del"><span class="diff-ln">13</span>- jwt.verify(token);</div>
-            <div class="diff-line diff-add"><span class="diff-ln">13</span>+ if (!token) throw new</div>
-            <div class="diff-line diff-add"><span class="diff-ln">14</span>+   AuthError('missing');</div>
-          </div>
-          <div class="appr-btns">
-            <button class="btn-deny">Deny <kbd>⌘N</kbd></button>
-            <button class="btn-allow" id="btn-allow">Allow <kbd>⌘Y</kbd></button>
-          </div>
-        </div>
-
-        <!-- approved (brief confirmation) -->
-        <div class="layer" data-layer="approved">
-          <div class="approved-inner">
-            <svg class="pet" width="20" height="12" viewBox="0 0 10 6" shape-rendering="crispEdges">
-              <rect x="1" y="1" width="1" height="1" fill="#4ade80"/>
-              <rect x="4" y="1" width="1" height="1" fill="#4ade80"/>
-              <rect x="0" y="2" width="6" height="1" fill="#22c55e"/>
-              <rect x="1" y="2" width="1" height="1" fill="#000"/>
-              <rect x="4" y="2" width="1" height="1" fill="#000"/>
-              <rect x="0" y="3" width="6" height="1" fill="#22c55e"/>
-              <rect x="1" y="4" width="2" height="1" fill="#22c55e"/>
-              <rect x="4" y="4" width="2" height="1" fill="#22c55e"/>
-            </svg>
-            <span class="approved-text">Allowed</span>
-            <span class="approved-check">✓</span>
-          </div>
-        </div>
-
-        <!-- ask -->
-        <div class="layer" data-layer="ask">
-          <div class="ask-head">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="#22d3ee" opacity="0.9"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-            <span>Claude asks</span>
-          </div>
-          <div class="ask-q">Which deployment target?</div>
-          <div class="ask-opts">
-            <button class="ask-opt" id="ask-opt-0"><span class="ask-num">⌘1</span><span>Production</span></button>
-            <button class="ask-opt"><span class="ask-num">⌘2</span><span>Staging</span></button>
-            <button class="ask-opt"><span class="ask-num">⌘3</span><span>Local only</span></button>
-          </div>
-        </div>
-
-        <!-- answered (brief confirmation) -->
-        <div class="layer" data-layer="answered">
-          <div class="approved-inner">
-            <svg class="pet" width="20" height="12" viewBox="0 0 10 6" shape-rendering="crispEdges">
-              <rect x="1" y="1" width="1" height="1" fill="#22d3ee"/>
-              <rect x="4" y="1" width="1" height="1" fill="#22d3ee"/>
-              <rect x="0" y="2" width="6" height="1" fill="#06b6d4"/>
-              <rect x="1" y="2" width="1" height="1" fill="#000"/>
-              <rect x="4" y="2" width="1" height="1" fill="#000"/>
-              <rect x="0" y="3" width="6" height="1" fill="#06b6d4"/>
-              <rect x="1" y="4" width="2" height="1" fill="#06b6d4"/>
-              <rect x="4" y="4" width="2" height="1" fill="#06b6d4"/>
-            </svg>
-            <span class="approved-text">Production</span>
-            <span class="approved-check" style="color:#22d3ee">✓</span>
-          </div>
-        </div>
-
-        <!-- jump (highlighted session) -->
-        <div class="layer" data-layer="jump">
-          <div class="sess sess-hero sess-highlight">
-            <svg class="sess-pet" width="14" height="14" viewBox="0 0 8 6" shape-rendering="crispEdges">
-              <rect x="1" y="1" width="1" height="1" fill="#4ade80"/>
-              <rect x="4" y="1" width="1" height="1" fill="#4ade80"/>
-              <rect x="0" y="2" width="6" height="1" fill="#22c55e"/>
-              <rect x="1" y="2" width="1" height="1" fill="#000"/>
-              <rect x="4" y="2" width="1" height="1" fill="#000"/>
-              <rect x="0" y="3" width="6" height="1" fill="#22c55e"/>
-              <rect x="1" y="4" width="2" height="1" fill="#22c55e"/>
-              <rect x="4" y="4" width="2" height="1" fill="#22c55e"/>
-            </svg>
-            <div class="sess-info">
-              <div class="sess-r1">
-                <span class="sess-name">fix auth bug</span>
-                <span class="sess-tag">Claude</span>
-                <span class="sess-tag">Ghostty</span>
-                <span class="sess-dur">28m</span>
-              </div>
-              <div class="sess-you">Task completed</div>
-              <div class="sess-status" style="color:#22c55e">✓ Done — click to jump</div>
+          <div class="panel-header">
+            <div class="header-usage">
+              <span class="u-label">Cl</span>&nbsp;<span class="u-val grn">77%</span>
+              <span class="u-sep">/</span><span class="u-val red">0%</span>
+              <span class="u-sep">|</span>
+              <span class="u-label">Cx</span>&nbsp;<span class="u-val grn">98%</span>
+            </div>
+            <div class="header-controls">
+              <div class="hdr-icon active"><svg viewBox="0 0 24 24"><path d="M17 4v7l2 3v2h-6v5l-1 1-1-1v-5H5v-2l2-3V4c0-1.1.9-2 2-2h6c1.1 0 2 .9 2 2z"/></svg></div>
+              <div class="hdr-icon"><svg viewBox="0 0 24 24"><path d="M14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77zM3 9v6h4l5 5V4L7 9H3z"/></svg></div>
+              <div class="hdr-icon"><svg viewBox="0 0 24 24"><path d="M12.34 2.02C6.59 1.82 2 6.42 2 12c0 5.52 4.48 10 10 10 3.71 0 6.93-2.02 8.66-5.02-7.51-.25-12.09-8.43-8.32-14.96z"/></svg></div>
+              <div class="hdr-icon"><svg viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.31.06-.63.06-.94 0-.31-.02-.63-.06-.94l2.03-1.58a.49.49 0 00.12-.61l-1.92-3.32a.49.49 0 00-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.48.48 0 00-.48-.41h-3.84a.48.48 0 00-.48.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96a.49.49 0 00-.59.22L2.74 8.87a.48.48 0 00.12.61l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94l-2.03 1.58a.49.49 0 00-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.48-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6A3.6 3.6 0 1115.6 12 3.6 3.6 0 0112 15.6z"/></svg></div>
             </div>
           </div>
-          <div class="sess sess-mini">
-            <div class="sess-dot" style="background:#3b82f6"></div>
-            <span class="sess-name">backend server</span>
-            <span class="sess-tag">Codex</span><span class="sess-tag">iTerm2</span>
-            <span class="sess-dur">1h</span>
+          <div class="session-list">
+            <div class="s-row actionable" style="--tint-color:rgba(255,155,40,0.4);">
+              <div class="brand">
+                <canvas class="mascot" id="appr-m" width="8" height="8"></canvas>
+                <div class="sbar orange"></div>
+              </div>
+              <div class="s-body">
+                <div class="s-top">
+                  <span class="s-name">xisland-test</span>
+                  <div class="badges">
+                    <span class="b claude">Claude</span>
+                    <span class="b term">Terminal</span>
+                    <span class="b time">&lt;1m</span>
+                  </div>
+                </div>
+                <div class="s-prompt"><span class="you">You: </span>Testing hook notifications</div>
+                <div class="s-activity org">Claude wants to run Bash.</div>
+                <div class="approval-section">
+                  <div class="approval-label"><span class="tri">&#9888;</span> Bash</div>
+                  <div class="cmd-box">
+                    <div class="cmd-text"><span class="cmd-prefix">$ </span>rm -rf /tmp/test-directory</div>
+                  </div>
+                  <div class="approval-btns">
+                    <div class="abtn approve" id="btn-approve">Approve</div>
+                    <div class="abtn auto-accept">Auto Accept</div>
+                    <div class="abtn bypass">Bypass</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- approved (brief compact confirmation) -->
+        <div class="layer" data-layer="approved">
+          <div class="confirmed-inner">
+            <canvas class="mascot-compact" id="mascot-approved" width="8" height="8"></canvas>
+            <span class="confirmed-text">Allowed</span>
+            <span class="confirmed-check" style="color:rgb(74,219,117);">&#10003;</span>
+          </div>
+        </div>
+
+        <!-- question -->
+        <div class="layer" data-layer="question">
+          <div class="panel-header">
+            <div class="header-usage">
+              <span class="u-label">Cl</span>&nbsp;<span class="u-val grn">77%</span>
+              <span class="u-sep">/</span><span class="u-val red">0%</span>
+              <span class="u-sep">|</span>
+              <span class="u-label">Cx</span>&nbsp;<span class="u-val grn">98%</span>
+            </div>
+            <div class="header-controls">
+              <div class="hdr-icon active"><svg viewBox="0 0 24 24"><path d="M17 4v7l2 3v2h-6v5l-1 1-1-1v-5H5v-2l2-3V4c0-1.1.9-2 2-2h6c1.1 0 2 .9 2 2z"/></svg></div>
+              <div class="hdr-icon"><svg viewBox="0 0 24 24"><path d="M14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77zM3 9v6h4l5 5V4L7 9H3z"/></svg></div>
+              <div class="hdr-icon"><svg viewBox="0 0 24 24"><path d="M12.34 2.02C6.59 1.82 2 6.42 2 12c0 5.52 4.48 10 10 10 3.71 0 6.93-2.02 8.66-5.02-7.51-.25-12.09-8.43-8.32-14.96z"/></svg></div>
+              <div class="hdr-icon"><svg viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.31.06-.63.06-.94 0-.31-.02-.63-.06-.94l2.03-1.58a.49.49 0 00.12-.61l-1.92-3.32a.49.49 0 00-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.48.48 0 00-.48-.41h-3.84a.48.48 0 00-.48.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96a.49.49 0 00-.59.22L2.74 8.87a.48.48 0 00.12.61l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94l-2.03 1.58a.49.49 0 00-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.48-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6A3.6 3.6 0 1115.6 12 3.6 3.6 0 0112 15.6z"/></svg></div>
+            </div>
+          </div>
+          <div class="session-list">
+            <div class="s-row actionable" style="--tint-color:rgba(200,190,40,0.35);">
+              <div class="brand">
+                <canvas class="mascot" id="ask-m" width="8" height="8"></canvas>
+                <div class="sbar orange"></div>
+              </div>
+              <div class="s-body">
+                <div class="s-top">
+                  <span class="s-name">xisland-test</span>
+                  <div class="badges">
+                    <span class="b claude">Claude</span>
+                    <span class="b term">Terminal</span>
+                    <span class="b time">&lt;1m</span>
+                  </div>
+                </div>
+                <div class="s-prompt"><span class="you">You: </span>Testing hook notifications</div>
+                <div class="s-activity org">Which testing approach do you prefer?</div>
+                <div class="question-section">
+                  <div class="q-label">
+                    <div class="q-icon">?</div>
+                    Claude's Question
+                  </div>
+                  <div class="q-text"><span class="q-tag">[Test Strategy]</span> Which testing approach do you prefer?</div>
+                  <div class="q-options">
+                    <div class="q-option" id="q-opt-0">
+                      <div class="q-num">1</div>
+                      <div class="q-opt-text">
+                        <div class="q-opt-title">Unit tests only</div>
+                        <div class="q-opt-desc">Fast, isolated tests</div>
+                      </div>
+                    </div>
+                    <div class="q-option">
+                      <div class="q-num">2</div>
+                      <div class="q-opt-text">
+                        <div class="q-opt-title">Integration tests</div>
+                        <div class="q-opt-desc">Tests with real dependencies</div>
+                      </div>
+                    </div>
+                    <div class="q-option">
+                      <div class="q-num">3</div>
+                      <div class="q-opt-text">
+                        <div class="q-opt-title">Both</div>
+                        <div class="q-opt-desc">Comprehensive coverage</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- answered (brief compact confirmation) -->
+        <div class="layer" data-layer="answered">
+          <div class="confirmed-inner">
+            <canvas class="mascot-compact" id="mascot-answered" width="8" height="8"></canvas>
+            <span class="confirmed-text">Unit tests</span>
+            <span class="confirmed-check" style="color:rgb(55,170,230);">&#10003;</span>
+          </div>
+        </div>
+
+        <!-- done / jump -->
+        <div class="layer" data-layer="done">
+          <div class="panel-header">
+            <div class="header-usage">
+              <span class="u-label">Cl</span>&nbsp;<span class="u-val grn">77%</span>
+              <span class="u-sep">/</span><span class="u-val red">0%</span>
+              <span class="u-sep">|</span>
+              <span class="u-label">Cx</span>&nbsp;<span class="u-val grn">98%</span>
+            </div>
+            <div class="header-controls">
+              <div class="hdr-icon active"><svg viewBox="0 0 24 24"><path d="M17 4v7l2 3v2h-6v5l-1 1-1-1v-5H5v-2l2-3V4c0-1.1.9-2 2-2h6c1.1 0 2 .9 2 2z"/></svg></div>
+              <div class="hdr-icon"><svg viewBox="0 0 24 24"><path d="M14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77zM3 9v6h4l5 5V4L7 9H3z"/></svg></div>
+              <div class="hdr-icon"><svg viewBox="0 0 24 24"><path d="M12.34 2.02C6.59 1.82 2 6.42 2 12c0 5.52 4.48 10 10 10 3.71 0 6.93-2.02 8.66-5.02-7.51-.25-12.09-8.43-8.32-14.96z"/></svg></div>
+              <div class="hdr-icon"><svg viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.31.06-.63.06-.94 0-.31-.02-.63-.06-.94l2.03-1.58a.49.49 0 00.12-.61l-1.92-3.32a.49.49 0 00-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.48.48 0 00-.48-.41h-3.84a.48.48 0 00-.48.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96a.49.49 0 00-.59.22L2.74 8.87a.48.48 0 00.12.61l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94l-2.03 1.58a.49.49 0 00-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.48-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6A3.6 3.6 0 1115.6 12 3.6 3.6 0 0112 15.6z"/></svg></div>
+            </div>
+          </div>
+          <div class="session-list">
+            <div class="s-row actionable" style="--tint-color:rgba(74,219,117,0.3);">
+              <div class="brand">
+                <canvas class="mascot" id="done-m" width="8" height="8"></canvas>
+                <div class="sbar green"></div>
+              </div>
+              <div class="s-body">
+                <div class="s-top">
+                  <span class="s-name">open-vibe-island</span>
+                  <div class="badges">
+                    <span class="b claude">Claude</span>
+                    <span class="b term">Ghostty</span>
+                    <span class="b time">24m</span>
+                  </div>
+                </div>
+                <div class="s-prompt"><span class="you">You: </span>Update the README with new API docs</div>
+                <div class="s-activity grn">Done.</div>
+                <div class="done-section">
+                  <div class="done-header">
+                    <div class="done-prompt"><em>You: </em>Update the README with new API docs</div>
+                    <div class="done-badge">Done</div>
+                  </div>
+                  <div class="done-divider"></div>
+                  <div class="done-body">
+                    Updated README with new API documentation.<br>
+                    &bull; Added <code>GET /api/v2/users</code> endpoint<br>
+                    &bull; Updated auth section with OAuth2 flow<br>
+                    &bull; 3 files changed, +142 -28
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -211,30 +336,92 @@
 </section>
 
 <script>
-  // Queue-based cinematic animation system
+  // Mascot pixel art
+  const frame = [
+    ".D....D.",
+    ".MMMMMM.",
+    ".MYEMYE.",
+    ".MLKKML.",
+    "DMHHHHDM",
+    ".MHHHH..",
+    "..K..K..",
+    "........"
+  ];
+  const P = {
+    '.':null, 'D':[107,77,170], 'M':[155,126,216], 'L':[184,150,240],
+    'H':[212,192,240], 'E':[26,16,32], 'Y':[255,224,102], 'K':[255,179,71],
+  };
+
+  function drawMascot(id, opts) {
+    const c = document.getElementById(id);
+    if (!c) return;
+    const ctx = c.getContext('2d');
+    ctx.clearRect(0, 0, 8, 8);
+    for (let y = 0; y < 8; y++) {
+      for (let x = 0; x < 8; x++) {
+        const col = P[frame[y][x]];
+        if (!col) continue;
+        let [r, g, b] = col;
+        if (opts?.dim) {
+          const a = r * 0.3 + g * 0.59 + b * 0.11;
+          const m = 0.3;
+          r = r * m + a * (1 - m);
+          g = g * m + a * (1 - m);
+          b = b * m + a * (1 - m);
+        }
+        if (opts?.tint) {
+          const [tr, tg, tb] = opts.tint;
+          const m = 0.35;
+          r = r * (1 - m) + tr * m;
+          g = g * (1 - m) + tg * m;
+          b = b * (1 - m) + tb * m;
+        }
+        ctx.fillStyle = `rgb(${r|0},${g|0},${b|0})`;
+        ctx.fillRect(x, y, 1, 1);
+      }
+    }
+  }
+
+  const BLUE = [87, 155, 255];
+  const GREEN = [42, 232, 107];
+  const ORANGE = [255, 155, 40];
+
+  // Draw all mascots
+  function drawAllMascots() {
+    // Compact
+    drawMascot('mascot-compact', { tint: BLUE });
+    // Session list
+    drawMascot('sess-m1', { tint: BLUE });
+    drawMascot('sess-m2', { tint: BLUE });
+    drawMascot('sess-m3', { tint: GREEN });
+    // Approval
+    drawMascot('appr-m', { tint: ORANGE });
+    // Approved
+    drawMascot('mascot-approved', { tint: GREEN });
+    // Question
+    drawMascot('ask-m', { tint: ORANGE });
+    // Answered
+    drawMascot('mascot-answered', { tint: BLUE });
+    // Done
+    drawMascot('done-m', { tint: GREEN });
+  }
+
+  drawAllMascots();
+
+  // Queue-based animation system
   const queue = [];
   let timer = null;
   const island = document.getElementById('island');
   const labelEl = document.getElementById('demo-label');
 
   const sizes = {
-    compact:  { w: 200, h: 32,  r: 20 },
-    overview: { w: 380, h: 155, r: 14 },
-    approval: { w: 360, h: 210, r: 14 },
-    approved: { w: 240, h: 36,  r: 18 },
-    ask:      { w: 330, h: 155, r: 14 },
-    answered: { w: 240, h: 36,  r: 18 },
-    jump:     { w: 380, h: 120, r: 14 },
-  };
-
-  const glows = {
-    compact:  'rgba(34,197,94,0.08)',
-    overview: 'rgba(59,130,246,0.08)',
-    approval: 'rgba(249,115,22,0.12)',
-    approved: 'rgba(34,197,94,0.15)',
-    ask:      'rgba(6,182,212,0.12)',
-    answered: 'rgba(6,182,212,0.15)',
-    jump:     'rgba(34,197,94,0.12)',
+    compact:  { w: 200, h: 32 },
+    sessions: { w: 420, h: 280 },
+    approval: { w: 420, h: 320 },
+    approved: { w: 240, h: 36 },
+    question: { w: 420, h: 320 },
+    answered: { w: 240, h: 36 },
+    done:     { w: 420, h: 220 },
   };
 
   function step(fn, delay) {
@@ -242,68 +429,63 @@
   }
 
   function showLayer(name) {
-    document.querySelectorAll('.layer').forEach(l => l.classList.remove('active'));
+    document.querySelectorAll('#island .layer').forEach(l => l.classList.remove('active'));
     const el = document.querySelector(`[data-layer="${name}"]`);
     if (el) el.classList.add('active');
     const s = sizes[name];
     island.style.width = s.w + 'px';
     island.style.height = s.h + 'px';
-    island.style.borderRadius = s.r + 'px';
-    island.style.boxShadow = `0 4px 24px rgba(0,0,0,0.5), 0 0 20px ${glows[name]}, 0 0 0 0.5px rgba(255,255,255,0.06)`;
+    // Compact/confirmed states get pill radius
+    if (name === 'compact' || name === 'approved' || name === 'answered') {
+      island.style.borderRadius = '20px';
+    } else {
+      island.style.borderRadius = '0 0 28px 28px';
+      island.style.borderTopColor = 'transparent';
+    }
   }
 
   function setLabel(text) {
     if (labelEl) labelEl.textContent = text;
   }
 
-  function highlightBtn(id) {
-    const btn = document.getElementById(id);
-    if (btn) {
-      btn.style.transform = 'scale(1.05)';
-      btn.style.filter = 'brightness(1.3)';
+  function highlightEl(id) {
+    const el = document.getElementById(id);
+    if (el) {
+      el.style.transform = 'scale(1.05)';
+      el.style.filter = 'brightness(1.3)';
+      el.style.transition = 'transform 0.2s, filter 0.2s';
       setTimeout(() => {
-        btn.style.transform = '';
-        btn.style.filter = '';
+        el.style.transform = '';
+        el.style.filter = '';
       }, 400);
     }
   }
 
-  // Build the cinematic sequence
+  // Build cinematic sequence
   function buildSequence() {
     // 1. Compact idle
     step(() => { showLayer('compact'); setLabel('idle'); }, 2000);
-
-    // 2. Expand to overview
-    step(() => { showLayer('overview'); setLabel('sessions'); }, 2500);
-
-    // 3. Approval comes in
+    // 2. Session list
+    step(() => { showLayer('sessions'); setLabel('sessions'); }, 3000);
+    // 3. Approval
     step(() => { showLayer('approval'); setLabel('approval'); }, 3000);
-
-    // 4. User clicks Allow
-    step(() => { highlightBtn('btn-allow'); }, 800);
-
-    // 5. Collapse to approved confirmation
+    // 4. Highlight approve button
+    step(() => { highlightEl('btn-approve'); }, 800);
+    // 5. Approved confirmation
     step(() => { showLayer('approved'); setLabel('allowed'); }, 1200);
-
-    // 6. Back to compact
-    step(() => { showLayer('compact'); setLabel('idle'); }, 1800);
-
-    // 7. Question comes in
-    step(() => { showLayer('ask'); setLabel('question'); }, 2800);
-
-    // 8. User picks option 1
-    step(() => { highlightBtn('ask-opt-0'); }, 800);
-
-    // 9. Collapse to answered confirmation
-    step(() => { showLayer('answered'); setLabel('answered'); }, 1200);
-
-    // 10. Back to compact briefly
+    // 6. Compact
     step(() => { showLayer('compact'); setLabel('idle'); }, 1500);
-
-    // 11. Task done — jump view
-    step(() => { showLayer('jump'); setLabel('done — jump'); }, 2500);
-
-    // 12. Back to compact, loop
+    // 7. Question
+    step(() => { showLayer('question'); setLabel('question'); }, 3000);
+    // 8. Highlight option 1
+    step(() => { highlightEl('q-opt-0'); }, 800);
+    // 9. Answered confirmation
+    step(() => { showLayer('answered'); setLabel('answered'); }, 1200);
+    // 10. Compact
+    step(() => { showLayer('compact'); setLabel('idle'); }, 1500);
+    // 11. Done / jump
+    step(() => { showLayer('done'); setLabel('done'); }, 2500);
+    // 12. Compact, loop
     step(() => { showLayer('compact'); setLabel('idle'); }, 2000);
   }
 
@@ -316,7 +498,6 @@
     }
   }
 
-  // Start after a brief pause
   setTimeout(run, 1000);
 </script>
 
@@ -350,17 +531,18 @@
       linear-gradient(180deg, #0c0c18 0%, #0a0a14 100%);
   }
 
+  /* Menu bar */
   .bar {
     position: relative;
     display: flex; justify-content: space-between; align-items: center;
     height: 26px; padding: 0 12px;
     background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(20px);
-    font-family: var(--mono); font-size: 11px;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+    font-size: 11px;
     color: rgba(255, 255, 255, 0.65);
     z-index: 2;
   }
-
   .bar-l, .bar-r { display: flex; align-items: center; gap: 10px; }
   .bar-bold { font-weight: 600; }
 
@@ -371,158 +553,290 @@
     display: flex; align-items: center; justify-content: center;
     z-index: 10;
   }
-
   .cam {
     width: 6px; height: 6px; border-radius: 50%;
     background: #1a1a2e;
     box-shadow: 0 0 0 1px rgba(255,255,255,0.05);
   }
 
-  /* Island */
+  /* =============================================
+     ISLAND PANEL
+     ============================================= */
   .island {
     position: absolute;
-    top: 30px; left: 50%; transform: translateX(-50%);
+    top: 0; left: 50%; transform: translateX(-50%);
     width: 200px; height: 32px;
     background: #000;
-    border: 1px solid rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-top-color: transparent;
     border-radius: 20px;
     z-index: 9;
     overflow: hidden;
     transition:
       width 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.1),
       height 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.1),
-      border-radius 0.4s ease-out,
-      box-shadow 0.4s ease-out;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.5), 0 0 0 0.5px rgba(255,255,255,0.06);
+      border-radius 0.4s ease-out;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.65);
   }
 
   .layer {
     position: absolute; inset: 0;
-    padding: 8px 12px;
     opacity: 0; transform: scale(0.96);
     transition: opacity 0.35s ease, transform 0.35s ease;
     pointer-events: none;
-    font-family: var(--mono); font-size: 11px;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
   }
-
   .layer.active {
     opacity: 1; transform: scale(1);
     pointer-events: auto;
   }
 
-  /* Compact */
-  .compact-inner, .approved-inner {
-    display: flex; align-items: center; gap: 8px;
-    height: 100%; padding: 0 4px;
-  }
-  .compact-task { color: rgba(255,255,255,0.5); font-size: 10px; flex: 1; }
-  .compact-count {
-    font-size: 10px; color: rgba(255,255,255,0.3);
-    background: rgba(255,255,255,0.08);
-    padding: 1px 6px; border-radius: 8px;
-  }
-  .pet { flex-shrink: 0; }
-
-  /* Approved/Answered confirmation */
-  .approved-text { color: rgba(255,255,255,0.6); font-size: 10px; flex: 1; }
-  .approved-check { color: var(--green); font-size: 12px; }
-
-  /* Sessions */
-  .sess { display: flex; align-items: flex-start; gap: 8px; padding: 6px 4px; }
-  .sess-hero { border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 8px; }
-  .sess-highlight {
-    background: rgba(34,197,94,0.06);
-    border-radius: 8px;
-    border-bottom-color: rgba(34,197,94,0.1);
-  }
-  .sess-mini { align-items: center; padding: 5px 4px; }
-  .sess-pet { flex-shrink: 0; margin-top: 2px; }
-  .sess-info { flex: 1; min-width: 0; }
-  .sess-r1 { display: flex; align-items: center; gap: 6px; margin-bottom: 3px; }
-  .sess-name { font-size: 10px; color: #fff; font-weight: 500; }
-  .sess-tag {
-    font-size: 8px; color: rgba(255,255,255,0.35);
-    background: rgba(255,255,255,0.06);
-    padding: 1px 5px; border-radius: 3px;
-  }
-  .sess-dur { font-size: 9px; color: rgba(255,255,255,0.25); margin-left: auto; }
-  .sess-you { font-size: 9px; color: rgba(255,255,255,0.35); margin-bottom: 2px; }
-  .sess-status { font-size: 9px; }
-  .sess-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
-
-  /* Approval */
-  .appr-head {
-    display: flex; align-items: center; gap: 8px;
-    font-size: 10px; color: rgba(255,255,255,0.7); margin-bottom: 8px;
-  }
-  .appr-dot {
-    width: 6px; height: 6px; border-radius: 50%;
-    background: var(--orange);
-    box-shadow: 0 0 6px rgba(255,138,80,0.4);
-    animation: pulse 1.5s ease-in-out infinite;
-  }
-  @keyframes pulse { 50% { opacity: 0.4; } }
-
-  .appr-tool {
+  /* =============================================
+     COMPACT STATE
+     ============================================= */
+  .compact-inner, .confirmed-inner {
     display: flex; align-items: center; gap: 6px;
-    font-size: 10px; margin-bottom: 6px;
+    height: 100%; padding: 0 12px;
   }
-  .appr-warn { color: var(--orange); }
-  .appr-action { color: var(--green); font-weight: 500; }
-  .appr-path { color: rgba(255,255,255,0.35); }
+  .mascot-compact {
+    width: 14px; height: 14px;
+    image-rendering: pixelated; flex-shrink: 0;
+  }
+  .compact-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: rgb(87,155,255); flex-shrink: 0;
+  }
+  .compact-count {
+    font-size: 11.5px; font-weight: 700;
+    color: rgb(87,155,255);
+    background: rgb(16,16,18);
+    padding: 1px 7px; border-radius: 10px;
+    margin-left: auto;
+  }
 
-  .appr-diff {
-    background: rgba(255,255,255,0.03); border-radius: 6px;
-    padding: 4px 0; margin-bottom: 8px; font-size: 9px; overflow: hidden;
+  /* =============================================
+     CONFIRMED STATE (approved / answered)
+     ============================================= */
+  .confirmed-text {
+    color: rgba(255,255,255,0.6); font-size: 12px;
+    font-weight: 500; flex: 1;
   }
-  .diff-line {
-    padding: 1px 8px; display: flex; gap: 8px;
-    font-family: var(--mono); white-space: nowrap;
-  }
-  .diff-ln { color: rgba(255,255,255,0.15); min-width: 16px; text-align: right; }
-  .diff-ctx { color: rgba(255,255,255,0.3); }
-  .diff-del { color: #f87171; background: rgba(248,113,113,0.06); }
-  .diff-add { color: #4ade80; background: rgba(74,222,128,0.06); }
+  .confirmed-check { font-size: 13px; font-weight: 600; }
 
-  .appr-btns { display: flex; gap: 6px; justify-content: flex-end; }
-  .appr-btns button {
-    font-family: var(--mono); font-size: 10px;
-    padding: 4px 10px; border: none; border-radius: 6px;
-    cursor: default; display: flex; align-items: center; gap: 4px;
+  /* =============================================
+     PANEL HEADER
+     ============================================= */
+  .panel-header {
+    display: flex; align-items: center;
+    padding: 10px 18px 2px; min-height: 28px;
+  }
+  .header-usage {
+    font-size: 12.5px; font-weight: 500; color: rgba(255,255,255,0.45);
+    display: flex; align-items: baseline; gap: 3px; flex: 1;
+  }
+  .u-label { color: rgba(255,255,255,0.38); font-weight: 600; }
+  .u-val { font-weight: 700; }
+  .u-val.grn { color: rgb(75, 195, 90); }
+  .u-val.red { color: rgb(225, 75, 75); }
+  .u-sep { color: rgba(255,255,255,0.18); margin: 0 3px; }
+
+  .header-controls { display: flex; align-items: center; gap: 14px; }
+  .hdr-icon {
+    color: rgba(255,255,255,0.45); font-size: 18px; cursor: default;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .hdr-icon.active { color: rgba(255,160,50,0.85); }
+  .hdr-icon svg { width: 16px; height: 16px; fill: currentColor; }
+
+  /* =============================================
+     SESSION LIST & ROWS
+     ============================================= */
+  .session-list {
+    padding: 6px 10px 10px;
+    display: flex; flex-direction: column; gap: 2px;
+  }
+  .s-row {
+    display: flex; align-items: flex-start; gap: 10px;
+    padding: 10px 12px; border-radius: 12px; cursor: default;
+  }
+  .s-row:hover { background: rgba(255,255,255,0.03); }
+  .s-row.actionable {
+    background: rgba(255,255,255,0.04);
+    outline: 1.5px solid var(--tint-color, rgba(255,255,255,0.1));
+    outline-offset: -1.5px;
+  }
+
+  /* Brand: mascot + status bar */
+  .brand {
+    display: flex; align-items: flex-start; gap: 3px;
+    padding-top: 2px; flex-shrink: 0;
+  }
+  .mascot {
+    width: 28px; height: 28px; image-rendering: pixelated; flex-shrink: 0;
+  }
+  .sbar {
+    width: 3.5px; min-height: 28px; border-radius: 2px;
+    background: rgba(255,255,255,0.05);
+  }
+  .sbar.blue { background: rgb(87,155,255); }
+  .sbar.green { background: rgb(74,219,117); }
+  .sbar.green-dim { background: rgb(74,219,117); opacity: 0.45; }
+  .sbar.orange { background: rgb(255,155,40); }
+
+  .idle-dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: rgba(255,255,255,0.2); margin: 9px 14px 9px 10px;
+  }
+
+  /* Content */
+  .s-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+  .s-top { display: flex; align-items: center; gap: 8px; }
+  .s-name {
+    font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.9);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    flex: 1; min-width: 0;
+  }
+  .s-name.dim { color: rgba(255,255,255,0.45); }
+
+  .badges { display: flex; gap: 6px; align-items: center; flex-shrink: 0; }
+  .b {
+    font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 6px;
+    white-space: nowrap;
+  }
+  .b.claude { background: rgba(195,70,55,0.22); color: rgb(215,105,85); }
+  .b.codex { background: rgba(70,170,110,0.2); color: rgb(85,195,125); }
+  .b.term { background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.48); }
+  .b.time { background: transparent; color: rgba(255,255,255,0.28); padding-right: 0; }
+
+  .s-prompt {
+    font-size: 12px; font-weight: 400; color: rgba(255,255,255,0.45);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; line-height: 1.45;
+  }
+  .s-prompt .you { color: rgba(255,255,255,0.32); }
+
+  .s-activity {
+    font-size: 11.5px; font-weight: 400; color: rgba(255,255,255,0.28);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; line-height: 1.4;
+  }
+  .s-activity.grn { color: rgba(74,219,117,0.65); }
+  .s-activity.org { color: rgba(255,165,50,0.75); }
+  .s-activity code {
+    font-family: 'SF Mono', 'Menlo', monospace; font-size: 10.5px;
+    background: rgba(255,255,255,0.06); padding: 1px 4px; border-radius: 3px;
+  }
+
+  /* =============================================
+     APPROVAL
+     ============================================= */
+  .approval-section { margin-top: 8px; }
+  .approval-label {
+    font-size: 12px; font-weight: 700; color: rgb(255,155,40);
+    display: flex; align-items: center; gap: 6px; margin-bottom: 8px;
+  }
+  .approval-label .tri { font-size: 14px; }
+  .cmd-box {
+    background: rgb(30,22,10);
+    border: 1.5px solid rgba(255,155,40,0.22);
+    border-radius: 14px; padding: 12px 16px; margin-bottom: 10px;
+  }
+  .cmd-text {
+    font-family: 'SF Mono', 'Menlo', 'Consolas', monospace;
+    font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.88);
+  }
+  .cmd-prefix { color: rgba(255,255,255,0.4); }
+
+  .approval-btns { display: flex; gap: 6px; }
+  .abtn {
+    flex: 1; text-align: center;
+    font-size: 12px; font-weight: 600;
+    padding: 9px 8px; border-radius: 10px;
+    cursor: default;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+    border: none;
     transition: transform 0.2s, filter 0.2s;
   }
-  .appr-btns kbd { font-family: var(--mono); font-size: 8px; opacity: 0.5; }
-  .btn-deny { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.5); }
-  .btn-allow { background: var(--green); color: #000; }
-
-  /* Ask */
-  .ask-head {
-    display: flex; align-items: center; gap: 6px;
-    font-size: 10px; color: #22d3ee; margin-bottom: 8px;
+  .abtn.approve {
+    background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.65);
   }
-  .ask-q {
-    font-size: 12px; color: rgba(255,255,255,0.8);
+  .abtn.auto-accept {
+    background: rgba(255,255,255,0.06); color: rgb(240,190,55);
+  }
+  .abtn.bypass {
+    background: rgba(255,255,255,0.06); color: rgb(235,130,55);
+  }
+
+  /* =============================================
+     QUESTION
+     ============================================= */
+  .question-section { margin-top: 8px; }
+  .q-label {
+    font-size: 13px; font-weight: 700; color: rgb(55,170,230);
+    display: flex; align-items: center; gap: 7px; margin-bottom: 10px;
+  }
+  .q-icon {
+    width: 18px; height: 18px; border-radius: 50%;
+    background: rgb(55,170,230); color: #fff;
+    font-size: 11px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .q-text {
+    font-size: 12.5px; font-weight: 600; color: rgba(255,255,255,0.85);
     margin-bottom: 10px; line-height: 1.4;
   }
-  .ask-opts { display: flex; flex-direction: column; gap: 4px; }
-  .ask-opt {
-    display: flex; align-items: center; gap: 8px;
-    font-family: var(--mono); font-size: 10px;
-    padding: 5px 8px;
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 6px;
-    color: rgba(255,255,255,0.6);
-    cursor: default;
-    transition: transform 0.2s, filter 0.2s, background 0.15s, border-color 0.15s;
-  }
-  .ask-opt:hover {
-    background: rgba(255,255,255,0.08);
-    border-color: rgba(34,211,238,0.3);
-  }
-  .ask-num { font-size: 9px; color: rgba(255,255,255,0.25); min-width: 20px; }
+  .q-tag { color: rgba(255,255,255,0.5); font-weight: 500; }
 
-  /* Dock */
+  .q-options { display: flex; flex-direction: column; gap: 6px; }
+  .q-option {
+    display: flex; align-items: center; gap: 12px;
+    background: rgba(255,255,255,0.06); border-radius: 12px;
+    padding: 12px 14px; cursor: default;
+    transition: transform 0.2s, filter 0.2s, background 0.15s;
+  }
+  .q-option:hover { background: rgba(255,255,255,0.08); }
+  .q-num {
+    width: 28px; height: 28px; border-radius: 8px;
+    background: rgb(50,140,80); color: #fff;
+    font-size: 13px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .q-opt-text { display: flex; flex-direction: column; gap: 2px; }
+  .q-opt-title { font-size: 12.5px; font-weight: 600; color: rgba(255,255,255,0.88); }
+  .q-opt-desc { font-size: 11px; font-weight: 400; color: rgba(255,255,255,0.38); }
+
+  /* =============================================
+     DONE / COMPLETION
+     ============================================= */
+  .done-section { margin-top: 6px; }
+  .done-header {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 6px;
+  }
+  .done-prompt {
+    font-size: 11px; font-weight: 500; color: rgba(255,255,255,0.5);
+  }
+  .done-prompt em { font-style: normal; color: rgba(255,255,255,0.3); }
+  .done-badge {
+    font-size: 10px; font-weight: 700;
+    background: rgba(74,219,117,0.15); color: rgb(74,219,117);
+    padding: 2px 8px; border-radius: 5px;
+  }
+  .done-divider {
+    height: 1px; background: rgba(255,255,255,0.04); margin-bottom: 7px;
+  }
+  .done-body {
+    font-size: 11px; color: rgba(255,255,255,0.45); line-height: 1.6;
+  }
+  .done-body code {
+    font-family: 'SF Mono', monospace; font-size: 10px;
+    background: rgba(255,255,255,0.06); padding: 1px 5px; border-radius: 3px;
+    color: rgba(255,255,255,0.6);
+  }
+
+  /* =============================================
+     DOCK
+     ============================================= */
   .dock {
     position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%);
     display: flex; gap: 6px; padding: 4px 8px;
@@ -546,7 +860,8 @@
   .dock-icon {
     width: 32px; height: 32px; border-radius: 7px;
     display: flex; align-items: center; justify-content: center;
-    font-family: var(--mono); font-size: 12px; font-weight: 600;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+    font-size: 12px; font-weight: 600;
   }
   .term-icon {
     background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
