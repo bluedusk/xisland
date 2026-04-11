@@ -9,9 +9,32 @@ import Features from '../components/Features.astro';
 import WhyBuilt from '../components/WhyBuilt.astro';
 import BlogPreview from '../components/BlogPreview.astro';
 import Footer from '../components/Footer.astro';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'xisland',
+  alternateName: 'xisland — Dynamic Island for Your Coding Agent',
+  applicationCategory: 'DeveloperApplication',
+  operatingSystem: 'macOS',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description: 'Free, open-source macOS app that monitors Claude Code, Codex, Gemini CLI, and OpenCode from the notch. Approve, answer, and jump back — without leaving your editor.',
+  url: 'https://xisland.app',
+  downloadUrl: 'https://github.com/bluedusk/xisland/releases',
+  license: 'https://opensource.org/licenses/GPL-3.0',
+  author: { '@type': 'Person', name: 'dan' },
+  featureList: [
+    'Monitor AI coding agent sessions from the macOS notch',
+    'Approve file edits, commands, and deletions before they run',
+    'Answer agent questions from a popup without switching windows',
+    'Jump to the right terminal session with one click',
+    'Vim-style keyboard navigation',
+    'Native Swift app — no Electron',
+  ],
+};
 ---
 
-<BaseLayout>
+<BaseLayout jsonLd={jsonLd}>
   <Nav />
   <Hero />
   <NotchMockup />

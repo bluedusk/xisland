@@ -5,17 +5,29 @@ interface Props {
   title: string;
   pubDate: Date;
   author: string;
+  description?: string;
 }
 
-const { title, pubDate, author } = Astro.props;
+const { title, pubDate, author, description } = Astro.props;
 const dateStr = pubDate.toLocaleDateString('en-US', {
   year: 'numeric',
   month: 'short',
   day: 'numeric',
 });
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: title,
+  datePublished: pubDate.toISOString(),
+  author: { '@type': 'Person', name: author },
+  publisher: { '@type': 'Organization', name: 'xisland', url: 'https://xisland.app' },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': `https://xisland.app${Astro.url.pathname}` },
+  ...(description && { description }),
+};
 ---
 
-<BaseLayout title={`${title} — xisland`}>
+<BaseLayout title={`${title} — xisland`} description={description} ogType="article" jsonLd={jsonLd}>
   <article>
     <header>
       <a href="/blog" class="back">

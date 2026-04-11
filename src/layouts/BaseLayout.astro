@@ -4,12 +4,19 @@ import '@fontsource/press-start-2p/400.css';
 interface Props {
   title?: string;
   description?: string;
+  ogType?: string;
+  jsonLd?: Record<string, unknown>;
 }
 
 const {
-  title = 'xisland — Dynamic Island for Your Coding Agent',
-  description = 'Open-source macOS companion that monitors your AI coding agents from the notch. By developers, for developers.',
+  title = 'xisland — Monitor AI Coding Agents from the macOS Notch',
+  description = 'Free, open-source macOS app that monitors Claude Code, Codex, Gemini CLI, and OpenCode from the notch. Approve, answer, and jump back — without leaving your editor.',
+  ogType = 'website',
+  jsonLd,
 } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL('/og.png', Astro.site);
 ---
 
 <!doctype html>
@@ -18,11 +25,18 @@ const {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL.href} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://xisland.app" />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonicalURL.href} />
+    <meta property="og:image" content={ogImage.href} />
+    <meta property="og:site_name" content="xisland" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage.href} />
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

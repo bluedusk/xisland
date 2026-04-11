@@ -1,0 +1,188 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: 'xisland Pro',
+  description: 'Lifetime license for xisland — monitor AI coding agents from the macOS notch.',
+  url: 'https://xisland.app/buy',
+  offers: {
+    '@type': 'Offer',
+    price: '9.99',
+    priceCurrency: 'USD',
+    availability: 'https://schema.org/InStock',
+  },
+};
+
+// Replace with your real LemonSqueezy checkout URL
+const checkoutUrl = 'https://xisland.lemonsqueezy.com/buy/placeholder';
+---
+
+<BaseLayout
+  title="Buy xisland Pro — AI Coding Agent Monitor for macOS"
+  description="Get xisland Pro for $9.99. Lifetime license for 2 machines. Monitor Claude Code, Codex, Gemini CLI, and OpenCode from the macOS notch."
+  jsonLd={jsonLd}
+>
+  <Nav />
+  <main>
+    <div class="pricing-card">
+      <h1>xisland Pro</h1>
+
+      <div class="price">
+        <span class="amount">$9.99</span>
+        <span class="period">one-time payment</span>
+      </div>
+
+      <ul class="features">
+        <li>
+          <span class="check">&#x2713;</span>
+          Lifetime updates
+        </li>
+        <li>
+          <span class="check">&#x2713;</span>
+          2 machine license
+        </li>
+        <li>
+          <span class="check">&#x2713;</span>
+          All AI coding agents
+        </li>
+        <li>
+          <span class="check">&#x2713;</span>
+          7 terminals supported
+        </li>
+      </ul>
+
+      <button class="btn-buy" id="btn-buy">Buy Now</button>
+
+      <p class="note">One-time purchase. No subscription.</p>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<script src="https://app.lemonsqueezy.com/js/lemon.js" defer></script>
+
+<script define:vars={{ checkoutUrl }}>
+  document.getElementById('btn-buy').addEventListener('click', () => {
+    if (window.LemonSqueezy) {
+      window.LemonSqueezy.Url.Open(checkoutUrl);
+    } else {
+      window.open(checkoutUrl, '_blank');
+    }
+  });
+</script>
+
+<style>
+  main {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 24px 80px;
+  }
+
+  .pricing-card {
+    width: 100%;
+    max-width: 380px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 48px 36px;
+    text-align: center;
+    background: var(--bg-elevated);
+  }
+
+  h1 {
+    font-size: 16px;
+    color: var(--text);
+    margin-bottom: 32px;
+  }
+
+  .price {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 36px;
+  }
+
+  .amount {
+    font-family: var(--mono);
+    font-size: 48px;
+    font-weight: 500;
+    color: var(--green);
+    text-shadow: 0 0 30px var(--green-glow);
+    line-height: 1;
+  }
+
+  .period {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-3);
+  }
+
+  .features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 36px;
+    text-align: left;
+  }
+
+  .features li {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--text-2);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .check {
+    color: var(--green);
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  .btn-buy {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    background: var(--green);
+    color: var(--bg);
+    font-family: var(--pixel);
+    font-size: 11px;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+
+  .btn-buy:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px var(--green-glow);
+  }
+
+  .note {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-3);
+    margin-top: 20px;
+  }
+
+  @media (max-width: 640px) {
+    main {
+      padding: 100px 16px 60px;
+    }
+
+    .pricing-card {
+      padding: 36px 24px;
+    }
+
+    .amount {
+      font-size: 40px;
+    }
+  }
+</style>

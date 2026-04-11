@@ -3,7 +3,7 @@ const agents = [
   {
     name: 'Claude Code',
     org: 'Anthropic',
-    // Pixel "C" icon
+    status: 'best',
     icon: `<svg width="18" height="18" viewBox="0 0 16 16" shape-rendering="crispEdges">
       <rect x="4" y="2" width="8" height="2" fill="var(--green)"/>
       <rect x="2" y="4" width="2" height="8" fill="var(--green)"/>
@@ -15,7 +15,7 @@ const agents = [
   {
     name: 'Codex',
     org: 'OpenAI',
-    // Pixel "O" icon
+    status: 'supported',
     icon: `<svg width="18" height="18" viewBox="0 0 16 16" shape-rendering="crispEdges">
       <rect x="4" y="2" width="8" height="2" fill="var(--green)"/>
       <rect x="2" y="4" width="2" height="8" fill="var(--green)"/>
@@ -26,7 +26,7 @@ const agents = [
   {
     name: 'OpenCode',
     org: 'Community',
-    // Pixel "<>" icon
+    status: 'coming',
     icon: `<svg width="18" height="18" viewBox="0 0 16 16" shape-rendering="crispEdges">
       <rect x="4" y="3" width="2" height="2" fill="var(--green)"/>
       <rect x="2" y="5" width="2" height="2" fill="var(--green)"/>
@@ -43,7 +43,7 @@ const agents = [
   {
     name: 'Gemini CLI',
     org: 'Google',
-    // Pixel "G" icon
+    status: 'coming',
     icon: `<svg width="18" height="18" viewBox="0 0 16 16" shape-rendering="crispEdges">
       <rect x="4" y="2" width="10" height="2" fill="var(--green)"/>
       <rect x="2" y="4" width="2" height="8" fill="var(--green)"/>
@@ -55,33 +55,62 @@ const agents = [
 ];
 
 const terminals = [
-  'Terminal.app', 'Ghostty', 'iTerm2', 'WezTerm', 'Kaku', 'Cmux', 'Warp',
+  { name: 'Ghostty', status: 'best' },
+  { name: 'iTerm2', status: 'best' },
+  { name: 'Terminal.app', status: 'supported' },
+  { name: 'Warp', status: 'limited' },
+  { name: 'WezTerm', status: 'supported' },
+  { name: 'Kaku', status: 'coming' },
+  { name: 'Cmux', status: 'supported' },
 ];
 ---
 
 <section class="support section">
   <div class="container">
-    <h2>Powerfully compatible.</h2>
-    <p class="support-sub">Plug in and go.</p>
+    <h2>Supported AI coding agents.</h2>
+    <p class="support-sub">Works with Claude Code, Codex, Gemini CLI, and OpenCode.</p>
 
-    <div class="agents">
-      {agents.map((a) => (
-        <div class="agent">
-          <div class="agent-icon" set:html={a.icon} />
-          <div class="agent-info">
-            <span class="agent-name">{a.name}</span>
-            <span class="agent-org">{a.org}</span>
-          </div>
+    <div class="grid">
+      <div class="col">
+        <h3>Agents</h3>
+        <div class="items">
+          {agents.map((a) => (
+            <div class:list={['item', { coming: a.status === 'coming' }]}>
+              <div class="item-icon" set:html={a.icon} />
+              <div class="item-info">
+                <span class="item-name">{a.name}</span>
+                <span class="item-org">{a.org}</span>
+              </div>
+              {a.status === 'best' ? (
+                <span class="badge best">Best experience</span>
+              ) : a.status === 'supported' ? (
+                <span class="badge supported">Supported</span>
+              ) : (
+                <span class="badge wip">Coming soon</span>
+              )}
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
+      </div>
 
-    <div class="terminals">
-      <span class="t-label">Terminals</span>
-      <div class="t-list">
-        {terminals.map((t) => (
-          <span class="t-tag">{t}</span>
-        ))}
+      <div class="col">
+        <h3>Terminals</h3>
+        <div class="items">
+          {terminals.map((t) => (
+            <div class:list={['item', 'item-terminal', { coming: t.status === 'coming' }]}>
+              <span class="item-name">{t.name}</span>
+              {t.status === 'best' ? (
+                <span class="badge best">Best experience</span>
+              ) : t.status === 'supported' ? (
+                <span class="badge supported">Supported</span>
+              ) : t.status === 'limited' ? (
+                <span class="badge limited">Limited</span>
+              ) : (
+                <span class="badge wip">Coming soon</span>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   </div>
@@ -103,106 +132,125 @@ const terminals = [
     font-family: var(--mono);
     font-size: 13px;
     color: var(--text-3);
-    margin-bottom: 40px;
+    margin-bottom: 48px;
   }
 
-  .agents {
+  .grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1px;
-    background: var(--border-2);
-    border: 1px solid var(--border-2);
-    border-radius: var(--radius);
-    overflow: hidden;
-    margin-bottom: 36px;
-  }
-
-  .agent {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 22px 20px;
-    background: var(--bg);
-    transition: background 0.25s;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    max-width: 800px;
+    margin: 0 auto;
     text-align: left;
   }
 
-  .agent:hover {
+  h3 {
+    font-size: 9px;
+    color: var(--text-3);
+    letter-spacing: 0.08em;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+
+  .items {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border-2);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 20px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border-2);
+    transition: background 0.2s;
+  }
+
+  .item:last-child {
+    border-bottom: none;
+  }
+
+  .item:hover {
     background: var(--bg-elevated);
   }
 
-  .agent-icon {
-    flex-shrink: 0;
+  .item.coming {
+    opacity: 0.4;
+  }
+
+  .item.coming:hover {
     opacity: 0.6;
-    transition: opacity 0.2s;
   }
 
-  .agent:hover .agent-icon {
-    opacity: 1;
+  .item-icon {
+    flex-shrink: 0;
   }
 
-  .agent-info {
+  .item-info {
     display: flex;
     flex-direction: column;
-    gap: 3px;
+    gap: 2px;
+    flex: 1;
+    min-width: 0;
   }
 
-  .agent-name {
+  .item-terminal {
+    padding: 14px 20px;
+  }
+
+  .item-terminal .item-name {
+    flex: 1;
+  }
+
+  .item-name {
     font-size: 9px;
     color: var(--text);
   }
 
-  .agent-org {
+  .item-org {
     font-family: var(--mono);
     font-size: 11px;
     color: var(--text-3);
   }
 
-  .terminals {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 14px;
-  }
-
-  .t-label {
-    font-size: 9px;
-    color: var(--text-3);
-    letter-spacing: 0.05em;
-  }
-
-  .t-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-  }
-
-  .t-tag {
+  .badge {
     font-family: var(--mono);
-    font-size: 12px;
+    font-size: 10px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  .badge.best {
+    color: var(--green);
+    background: rgba(61, 220, 132, 0.12);
+    border: 1px solid rgba(61, 220, 132, 0.2);
+  }
+
+  .badge.supported {
     color: var(--text-2);
-    padding: 6px 14px;
-    background: var(--bg-elevated);
-    border: 1px solid var(--border-2);
-    border-radius: 6px;
-    transition: border-color 0.2s, color 0.2s;
+    background: rgba(255, 255, 255, 0.05);
   }
 
-  .t-tag:hover {
-    border-color: var(--green-dim);
-    color: var(--text);
+  .badge.limited {
+    color: var(--orange);
+    background: rgba(255, 138, 80, 0.1);
   }
 
-  @media (max-width: 768px) {
-    .agents {
-      grid-template-columns: repeat(2, 1fr);
-    }
+  .badge.wip {
+    color: var(--text-3);
+    background: rgba(255, 255, 255, 0.03);
   }
 
-  @media (max-width: 480px) {
-    .agents {
+  @media (max-width: 640px) {
+    .grid {
       grid-template-columns: 1fr;
+      gap: 24px;
     }
   }
 </style>

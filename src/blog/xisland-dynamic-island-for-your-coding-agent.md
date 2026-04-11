@@ -1,7 +1,7 @@
 ---
-title: 'xisland: dynamic island for your coding agent'
+title: 'xisland: monitor your AI coding agents from the macOS notch'
 pubDate: 2026-04-10
-description: 'Why I built an open-source macOS notch app for AI coding agents.'
+description: 'Why I built a free, open-source macOS app to monitor Claude Code, Codex, Gemini CLI, and OpenCode from the notch.'
 author: 'dan'
 tags: ['launch', 'open-source', 'macos']
 ---

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://xisland.app/sitemap-index.xml
