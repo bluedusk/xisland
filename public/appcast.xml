@@ -6,6 +6,27 @@
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
         <item>
+            <title>Version 0.6.0</title>
+            <pubDate>Mon, 13 Apr 2026 01:44:25 +1000</pubDate>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[<h3>New</h3>
+<ul>
+<li><b>Smart suppression</b> — notifications don't auto-expand when you're looking at the agent's terminal tab. Detects the focused pane in iTerm, Terminal.app, Ghostty, and WezTerm/Kaku. Falls back to app-level detection for Warp and cmux. Enabled by default in Settings > Behavior.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Session metadata occasionally cleared during discovery snapshots</li>
+</ul>]]></description>
+            <enclosure
+                url="https://github.com/bluedusk/xisland/releases/download/v0.6.0/XIsland.zip"
+                sparkle:version="884"
+                sparkle:shortVersionString="0.6.0"
+                sparkle:edSignature="sMogrxqChV/tQJCnRX+JAhjx9d2HUoEj8xPcb8KnuY/KlutOmmbFrfM5LwGIqjf65yYjhlOpT5bVG5jQoujMCA=="
+                length="7302341"
+                type="application/octet-stream"
+            />
+        </item>
+        <item>
             <title>Version 0.5.0</title>
             <pubDate>Mon, 13 Apr 2026 00:43:43 +1000</pubDate>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
