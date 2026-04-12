@@ -6,6 +6,20 @@
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
         <item>
+            <title>Version 0.5.0</title>
+            <pubDate>Mon, 13 Apr 2026 00:43:43 +1000</pubDate>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[<p>bug fixes and chores</p>]]></description>
+            <enclosure
+                url="https://github.com/bluedusk/xisland/releases/download/v0.5.0/XIsland.zip"
+                sparkle:version="873"
+                sparkle:shortVersionString="0.5.0"
+                sparkle:edSignature="eR+BTjSU0b6SxqRKRhIxvLf0DbEXtozskBC9hjp/rOeKUHMkFydjFwVXcSVPOkafM1lMjc91Co+7/Yqq932dDg=="
+                length="7280511"
+                type="application/octet-stream"
+            />
+        </item>
+        <item>
             <title>Version 0.4.0</title>
             <pubDate>Sun, 12 Apr 2026 21:01:04 +1000</pubDate>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
