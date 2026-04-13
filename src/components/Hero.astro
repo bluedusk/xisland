@@ -43,6 +43,9 @@ const agents = ['Claude Code', 'Codex', 'Gemini CLI', 'OpenCode'];
       </a>
       <a href="#features" class="btn-ghost">Learn More</a>
     </div>
+    <div class="brew-cmd">
+      <code>brew install --cask bluedusk/xisland/x-island</code>
+    </div>
     <a href="/download" class="dl-link">Old versions</a>
   </div>
 </section>
@@ -257,6 +260,21 @@ const agents = ['Claude Code', 'Codex', 'Gemini CLI', 'OpenCode'];
   .btn-ghost:hover {
     border-color: var(--text-3);
     color: var(--text);
+  }
+
+  .brew-cmd {
+    margin-bottom: 16px;
+  }
+
+  .brew-cmd code {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-3);
+    background: var(--surface-1, rgba(255, 255, 255, 0.04));
+    padding: 6px 14px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-2);
+    user-select: all;
   }
 
   .dl-link {
