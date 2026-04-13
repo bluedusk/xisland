@@ -1,0 +1,132 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const versions = [
+  { version: '0.7.0', url: 'https://github.com/bluedusk/xisland/releases/download/v0.7.0/XIsland.dmg' },
+  { version: '0.6.0', url: 'https://github.com/bluedusk/xisland/releases/download/v0.6.0/XIsland.dmg' },
+  { version: '0.5.0', url: 'https://github.com/bluedusk/xisland/releases/download/v0.5.0/XIsland.dmg' },
+];
+---
+<BaseLayout
+  title="Download xisland — AI Coding Agent Monitor for macOS"
+  description="Download xisland to monitor Claude Code, Codex, Gemini CLI, and OpenCode from the macOS Dynamic Island. Free download for macOS 14+."
+>
+  <Nav />
+  <main>
+    <div class="download-card">
+      <h1>Download</h1>
+      
+      <p class="description">
+        Monitor AI coding agents from your macOS Dynamic Island.
+      </p>
+
+      <ul class="version-list">
+        {versions.map(v => (
+          <li>
+            <a href={v.url} target="_blank" rel="noopener">
+              <span class="version">v{v.version}</span>
+              <span class="download-text">Download</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <div class="requirements">
+        <p>macOS 14.0+ required</p>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  main {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 24px 80px;
+  }
+
+  .download-card {
+    width: 100%;
+    max-width: 360px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 48px 36px;
+    text-align: center;
+    background: var(--bg-elevated);
+  }
+
+  h1 {
+    font-size: 24px;
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+
+  .description {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--text-3);
+    margin-bottom: 32px;
+  }
+
+  .version-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 32px;
+  }
+
+  .version-list a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 18px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .version-list a:hover {
+    border-color: var(--text-3);
+  }
+
+  .version {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--text);
+  }
+
+  .download-text {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-3);
+  }
+
+  .requirements {
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+
+  .requirements p {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-3);
+  }
+
+  @media (max-width: 640px) {
+    main {
+      padding: 100px 16px 60px;
+    }
+
+    .download-card {
+      padding: 36px 24px;
+    }
+  }
+</style>
