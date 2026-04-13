@@ -1,0 +1,165 @@
+---
+const faqs = [
+  {
+    q: 'Which terminals are supported?',
+    a: 'iTerm2, Terminal.app, Ghostty, Warp, Alacritty, Kitty, and VS Code / Cursor / Windsurf integrated terminals. Precise jump — including split panes and tmux sessions — works with iTerm2, Ghostty, Terminal.app, Warp, and IDE terminals.',
+  },
+  {
+    q: 'What AI coding tools does xisland support?',
+    a: 'Claude Code, Codex, Gemini CLI, and OpenCode. All sessions appear in one unified notch panel so you can monitor everything at a glance.',
+  },
+  {
+    q: 'Can I approve permissions without switching to the terminal?',
+    a: 'Yes. When your agent requests permission to run a tool, the notch panel expands with Allow and Deny buttons. Approve or reject directly from the notch without leaving your editor.',
+  },
+  {
+    q: 'Does my data leave my machine?',
+    a: 'No. All communication between xisland and your CLI tools happens locally on your Mac. No data is sent to any server.',
+  },
+  {
+    q: 'How does zero-config setup work?',
+    a: 'On first launch, xisland auto-configures each supported CLI tool. Everything is set up locally — no API keys, no cloud accounts, no manual editing.',
+  },
+  {
+    q: 'Does it use a lot of resources?',
+    a: 'No. xisland is a native Swift app built for Apple Silicon. It typically uses under 50 MB of RAM and near-zero CPU when idle.',
+  },
+  {
+    q: 'Does it work on external monitors?',
+    a: 'Yes. On Macs with a built-in notch, the panel sits in the notch area. On external displays or older Macs without a notch, it appears as a compact floating bar at the top center.',
+  },
+  {
+    q: 'Is xisland free?',
+    a: 'Yes. xisland is completely free. Download it from the website or install via Homebrew.',
+  },
+];
+---
+
+<section class="faq section" id="faq">
+  <div class="container">
+    <div class="faq-header">
+      <h2>FAQ</h2>
+      <p class="faq-sub">Common questions, quick answers.</p>
+    </div>
+
+    <div class="faq-list">
+      {faqs.map((item, i) => (
+        <details class="faq-item">
+          <summary>
+            <span class="faq-q">{item.q}</span>
+            <span class="faq-toggle" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-a">
+            <p>{item.a}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq {
+    background: var(--bg-2);
+    border-top: 1px solid var(--border);
+  }
+
+  .faq-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .faq-header h2 {
+    font-size: clamp(14px, 2.5vw, 20px);
+    color: var(--text);
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+
+  .faq-sub {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--text-3);
+  }
+
+  .faq-list {
+    max-width: 720px;
+    margin: 0 auto;
+    border: 1px solid var(--border-2);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--border);
+    background: var(--bg);
+    transition: background 0.25s;
+  }
+
+  .faq-item:last-child {
+    border-bottom: none;
+  }
+
+  .faq-item:hover {
+    background: var(--bg-elevated);
+  }
+
+  summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 24px 28px;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  summary::marker {
+    display: none;
+    content: '';
+  }
+
+  .faq-q {
+    font-size: 11px;
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  .faq-toggle {
+    flex-shrink: 0;
+    font-family: var(--mono);
+    font-size: 18px;
+    color: var(--green);
+    transition: transform 0.2s;
+  }
+
+  .faq-item[open] .faq-toggle {
+    transform: rotate(45deg);
+  }
+
+  .faq-a {
+    padding: 0 28px 24px;
+  }
+
+  .faq-a p {
+    font-family: var(--mono);
+    font-size: 12px;
+    line-height: 1.7;
+    color: var(--text-2);
+  }
+
+  @media (max-width: 480px) {
+    summary {
+      padding: 20px 20px;
+    }
+
+    .faq-a {
+      padding: 0 20px 20px;
+    }
+  }
+</style>
