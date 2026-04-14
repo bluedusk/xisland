@@ -6,6 +6,23 @@
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
         <item>
+            <title>Version 0.9.2</title>
+            <pubDate>Tue, 14 Apr 2026 23:30:41 +1000</pubDate>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[<h3>Improved</h3>
+<ul>
+<li>More reliable jump-to-terminal for Ghostty</li>
+</ul>]]></description>
+            <enclosure
+                url="https://github.com/bluedusk/xisland/releases/download/v0.9.2/XIsland.zip"
+                sparkle:version="995"
+                sparkle:shortVersionString="0.9.2"
+                sparkle:edSignature="5pCrD7oymD/Mg7ztL1ZQy8soF46T9dKz1KGNLh3/BqFygjd7gQZwHfzLIYu7fiDy65AWuqvKhd0y1Cpn53nlBQ=="
+                length="7407981"
+                type="application/octet-stream"
+            />
+        </item>
+        <item>
             <title>Version 0.9.1</title>
             <pubDate>Tue, 14 Apr 2026 23:03:41 +1000</pubDate>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
