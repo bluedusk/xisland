@@ -4,10 +4,9 @@ import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 
 const versions = [
+  { version: '0.9.0', url: 'https://github.com/bluedusk/xisland/releases/download/v0.9.0/XIsland.dmg' },
   { version: '0.8.0', url: 'https://github.com/bluedusk/xisland/releases/download/v0.8.0/XIsland.dmg' },
   { version: '0.7.1', url: 'https://github.com/bluedusk/xisland/releases/download/v0.7.1/XIsland.dmg' },
-  { version: '0.7.0', url: 'https://github.com/bluedusk/xisland/releases/download/v0.7.0/XIsland.dmg' },
-  { version: '0.6.0', url: 'https://github.com/bluedusk/xisland/releases/download/v0.6.0/XIsland.dmg' },
 ];
 ---
 <BaseLayout
@@ -107,7 +106,7 @@ const versions = [
   .download-text {
     font-family: var(--mono);
     font-size: 11px;
-    color: var(--text-3);
+    color: #22c55e;
   }
 
   .requirements {
