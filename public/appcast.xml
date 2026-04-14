@@ -6,6 +6,23 @@
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
         <item>
+            <title>Version 0.9.1</title>
+            <pubDate>Tue, 14 Apr 2026 23:03:41 +1000</pubDate>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[<h3>Fixed</h3>
+<ul>
+<li>Sessions from before app launch now appear immediately on startup</li>
+</ul>]]></description>
+            <enclosure
+                url="https://github.com/bluedusk/xisland/releases/download/v0.9.1/XIsland.zip"
+                sparkle:version="991"
+                sparkle:shortVersionString="0.9.1"
+                sparkle:edSignature="44mWoE6665vEop58L5acNMvkMDomdPMW+TUejzU/txIBcXZ4Ux+pDbaKd3KAQjAg98JvZoyoZMjFtVctBgQVDQ=="
+                length="7408182"
+                type="application/octet-stream"
+            />
+        </item>
+        <item>
             <title>Version 0.9.0</title>
             <pubDate>Tue, 14 Apr 2026 22:21:11 +1000</pubDate>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
