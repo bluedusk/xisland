@@ -6,6 +6,23 @@
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
         <item>
+            <title>Version 0.9.4</title>
+            <pubDate>Wed, 15 Apr 2026 12:30:51 +1000</pubDate>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[<h3>Fixed</h3>
+<ul>
+<li>Handle Claude Code recap events after returning from away</li>
+</ul>]]></description>
+            <enclosure
+                url="https://github.com/bluedusk/xisland/releases/download/v0.9.4/XIsland.zip"
+                sparkle:version="1003"
+                sparkle:shortVersionString="0.9.4"
+                sparkle:edSignature="COnNBC3Uy3lXBXGSkzNzNzQJ5/FgW95pcW220pHRWIKoHLL1tOzLCpQAIdZeuDtcrMJwE08HF2x4MebQnDb7DA=="
+                length="7415207"
+                type="application/octet-stream"
+            />
+        </item>
+        <item>
             <title>Version 0.9.3</title>
             <pubDate>Wed, 15 Apr 2026 01:03:37 +1000</pubDate>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
