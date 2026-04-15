@@ -6,6 +6,32 @@
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
         <item>
+            <title>Version 0.10.0-beta.1</title>
+            <pubDate>Wed, 15 Apr 2026 20:18:51 +1000</pubDate>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[<h3>New</h3>
+<ul>
+<li>Task tracking with automatic ID assignment and startup restore</li>
+</ul>
+<h3>Improved</h3>
+<ul>
+<li>Session metadata cached in PID store — faster startup, no per-event transcript reads</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Subagent messages no longer overwrite parent session status</li>
+</ul>]]></description>
+            <enclosure
+                url="https://github.com/bluedusk/xisland/releases/download/v0.10.0-beta.1/XIsland.zip"
+                sparkle:version="1013"
+                sparkle:shortVersionString="0.10.0-beta.1"
+                sparkle:edSignature="I/AO0n6EIHvO4J0wajkmVwKkUu9/2qsRO8ZwrsM7g7fMGxMSp/irs2riBozgZrny1Oq3rb1YympXwvG5o9YoAw=="
+                sparkle:channel="beta"
+                length="7447733"
+                type="application/octet-stream"
+            />
+        </item>
+        <item>
             <title>Version 0.9.4</title>
             <pubDate>Wed, 15 Apr 2026 12:30:51 +1000</pubDate>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
