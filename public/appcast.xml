@@ -6,6 +6,27 @@
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
         <item>
+            <title>Version 0.10.0-beta.2</title>
+            <pubDate>Thu, 16 Apr 2026 21:21:05 +1000</pubDate>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[<h3>Fixed</h3>
+<ul>
+<li>Notch edge hover no longer flickers</li>
+<li>Pill snaps cleanly on close instead of sliding</li>
+<li>Overlay now expands reliably on open</li>
+<li>Session row hover more responsive</li>
+</ul>]]></description>
+            <enclosure
+                url="https://github.com/bluedusk/xisland/releases/download/v0.10.0-beta.2/XIsland.zip"
+                sparkle:version="1030"
+                sparkle:shortVersionString="0.10.0-beta.2"
+                sparkle:edSignature="q4zKWmwvF0jnJfRXJ6L08UeFuYUXea/KE+Difxg1dLRmssvVWOrPyD5MdACo8oGwPRZmkImGuhS8cWGxgBL0AA=="
+                sparkle:channel="beta"
+                length="7451479"
+                type="application/octet-stream"
+            />
+        </item>
+        <item>
             <title>Version 0.10.0-beta.1</title>
             <pubDate>Wed, 15 Apr 2026 20:18:51 +1000</pubDate>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
