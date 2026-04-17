@@ -6,6 +6,24 @@
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
         <item>
+            <title>Version 0.10.0-beta.3</title>
+            <pubDate>Fri, 17 Apr 2026 21:41:33 +1000</pubDate>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[<h3>Fixed</h3>
+<ul>
+<li>Prevents duplicate bridge instances when app relaunches</li>
+</ul>]]></description>
+            <enclosure
+                url="https://github.com/bluedusk/xisland/releases/download/v0.10.0-beta.3/XIsland.zip"
+                sparkle:version="1034"
+                sparkle:shortVersionString="0.10.0-beta.3"
+                sparkle:edSignature="HeqEf+3ehJoEiM0G5ePOc9lLV8SrCWTq7DFivtinBpMejgDxiR+w8b4qGuQcjTAqr8w17nRrgqkuJbryBTYjBg=="
+                sparkle:channel="beta"
+                length="7452561"
+                type="application/octet-stream"
+            />
+        </item>
+        <item>
             <title>Version 0.10.0-beta.2</title>
             <pubDate>Thu, 16 Apr 2026 21:21:05 +1000</pubDate>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
