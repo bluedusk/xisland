@@ -6,6 +6,32 @@
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
         <item>
+            <title>Version 0.10.0-beta.4</title>
+            <pubDate>Sat, 18 Apr 2026 00:00:50 +1000</pubDate>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[<h3>New</h3>
+<ul>
+<li>Ignore sessions by agent, terminal, or individual — inline bell toggle on each session row</li>
+<li>Dedicated Ignore settings tab</li>
+<li>Customize session row tags (visibility and style)</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Smooth pill open/close transitions</li>
+<li>WezTerm jump restored</li>
+<li>Sparkle update window detection more reliable</li>
+</ul>]]></description>
+            <enclosure
+                url="https://github.com/bluedusk/xisland/releases/download/v0.10.0-beta.4/XIsland.zip"
+                sparkle:version="1055"
+                sparkle:shortVersionString="0.10.0-beta.4"
+                sparkle:edSignature="XJN3dTuWgn+PplrgbPYlt69bta2L1BGkWz2qlfnoBI2okb3wwnOi+9RqzsxUYBmyW1DWXJHhEQ/jF7ejC+UPBQ=="
+                sparkle:channel="beta"
+                length="7493470"
+                type="application/octet-stream"
+            />
+        </item>
+        <item>
             <title>Version 0.10.0-beta.3</title>
             <pubDate>Fri, 17 Apr 2026 21:41:33 +1000</pubDate>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
