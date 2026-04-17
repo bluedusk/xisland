@@ -6,6 +6,24 @@
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
         <item>
+            <title>Version 0.11.0</title>
+            <pubDate>Sat, 18 Apr 2026 01:29:30 +1000</pubDate>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[<h3>New</h3>
+<ul>
+<li>VS Code and Cursor integrated terminal support</li>
+<li>IDE extension installer in Settings</li>
+</ul>]]></description>
+            <enclosure
+                url="https://github.com/bluedusk/xisland/releases/download/v0.11.0/XIsland.zip"
+                sparkle:version="1066"
+                sparkle:shortVersionString="0.11.0"
+                sparkle:edSignature="DPrCeFoIFHnkyKpxj3LlQ8F74fnIXh7OcHaYocpPeUg8PgHQuX8LeZwP1EZjeW3kL0gCpzpqe3CtYXY96y9gCg=="
+                length="7591161"
+                type="application/octet-stream"
+            />
+        </item>
+        <item>
             <title>Version 0.10.0</title>
             <pubDate>Sat, 18 Apr 2026 00:35:45 +1000</pubDate>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
