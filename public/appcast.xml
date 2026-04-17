@@ -6,6 +6,40 @@
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
         <item>
+            <title>Version 0.10.0</title>
+            <pubDate>Sat, 18 Apr 2026 00:35:45 +1000</pubDate>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[<h3>New</h3>
+<ul>
+<li>Ignore sessions by agent, terminal, or individual — inline bell toggle on each session row</li>
+<li>Dedicated Ignore settings tab</li>
+<li>Customize session row tags (visibility and style)</li>
+<li>Task tracking with automatic ID assignment and startup restore</li>
+<li>Beta Updates opt-in via Settings > Lab</li>
+</ul>
+<h3>Improved</h3>
+<ul>
+<li>Session metadata cached in PID store — faster startup</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Smooth pill open/close transitions</li>
+<li>WezTerm jump restored</li>
+<li>Notch edge hover no longer flickers</li>
+<li>Prevents duplicate bridge instances when app relaunches</li>
+<li>Subagent messages no longer overwrite parent session status</li>
+<li>Sparkle update window detection more reliable</li>
+</ul>]]></description>
+            <enclosure
+                url="https://github.com/bluedusk/xisland/releases/download/v0.10.0/XIsland.zip"
+                sparkle:version="1060"
+                sparkle:shortVersionString="0.10.0"
+                sparkle:edSignature="zlRGA5S6EYwvV1CeveLFGTeHHDIDmTamlImIrTcX4+k4AIXDHYzCf9hlEhvgEfOkIQ7jfIvG+n3Uy9R1ndcdAA=="
+                length="7493694"
+                type="application/octet-stream"
+            />
+        </item>
+        <item>
             <title>Version 0.10.0-beta.4</title>
             <pubDate>Sat, 18 Apr 2026 00:00:50 +1000</pubDate>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
