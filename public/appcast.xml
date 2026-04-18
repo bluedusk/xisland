@@ -6,6 +6,25 @@
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
         <item>
+            <title>Version 0.13.0-beta.2</title>
+            <pubDate>Sat, 18 Apr 2026 20:47:45 +1000</pubDate>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[<h3>Fixed</h3>
+<ul>
+<li>IDE terminal-focus extension installs more reliably</li>
+<li>Ready badge text dimmed to match idle tone</li>
+</ul>]]></description>
+            <enclosure
+                url="https://github.com/bluedusk/xisland/releases/download/v0.13.0-beta.2/XIsland.zip"
+                sparkle:version="1113"
+                sparkle:shortVersionString="0.13.0-beta.2"
+                sparkle:edSignature="w5hOo/TjP2TZvCla829f1bUCGcnBToie0q1XgSYW21Wl4LW8sSxRHgPi0XLgzM0NnCUujoEU+UgvrpEEvL/7DA=="
+                sparkle:channel="beta"
+                length="9106083"
+                type="application/octet-stream"
+            />
+        </item>
+        <item>
             <title>Version 0.13.0-beta.1</title>
             <pubDate>Sat, 18 Apr 2026 19:51:30 +1000</pubDate>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
