@@ -27,8 +27,9 @@ const checkoutUrl = 'https://appstore-pro.lemonsqueezy.com/checkout/buy/fe5cffa7
 >
   <Nav />
   <main>
+    <p class="info-line">Hey bro, I'm glad it helped!</p>
     <div class="pricing-card">
-      <h1>xisland Pro</h1>
+      <h1>X Island</h1>
 
       <div class="price">
         <span class="amount">$9.99</span>
@@ -78,9 +79,17 @@ const checkoutUrl = 'https://appstore-pro.lemonsqueezy.com/checkout/buy/fe5cffa7
   main {
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 120px 24px 80px;
+  }
+
+  .info-line {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--green);
+    margin-bottom: 24px;
   }
 
   .pricing-card {
@@ -125,7 +134,7 @@ const checkoutUrl = 'https://appstore-pro.lemonsqueezy.com/checkout/buy/fe5cffa7
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    //gap: 8px;
     margin-bottom: 36px;
     text-align: left;
   }
