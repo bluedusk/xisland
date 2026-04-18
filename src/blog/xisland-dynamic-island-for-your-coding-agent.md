@@ -1,9 +1,9 @@
 ---
 title: 'xisland: monitor your AI coding agents from the macOS notch'
 pubDate: 2026-04-10
-description: 'Why I built a free, open-source macOS app to monitor Claude Code, Codex, Gemini CLI, and OpenCode from the notch.'
+description: 'Why I built a free macOS app to monitor Claude Code, Codex, Gemini CLI, and OpenCode from the notch.'
 author: 'dan'
-tags: ['launch', 'open-source', 'macos']
+tags: ['launch', 'macos']
 ---
 
 I run multiple coding agents at the same time. Claude Code in one terminal, Codex in another, sometimes Gemini CLI doing something else. That's three agents doing real work in background terminals I can't see.
@@ -24,13 +24,13 @@ Your agent emits events through hooks — session start, tool use, permission re
 
 It supports Claude Code, Codex, OpenCode, and Gemini CLI. Seven terminals. The whole thing runs local. No server, no cloud, no telemetry.
 
-## Why open source
+## Why free
 
-I looked at existing tools and they were either closed-source with license keys, or they were overcomplicated. I wanted something I'd actually use every day. Something that does one thing and does it well.
+I looked at existing tools and they were either locked behind license keys, or they were overcomplicated. I wanted something I'd actually use every day. Something that does one thing and does it well.
 
 I also wanted to learn Swift. Building xisland was a good excuse.
 
-The code is GPL-3.0. Fork it, break it, improve it. If you use coding agents daily, you'll probably want something like this. Maybe you'll want it to work differently. That's fine — that's why it's open.
+It's free because I built it for myself and I want others to use it too. No license keys, no paywalls. Just a tool that works.
 
 ## What's next
 

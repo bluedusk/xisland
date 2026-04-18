@@ -52,6 +52,10 @@ const jsonLd = {
     <div class="content">
       <slot />
     </div>
+    <nav class="post-nav">
+      <a href="/download" rel="nofollow">xisland download</a>
+      <a href="/blog" rel="nofollow">back to blog</a>
+    </nav>
   </article>
 </BaseLayout>
 
@@ -136,6 +140,26 @@ const jsonLd = {
   .content :global(strong) {
     color: var(--text);
     font-weight: 500;
+  }
+
+  .post-nav {
+    display: flex;
+    gap: 16px;
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+  }
+
+  .post-nav a {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-2);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .post-nav a:hover {
+    color: var(--green);
   }
 
   @media (max-width: 640px) {

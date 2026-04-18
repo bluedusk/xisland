@@ -1,9 +1,9 @@
 ---
 title: 'XIsland: the best free alternative to Vibe Island'
 pubDate: 2026-04-15
-description: 'A free, open-source macOS Dynamic Island for AI coding agents. Built by a developer, for developers.'
+description: 'A free macOS Dynamic Island for AI coding agents. Built by a developer, for developers.'
 author: 'dan'
-tags: ['product', 'open-source', 'macos']
+tags: ['product', 'macos']
 ---
 
 If you've been looking for a free alternative to Vibe Island, this is it.
@@ -50,4 +50,4 @@ I ship updates regularly. I read every issue filed on GitHub. I use the app myse
 brew install --cask bluedusk/xisland/x-island
 ```
 
-It's free. It's [open source](https://github.com/bluedusk/xisland). Try it.
+It's free. Try it.

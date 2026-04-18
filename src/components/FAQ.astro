@@ -32,10 +32,28 @@ const faqs = [
     q: 'Is xisland free?',
     a: 'Yes. xisland is completely free. Download it from the website or install via Homebrew.',
   },
+  {
+    q: 'Why use a dynamic island for AI coding agents?',
+    a: 'A dynamic island for your coding agent keeps you in flow. Instead of switching windows or checking terminals, you see everything that matters — approvals, questions, progress — right in your notch. Stay focused on your code while xisland monitors your AI agents in the background.',
+  },
 ];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(item => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.a,
+    },
+  })),
+};
 ---
 
 <section class="faq section" id="faq">
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <div class="container">
     <div class="faq-header">
       <h2>FAQ</h2>
