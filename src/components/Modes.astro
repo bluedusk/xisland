@@ -1,12 +1,13 @@
 <section class="modes section">
   <div class="container">
-    <h2>Two display modes. Notch or pill.</h2>
+    <h2>Two display modes for your dynamic island.</h2>
+    <h3 class="modes-h3">Notch or pill.</h3>
     <p class="modes-sub">Choose your style. Switch anytime.</p>
 
     <div class="mode-cards">
       <!-- Notch mode -->
       <div class="mode-card">
-        <div class="mode-preview notch-preview">
+        <div class="mode-preview notch-preview" aria-label="macOS dynamic island in notch display mode showing AI coding agent status">
           <div class="preview-bar">
             <div class="preview-notch">
               <div class="preview-cam"></div>
@@ -19,7 +20,7 @@
           </div>
         </div>
         <div class="mode-info">
-          <h3>
+          <h4>
             <!-- Pixel notch icon -->
             <svg width="20" height="20" viewBox="0 0 16 16" shape-rendering="crispEdges">
               <rect x="0" y="0" width="5" height="2" fill="var(--green)"/>
@@ -27,15 +28,15 @@
               <rect x="5" y="0" width="6" height="4" fill="var(--text-3)"/>
               <rect x="0" y="2" width="16" height="2" fill="var(--green)" opacity="0.3"/>
             </svg>
-            Notch
-          </h3>
-          <p>Lives in the macOS notch. Expands when your coding agent needs attention. Collapses when it doesn't.</p>
+            Notch Mode
+          </h4>
+          <p>The dynamic island sits in your macOS notch. Expands when your AI coding agent needs attention. Collapses when it doesn't.</p>
         </div>
       </div>
 
       <!-- Pill mode -->
       <div class="mode-card">
-        <div class="mode-preview pill-preview">
+        <div class="mode-preview pill-preview" aria-label="Dynamic island floating pill mode for coding agents in menu bar">
           <div class="preview-bar">
             <div class="preview-notch">
               <div class="preview-cam"></div>
@@ -48,16 +49,16 @@
           </div>
         </div>
         <div class="mode-info">
-          <h3>
+          <h4>
             <!-- Pixel pill icon -->
             <svg width="20" height="20" viewBox="0 0 16 16" shape-rendering="crispEdges">
               <rect x="3" y="6" width="10" height="4" fill="var(--green)"/>
               <rect x="2" y="7" width="1" height="2" fill="var(--green)"/>
               <rect x="13" y="7" width="1" height="2" fill="var(--green)"/>
             </svg>
-            Pill
-          </h3>
-          <p>Floating pill on your menu bar. Compact, always visible — monitor your AI agents without losing focus.</p>
+            Pill Mode
+          </h4>
+          <p>Floating pill on your menu bar. Compact, always visible — monitor your AI coding agents without losing focus.</p>
         </div>
       </div>
     </div>
@@ -73,6 +74,13 @@
     text-align: center;
     font-size: clamp(14px, 2.5vw, 20px);
     color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .modes-h3 {
+    text-align: center;
+    font-size: clamp(12px, 2vw, 16px);
+    color: var(--text-2);
     margin-bottom: 12px;
   }
 
@@ -199,13 +207,14 @@
     padding: 24px;
   }
 
-  .mode-info h3 {
+  .mode-info h4 {
     display: flex;
     align-items: center;
     gap: 10px;
     font-size: 12px;
     color: var(--text);
     margin-bottom: 10px;
+    font-weight: 600;
   }
 
   .mode-info p {
