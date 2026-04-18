@@ -22,9 +22,13 @@ import Footer from '../components/Footer.astro';
 
     <main class="content">
 
+      <header class="page-header">
+        <h1>Documentation</h1>
+        <p>xIsland for macOS — setup and usage.</p>
+      </header>
+
       <section id="installation">
         <h2>Installation</h2>
-        <p>Pick one.</p>
 
         <div class="option-grid">
           <div class="option-card">
@@ -37,17 +41,7 @@ import Footer from '../components/Footer.astro';
           </div>
         </div>
 
-        <table>
-          <thead>
-            <tr><th>Agent</th><th>Config file</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Claude Code</td><td><code>~/.claude/settings.json</code></td></tr>
-            <tr><td>Codex</td><td><code>~/.codex/hooks.json</code></td></tr>
-            <tr><td>OpenCode</td><td>OpenCode plugin registry</td></tr>
-            <tr><td>Gemini CLI</td><td><code>~/.gemini/settings.json</code></td></tr>
-          </tbody>
-        </table>
+        <p>Launch xIsland. It appears in your menu bar and automatically connects to Claude Code, Codex, OpenCode, and Gemini CLI.</p>
       </section>
 
       <section id="reinstall-hooks">
@@ -142,6 +136,24 @@ import Footer from '../components/Footer.astro';
   /* ── Content ── */
   .content {
     padding-top: 40px;
+  }
+
+  .page-header {
+    margin-bottom: 56px;
+  }
+
+  h1 {
+    font-family: var(--mono);
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .page-header p {
+    color: var(--text-3);
+    font-size: 13px;
+    margin-bottom: 0;
   }
 
   section {
