@@ -16,10 +16,10 @@ const agents = ['Claude Code', 'Codex', 'Gemini CLI', 'OpenCode'];
     </div>
 
     <h1>
-      <span class="line">Dynamic Island</span>
-      <span class="line dim">for your</span>
+      <span class="line">The Dynamic Island</span>
+      <span class="line dim">for <span class="highlight-inline">AI Coding Agents</span></span>
       <span class="line agent-line"><span class="agent" id="agent-cycle">{agents[0]}</span><span class="cursor">_</span></span>
-      <span class="sr-only">Monitor Claude Code, Codex, Gemini CLI, and OpenCode from the macOS Dynamic Island</span>
+      <span class="sr-only">Dynamic island for AI coding agents. Monitor Claude Code, Codex, Gemini CLI, and OpenCode from the macOS Dynamic Island</span>
     </h1>
 
     <p class="tagline">By <span class="highlight">developers</span>, for <span class="highlight">developers</span>.</p>
@@ -30,7 +30,7 @@ const agents = ['Claude Code', 'Codex', 'Gemini CLI', 'OpenCode'];
     </p>
 
     <div class="ctas">
-      <a href="https://github.com/bluedusk/xisland/releases/latest/download/XIsland.dmg" class="btn-dl" target="_blank" rel="noopener">
+      <a href="https://github.com/bluedusk/xisland/releases/latest/download/XIsland.zip" class="btn-dl" target="_blank" rel="noopener">
         <svg width="14" height="14" viewBox="0 0 16 16" shape-rendering="crispEdges">
           <rect x="7" y="2" width="2" height="7" fill="currentColor"/>
           <rect x="5" y="7" width="2" height="2" fill="currentColor"/>
@@ -174,6 +174,11 @@ const agents = ['Claude Code', 'Codex', 'Gemini CLI', 'OpenCode'];
   .line.dim {
     color: var(--text-3);
     font-size: clamp(16px, 3vw, 26px);
+  }
+
+  .highlight-inline {
+    color: var(--green);
+    text-shadow: 0 0 12px var(--green-dim);
   }
 
   .agent-line {
