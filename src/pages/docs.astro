@@ -9,434 +9,322 @@ import Footer from '../components/Footer.astro';
   description="How to install xisland, connect your AI agents, reinstall hooks, and label sessions."
 >
   <Nav />
-  <main>
-    <div class="docs-layout">
+  <div class="docs-root">
 
-      <aside class="sidenav">
-        <div class="sidenav-inner">
-          <div class="sidenav-group">
-            <div class="sidenav-label">Getting started</div>
-            <a href="#installation" class="sidenav-link">Installation</a>
-            <a href="#reinstall-hooks" class="sidenav-link">Reinstall hooks</a>
-            <a href="#label-session" class="sidenav-link">Label a session</a>
+    <aside class="sidenav">
+      <nav>
+        <p class="nav-group-label">Getting started</p>
+        <a href="#installation" class="nav-link">Installation</a>
+        <a href="#reinstall-hooks" class="nav-link">Reinstall hooks</a>
+        <a href="#label-session" class="nav-link">Label a session</a>
+      </nav>
+    </aside>
+
+    <main class="content">
+
+      <section id="installation">
+        <h2>Installation</h2>
+        <p>Pick one.</p>
+
+        <div class="option-grid">
+          <div class="option-card">
+            <div class="option-label">DMG</div>
+            <p>Download from the <a href="/download" class="link">download page</a>, open the DMG, drag <strong>xIsland</strong> to Applications.</p>
+          </div>
+          <div class="option-card">
+            <div class="option-label">Homebrew</div>
+            <div class="codeblock"><code>brew install --cask xisland</code></div>
           </div>
         </div>
-      </aside>
 
-      <div class="content">
-        <header class="page-header">
-          <h1>Docs</h1>
-          <p class="subtitle">Get xisland running in a few minutes.</p>
-        </header>
+        <p>Launch xIsland — it appears in your menu bar. Then open <strong>Settings → Setup</strong> to connect your agents.</p>
 
-        <section id="installation">
-          <h2><span class="num">01</span> Installation</h2>
+        <table>
+          <thead>
+            <tr><th>Agent</th><th>Config file</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Claude Code</td><td><code>~/.claude/settings.json</code></td></tr>
+            <tr><td>Codex</td><td><code>~/.codex/hooks.json</code></td></tr>
+            <tr><td>OpenCode</td><td>OpenCode plugin registry</td></tr>
+            <tr><td>Gemini CLI</td><td><code>~/.gemini/settings.json</code></td></tr>
+          </tbody>
+        </table>
+      </section>
 
-          <div class="install-options">
-            <div class="install-option">
-              <div class="step-title">DMG</div>
-              <p>Download from the <a href="/download" class="link">download page</a>, open the DMG, and drag <strong>xIsland</strong> to Applications.</p>
-            </div>
-            <div class="install-divider">or</div>
-            <div class="install-option">
-              <div class="step-title">Homebrew</div>
-              <div class="code-block"><code>brew install --cask xisland</code></div>
-            </div>
-          </div>
+      <section id="reinstall-hooks">
+        <h2>Reinstall hooks</h2>
+        <p>If an agent update overwrites your config, or xIsland shows a hooks warning:</p>
+        <ol>
+          <li>Open <strong>Settings → Setup</strong>.</li>
+          <li>Toggle the agent <strong>off</strong>, then <strong>on</strong>.</li>
+        </ol>
+        <p>No restart required.</p>
+      </section>
 
-          <p>Once installed, launch xIsland — it will appear in your menu bar. Then open <strong>Settings → Setup</strong> to connect your agents.</p>
-        </section>
+      <section id="label-session">
+        <h2>Label a session</h2>
+        <p>Give a session a name that shows in the xIsland panel instead of the folder name.</p>
+        <p>From inside a running Claude Code or Gemini CLI session:</p>
+        <div class="codeblock"><code>!xisland rename "Auth refactor"</code></div>
+        <p>The label updates immediately. The <code>!</code> runs the command without interrupting your agent.</p>
+        <p class="aside">Requires the <code>xisland</code> CLI. Install it from <strong>Settings → Setup → Command line</strong>.</p>
+      </section>
 
-        <section id="reinstall-hooks">
-          <h2><span class="num">02</span> Reinstall hooks</h2>
-
-          <p>If an agent update overwrites your hook config, or xIsland shows a warning that hooks are inactive:</p>
-
-          <ol class="steps">
-            <li>Open <strong>Settings → Setup</strong>.</li>
-            <li>Toggle the affected agent <strong>off</strong>, then <strong>on</strong> again.</li>
-          </ol>
-
-          <p>xIsland rewrites the hook entries. No restart required.</p>
-        </section>
-
-        <section id="label-session">
-          <h2><span class="num">03</span> Label a session</h2>
-
-          <p>Labels give a session a memorable name in the xIsland panel, replacing the default folder name.</p>
-
-          <div class="step-title">From inside an agent</div>
-          <p>While a Claude Code or Gemini CLI session is running, type:</p>
-
-          <div class="code-block">
-            <code>!xisland rename "Auth refactor"</code>
-          </div>
-
-          <p>The <code>!</code> prefix runs the command in your shell without interrupting the agent. The label updates in the panel immediately.</p>
-
-          <p class="note">Requires the <code>xisland</code> CLI — see step 4 of Installation above.</p>
-
-          <div class="priority-box">
-            <div class="priority-title">Name priority</div>
-            <ol class="priority-list">
-              <li><span class="badge">1</span> Your <code>xisland rename</code> label — highest priority</li>
-              <li><span class="badge">2</span> Agent-native title (e.g. Claude Code <code>/rename</code>)</li>
-              <li><span class="badge">3</span> Working directory name</li>
-              <li><span class="badge">4</span> Session ID prefix — fallback</li>
-            </ol>
-          </div>
-        </section>
-      </div>
-
-    </div>
-  </main>
+    </main>
+  </div>
   <Footer />
 </BaseLayout>
 
 <script>
-  // Highlight active sidenav link based on scroll position
-  const links = document.querySelectorAll<HTMLAnchorElement>('.sidenav-link');
+  const links = document.querySelectorAll<HTMLAnchorElement>('.nav-link');
   const sections = document.querySelectorAll<HTMLElement>('section[id]');
 
-  function setActive() {
-    let current = '';
-    sections.forEach(section => {
-      if (window.scrollY >= section.offsetTop - 120) {
-        current = section.id;
-      }
+  function sync() {
+    let active = sections[0]?.id ?? '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 100) active = s.id;
     });
-    links.forEach(link => {
-      link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
-    });
+    links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === `#${active}`));
   }
 
-  window.addEventListener('scroll', setActive, { passive: true });
-  setActive();
+  window.addEventListener('scroll', sync, { passive: true });
+  sync();
 </script>
 
 <style>
-  main {
-    padding: 80px 0 100px;
-    min-height: 100vh;
-  }
-
-  /* Two-column layout */
-  .docs-layout {
-    width: 100%;
-    max-width: 980px;
-    margin: 0 auto;
-    padding: 0 24px;
+  .docs-root {
     display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 64px;
+    grid-template-columns: 220px 1fr;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 100px 24px 120px;
+    gap: 80px;
     align-items: start;
   }
 
-  /* Sidebar */
+  /* ── Sidebar ── */
   .sidenav {
     position: sticky;
     top: 88px;
+    padding-top: 40px;
   }
 
-  .sidenav-inner {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-  }
-
-  .sidenav-label {
+  .nav-group-label {
     font-family: var(--mono);
     font-size: 9px;
     color: var(--text-3);
     text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin-bottom: 10px;
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
   }
 
-  .sidenav-group {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .sidenav-link {
+  .nav-link {
+    display: block;
     font-family: var(--mono);
-    font-size: 11px;
+    font-size: 12px;
     color: var(--text-3);
-    padding: 7px 12px;
-    border-left: 2px solid var(--border);
-    transition: color 0.2s, border-color 0.2s;
-    line-height: 1.4;
+    padding: 8px 0 8px 14px;
+    border-left: 2px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
   }
 
-  .sidenav-link:hover {
-    color: var(--text-2);
-    border-left-color: var(--border-2);
-  }
+  .nav-link:hover { color: var(--text-2); }
 
-  .sidenav-link.active {
+  .nav-link.active {
     color: var(--green);
     border-left-color: var(--green);
   }
 
-  /* Content */
-  .page-header {
-    margin-bottom: 56px;
+  /* ── Content ── */
+  .content {
     padding-top: 40px;
   }
 
-  h1 {
-    font-size: 28px;
-    color: var(--green);
-    margin-bottom: 12px;
-  }
-
-  .subtitle {
-    font-family: var(--mono);
-    font-size: 13px;
-    color: var(--text-3);
-  }
-
   section {
-    margin-bottom: 72px;
-    padding-top: 16px;
+    padding-bottom: 64px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 64px;
+  }
+
+  section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
   }
 
   h2 {
-    font-size: 13px;
+    font-family: var(--mono);
+    font-size: 18px;
+    font-weight: 500;
     color: var(--text);
     margin-bottom: 24px;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-  }
-
-  .num {
-    font-size: 10px;
-    color: var(--green);
-    opacity: 0.7;
+    letter-spacing: -0.01em;
   }
 
   p {
     font-family: var(--mono);
-    font-size: 12px;
+    font-size: 13px;
     color: var(--text-2);
-    line-height: 1.9;
-    margin-bottom: 16px;
-    max-width: 600px;
+    line-height: 2;
+    margin-bottom: 18px;
+    max-width: 560px;
   }
 
   p:last-child { margin-bottom: 0; }
 
-  .steps {
-    list-style: none;
-    counter-reset: steps;
-    display: flex;
-    flex-direction: column;
-    gap: 28px;
-    margin-bottom: 20px;
-  }
+  strong { color: var(--text); font-weight: 500; }
 
-  .steps > li {
-    counter-increment: steps;
-    padding-left: 28px;
-    position: relative;
-  }
-
-  .steps > li::before {
-    content: counter(steps);
-    position: absolute;
-    left: 0;
-    top: 1px;
+  ol {
     font-family: var(--mono);
-    font-size: 10px;
+    font-size: 13px;
+    color: var(--text-2);
+    line-height: 2;
+    padding-left: 22px;
+    margin-bottom: 18px;
+    max-width: 560px;
+  }
+
+  ol li { margin-bottom: 4px; }
+
+  /* Install options */
+  .option-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    margin: 20px 0;
+    max-width: 560px;
+  }
+
+  .option-card {
+    background: var(--bg-elevated);
+    padding: 24px 22px;
+  }
+
+  .option-label {
+    font-size: 9px;
     color: var(--green);
-    opacity: 0.6;
+    margin-bottom: 12px;
+    letter-spacing: 0.06em;
   }
 
-  .step-title {
-    font-family: var(--mono);
+  .option-card p {
+    margin-bottom: 0;
     font-size: 12px;
-    color: var(--text);
-    margin-bottom: 8px;
+    color: var(--text-2);
   }
 
+  /* Table */
   table {
     width: 100%;
     max-width: 560px;
     border-collapse: collapse;
-    margin: 16px 0;
     font-family: var(--mono);
     font-size: 11px;
+    margin-top: 20px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
   }
 
   th {
     text-align: left;
     color: var(--text-3);
     font-weight: 400;
-    padding: 8px 12px;
+    font-size: 12px;
+    padding: 12px 16px;
+    background: var(--bg-elevated);
     border-bottom: 1px solid var(--border);
   }
 
   td {
     color: var(--text-2);
-    padding: 10px 12px;
+    font-size: 12px;
+    padding: 12px 16px;
     border-bottom: 1px solid var(--border);
   }
 
+  tr:last-child td { border-bottom: none; }
   td:first-child { color: var(--text); }
 
+  /* Code */
   code {
     font-family: var(--mono);
-    font-size: 11px;
+    font-size: 12px;
     color: var(--green);
-    background: var(--bg-elevated);
+    background: var(--bg-card);
     padding: 2px 6px;
     border-radius: 4px;
   }
 
-  .note {
-    font-size: 11px;
-    color: var(--text-3);
-    margin-top: 12px;
-  }
-
-  .code-block {
-    background: var(--bg-elevated);
+  .codeblock {
+    background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: var(--radius-sm);
-    padding: 16px 20px;
+    padding: 14px 18px;
     margin: 16px 0;
-    max-width: 440px;
+    max-width: 560px;
   }
 
-  .code-block code {
+  .codeblock code {
     background: none;
     padding: 0;
-    font-size: 12px;
-    color: var(--green);
-  }
-
-  .priority-box {
-    margin-top: 28px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    padding: 20px 24px;
-    max-width: 440px;
-    background: var(--bg-elevated);
-  }
-
-  .priority-title {
-    font-family: var(--mono);
-    font-size: 10px;
-    color: var(--text-3);
-    margin-bottom: 14px;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-  }
-
-  .priority-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .priority-list li {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--text-2);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .badge {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 16px;
-    height: 16px;
-    font-size: 9px;
-    color: var(--bg);
-    background: var(--green);
-    border-radius: 3px;
-    flex-shrink: 0;
-    opacity: 0.7;
-  }
-
-  .install-options {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    margin-bottom: 28px;
-    flex-wrap: wrap;
-  }
-
-  .install-option {
-    flex: 1;
-    min-width: 180px;
-  }
-
-  .install-divider {
-    font-family: var(--mono);
-    font-size: 10px;
-    color: var(--text-3);
-    flex-shrink: 0;
+    font-size: 13px;
   }
 
   .link {
     color: var(--green);
     text-decoration: underline;
     text-underline-offset: 3px;
-    text-decoration-color: rgba(61, 220, 132, 0.4);
+    text-decoration-color: rgba(61, 220, 132, 0.35);
+  }
+  .link:hover { text-decoration-color: var(--green); }
+
+  .aside {
+    color: var(--text-3);
+    font-size: 12px;
   }
 
-  .link:hover {
-    text-decoration-color: var(--green);
-  }
-
-  strong {
-    color: var(--text);
-    font-weight: 500;
-  }
-
-  /* Mobile: collapse sidebar to top bar */
+  /* Mobile */
   @media (max-width: 768px) {
-    main { padding: 80px 0 80px; }
-
-    .docs-layout {
+    .docs-root {
       grid-template-columns: 1fr;
       gap: 0;
-      padding: 0 16px;
+      padding: 80px 16px 80px;
     }
 
     .sidenav {
       position: static;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 20px;
-      margin-bottom: 36px;
-    }
-
-    .sidenav-inner {
-      flex-direction: row;
-      flex-wrap: wrap;
+      padding-top: 0;
+      display: flex;
       gap: 0;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 40px;
     }
 
-    .sidenav-label { display: none; }
+    .sidenav nav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      flex-wrap: wrap;
+    }
 
-    .sidenav-link {
+    .nav-group-label { display: none; }
+
+    .nav-link {
+      padding: 8px 12px;
       border-left: none;
-      border-bottom: 2px solid var(--border);
-      padding: 6px 12px 8px;
+      border-bottom: 2px solid transparent;
     }
 
-    .sidenav-link.active {
+    .nav-link.active {
+      border-left: none;
       border-bottom-color: var(--green);
-      border-left: none;
     }
 
-    .page-header { padding-top: 0; }
-    h1 { font-size: 20px; }
+    .option-grid { grid-template-columns: 1fr; }
   }
 </style>
