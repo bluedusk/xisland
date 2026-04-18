@@ -79,10 +79,15 @@ import Footer from '../components/Footer.astro';
   const sections = document.querySelectorAll<HTMLElement>('section[id]');
 
   function sync() {
+    const atBottom = window.innerHeight + window.scrollY >= document.body.scrollHeight - 8;
     let active = sections[0]?.id ?? '';
-    sections.forEach(s => {
-      if (window.scrollY >= s.offsetTop - 100) active = s.id;
-    });
+    if (atBottom) {
+      active = sections[sections.length - 1]?.id ?? active;
+    } else {
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 100) active = s.id;
+      });
+    }
     links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === `#${active}`));
   }
 
