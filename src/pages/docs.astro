@@ -32,38 +32,19 @@ import Footer from '../components/Footer.astro';
         <section id="installation">
           <h2><span class="num">01</span> Installation</h2>
 
-          <ol class="steps">
-            <li>
-              <div class="step-title">Download &amp; install</div>
-              <p>Download xisland from the <a href="/download" class="link">download page</a>, open the DMG, and drag <strong>xIsland</strong> to your Applications folder.</p>
-            </li>
-            <li>
-              <div class="step-title">Launch the app</div>
-              <p>Open xIsland from Applications. It will appear in your menu bar. The first launch may ask you to allow accessibility permissions — grant them so the app can detect terminal windows.</p>
-            </li>
-            <li>
-              <div class="step-title">Connect your agents</div>
-              <p>Open <strong>Settings → Setup</strong> and enable hooks for each agent you use.</p>
+          <div class="install-options">
+            <div class="install-option">
+              <div class="step-title">DMG</div>
+              <p>Download from the <a href="/download" class="link">download page</a>, open the DMG, and drag <strong>xIsland</strong> to Applications.</p>
+            </div>
+            <div class="install-divider">or</div>
+            <div class="install-option">
+              <div class="step-title">Homebrew</div>
+              <div class="code-block"><code>brew install --cask xisland</code></div>
+            </div>
+          </div>
 
-              <table>
-                <thead>
-                  <tr><th>Agent</th><th>What gets installed</th></tr>
-                </thead>
-                <tbody>
-                  <tr><td>Claude Code</td><td>Hook entries in <code>~/.claude/settings.json</code></td></tr>
-                  <tr><td>Codex</td><td>Hook entries in <code>~/.codex/hooks.json</code></td></tr>
-                  <tr><td>OpenCode</td><td>Plugin registered with OpenCode</td></tr>
-                  <tr><td>Gemini CLI</td><td>Hook entries in <code>~/.gemini/settings.json</code></td></tr>
-                </tbody>
-              </table>
-
-              <p class="note">Hooks are fail-open — if xIsland is not running, your agents continue normally without any interruption.</p>
-            </li>
-            <li>
-              <div class="step-title">Install the CLI tool (optional, recommended)</div>
-              <p>Still in <strong>Settings → Setup</strong>, find the <strong>Command line</strong> section and click <strong>Install</strong>. This adds <code>xisland</code> to <code>/usr/local/bin</code> so you can control the app from inside any agent session. Requires your admin password once.</p>
-            </li>
-          </ol>
+          <p>Once installed, launch xIsland — it will appear in your menu bar. Then open <strong>Settings → Setup</strong> to connect your agents.</p>
         </section>
 
         <section id="reinstall-hooks">
@@ -381,6 +362,26 @@ import Footer from '../components/Footer.astro';
     border-radius: 3px;
     flex-shrink: 0;
     opacity: 0.7;
+  }
+
+  .install-options {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+  }
+
+  .install-option {
+    flex: 1;
+    min-width: 180px;
+  }
+
+  .install-divider {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text-3);
+    flex-shrink: 0;
   }
 
   .link {
