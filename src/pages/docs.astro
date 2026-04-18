@@ -1,0 +1,337 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Docs — xisland"
+  description="How to install xisland, connect your AI agents, reinstall hooks, and label sessions."
+>
+  <Nav />
+  <main>
+    <div class="container">
+      <header class="page-header">
+        <h1>Docs</h1>
+        <p class="subtitle">Get xisland running in a few minutes.</p>
+      </header>
+
+      <div class="toc">
+        <a href="#installation">Installation</a>
+        <span class="sep">/</span>
+        <a href="#reinstall-hooks">Reinstall hooks</a>
+        <span class="sep">/</span>
+        <a href="#label-session">Label a session</a>
+      </div>
+
+      <section id="installation">
+        <h2><span class="num">01</span> Installation</h2>
+
+        <ol class="steps">
+          <li>
+            <div class="step-title">Download &amp; install</div>
+            <p>Download xisland from the <a href="/download" class="link">download page</a>, open the DMG, and drag <strong>xIsland</strong> to your Applications folder.</p>
+          </li>
+          <li>
+            <div class="step-title">Launch the app</div>
+            <p>Open xIsland from Applications. It will appear in your menu bar. The first launch may ask you to allow accessibility permissions — grant them so the app can detect terminal windows.</p>
+          </li>
+          <li>
+            <div class="step-title">Connect your agents</div>
+            <p>Open <strong>Settings → Setup</strong> and enable hooks for each agent you use.</p>
+
+            <table>
+              <thead>
+                <tr><th>Agent</th><th>What gets installed</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Claude Code</td><td>Hook entries in <code>~/.claude/settings.json</code></td></tr>
+                <tr><td>Codex</td><td>Hook entries in <code>~/.codex/hooks.json</code></td></tr>
+                <tr><td>OpenCode</td><td>Plugin registered with OpenCode</td></tr>
+                <tr><td>Gemini CLI</td><td>Hook entries in <code>~/.gemini/settings.json</code></td></tr>
+              </tbody>
+            </table>
+
+            <p class="note">Hooks are fail-open — if xIsland is not running, your agents continue normally without any interruption.</p>
+          </li>
+          <li>
+            <div class="step-title">Install the CLI tool (optional, recommended)</div>
+            <p>Still in <strong>Settings → Setup</strong>, find the <strong>Command line</strong> section and click <strong>Install</strong>. This adds <code>xisland</code> to <code>/usr/local/bin</code> so you can control the app from inside any agent session. Requires your admin password once.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section id="reinstall-hooks">
+        <h2><span class="num">02</span> Reinstall hooks</h2>
+
+        <p>If an agent update overwrites your hook config, or xIsland shows a warning that hooks are inactive:</p>
+
+        <ol class="steps">
+          <li>Open <strong>Settings → Setup</strong>.</li>
+          <li>Toggle the affected agent <strong>off</strong>, then <strong>on</strong> again.</li>
+        </ol>
+
+        <p>xIsland rewrites the hook entries. No restart required.</p>
+      </section>
+
+      <section id="label-session">
+        <h2><span class="num">03</span> Label a session</h2>
+
+        <p>Labels give a session a memorable name in the xIsland panel, replacing the default folder name.</p>
+
+        <div class="step-title">From inside an agent</div>
+        <p>While a Claude Code or Gemini CLI session is running, type:</p>
+
+        <div class="code-block">
+          <code>!xisland rename "Auth refactor"</code>
+        </div>
+
+        <p>The <code>!</code> prefix runs the command in your shell without interrupting the agent. The label updates in the panel immediately.</p>
+
+        <p class="note">Requires the <code>xisland</code> CLI — see step 4 of Installation above.</p>
+
+        <div class="priority-box">
+          <div class="priority-title">Name priority</div>
+          <ol class="priority-list">
+            <li><span class="badge">1</span> Your <code>xisland rename</code> label — highest priority</li>
+            <li><span class="badge">2</span> Agent-native title (e.g. Claude Code <code>/rename</code>)</li>
+            <li><span class="badge">3</span> Working directory name</li>
+            <li><span class="badge">4</span> Session ID prefix — fallback</li>
+          </ol>
+        </div>
+      </section>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  main {
+    padding: 120px 0 100px;
+    min-height: 100vh;
+  }
+
+  .page-header {
+    margin-bottom: 48px;
+  }
+
+  h1 {
+    font-size: 28px;
+    color: var(--green);
+    margin-bottom: 12px;
+  }
+
+  .subtitle {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--text-3);
+  }
+
+  .toc {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-3);
+    margin-bottom: 64px;
+    flex-wrap: wrap;
+  }
+
+  .toc a {
+    color: var(--text-2);
+    transition: color 0.2s;
+  }
+
+  .toc a:hover { color: var(--green); }
+
+  .sep { color: var(--border-2); }
+
+  section {
+    margin-bottom: 72px;
+  }
+
+  h2 {
+    font-size: 13px;
+    color: var(--text);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .num {
+    font-size: 10px;
+    color: var(--green);
+    opacity: 0.7;
+  }
+
+  p {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-2);
+    line-height: 1.9;
+    margin-bottom: 16px;
+    max-width: 640px;
+  }
+
+  p:last-child { margin-bottom: 0; }
+
+  .steps {
+    list-style: none;
+    counter-reset: steps;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-bottom: 20px;
+  }
+
+  .steps > li {
+    counter-increment: steps;
+    padding-left: 28px;
+    position: relative;
+  }
+
+  .steps > li::before {
+    content: counter(steps);
+    position: absolute;
+    left: 0;
+    top: 1px;
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--green);
+    opacity: 0.6;
+  }
+
+  .step-title {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  table {
+    width: 100%;
+    max-width: 600px;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-family: var(--mono);
+    font-size: 11px;
+  }
+
+  th {
+    text-align: left;
+    color: var(--text-3);
+    font-weight: 400;
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  td {
+    color: var(--text-2);
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  td:first-child { color: var(--text); }
+
+  code {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--green);
+    background: var(--bg-elevated);
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+
+  .note {
+    font-size: 11px;
+    color: var(--text-3);
+    margin-top: 12px;
+  }
+
+  .code-block {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 16px 20px;
+    margin: 16px 0;
+    max-width: 480px;
+  }
+
+  .code-block code {
+    background: none;
+    padding: 0;
+    font-size: 12px;
+    color: var(--green);
+  }
+
+  .priority-box {
+    margin-top: 28px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 20px 24px;
+    max-width: 480px;
+    background: var(--bg-elevated);
+  }
+
+  .priority-title {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text-3);
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .priority-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .priority-list li {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-2);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    font-size: 9px;
+    color: var(--bg);
+    background: var(--green);
+    border-radius: 3px;
+    flex-shrink: 0;
+    opacity: 0.7;
+  }
+
+  .link {
+    color: var(--green);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(61, 220, 132, 0.4);
+  }
+
+  .link:hover {
+    text-decoration-color: var(--green);
+  }
+
+  strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    main { padding: 100px 0 80px; }
+    h1 { font-size: 20px; }
+  }
+</style>
