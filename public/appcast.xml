@@ -6,6 +6,26 @@
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
         <item>
+            <title>Version 0.13.0-beta.3</title>
+            <pubDate>Sun, 19 Apr 2026 21:12:03 +1000</pubDate>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[<h3>Fixed</h3>
+<ul>
+<li>Mascot sprite cache now bounded to prevent memory growth</li>
+<li>API tokens scrubbed from diagnostic exports</li>
+<li>Ready badge opacity softened</li>
+</ul>]]></description>
+            <enclosure
+                url="https://github.com/bluedusk/xisland/releases/download/v0.13.0-beta.3/XIsland.zip"
+                sparkle:version="1137"
+                sparkle:shortVersionString="0.13.0-beta.3"
+                sparkle:edSignature="5aTKhFi84/PcSqD9Lz0+WAH6tMT67GFPTbnEMKIdL+QoE2TENZd9uKNl3GCsR5coLheluvWaQ/mvaVYSkF/kDg=="
+                sparkle:channel="beta"
+                length="9110017"
+                type="application/octet-stream"
+            />
+        </item>
+        <item>
             <title>Version 0.13.0-beta.2</title>
             <pubDate>Sat, 18 Apr 2026 20:47:45 +1000</pubDate>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
