@@ -35,4 +35,4 @@ Cloudflare Pages. The `ship` script runs `astro build && npx wrangler pages depl
 
 ## Download Page
 
-Maintains exactly 3 download versions (latest releases). When adding a new version, drop the oldest.
+Maintains exactly 3 download versions (latest releases). When adding a new version, drop the oldest. All release download URLs use `.dmg` — never `.zip`.
