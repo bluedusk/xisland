@@ -6,6 +6,27 @@
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
         <item>
+            <title>Version 0.15.0</title>
+            <pubDate>Fri, 24 Apr 2026 22:59:55 +1000</pubDate>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[<h3>New</h3>
+<ul>
+<li>Codex permission requests now surface as advisory cards with a one-click "Approve in terminal" jump — works reliably across all Codex sessions</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Codex sessions no longer linger as ghosts in the panel after restarting xIsland</li>
+</ul>]]></description>
+            <enclosure
+                url="https://github.com/bluedusk/xisland/releases/download/v0.15.0/XIsland.zip"
+                sparkle:version="1219"
+                sparkle:shortVersionString="0.15.0"
+                sparkle:edSignature="q8hFEEx/0Cag6H5mRDaaF9ouyLmlmabKtaTob9dL7FAOKNTL8fmH0WIBPUNRmBF/1WIkrLUL3bgmgeZk6neeCw=="
+                length="9384537"
+                type="application/octet-stream"
+            />
+        </item>
+        <item>
             <title>Version 0.14.0</title>
             <pubDate>Thu, 23 Apr 2026 18:23:01 +1000</pubDate>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
