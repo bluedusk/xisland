@@ -6,6 +6,23 @@
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
         <item>
+            <title>Version 0.16.0</title>
+            <pubDate>Sun, 26 Apr 2026 12:20:21 +1000</pubDate>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[<h3>New</h3>
+<ul>
+<li>Improved Gemini support for approval</li>
+</ul>]]></description>
+            <enclosure
+                url="https://github.com/bluedusk/xisland/releases/download/v0.16.0/XIsland.zip"
+                sparkle:version="1252"
+                sparkle:shortVersionString="0.16.0"
+                sparkle:edSignature="jBmIW+WVr4NJuoly6olxt3x/ajBtekmhLqbH4dt/TXpit0vKYMCPa8+j1/cVcPFVQ55Eiv3vWESFFxvZ6B/0CQ=="
+                length="9407542"
+                type="application/octet-stream"
+            />
+        </item>
+        <item>
             <title>Version 0.15.1</title>
             <pubDate>Sat, 25 Apr 2026 16:59:36 +1000</pubDate>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
