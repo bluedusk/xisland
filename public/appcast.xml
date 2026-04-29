@@ -6,6 +6,38 @@
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
         <item>
+            <title>Version 0.17.0</title>
+            <pubDate>Wed, 29 Apr 2026 21:39:41 +1000</pubDate>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[<ul>
+<li>fix: persist OpenCode sessions to AgentPIDStore so they survive app restart</li>
+<li>fix: drop opencode- session ID prefix so logs distinguish sessions</li>
+<li>refactor: drop row list, keep just the chip preview as the toggle</li>
+<li>refactor: tap header icons to toggle, drop Settings toggle</li>
+<li>fix: build a manual dict for jsonDump instead of encoding TrackedSession</li>
+<li>fix: allow LogFileTail deinit to invalidate non-Sendable Timer</li>
+<li>docs: add Hermes support analysis</li>
+<li>feat: redesign debug panel as 5-tab control center</li>
+<li>feat: add LogFileTail for real-time JSONL log streaming</li>
+<li>docs: add debug panel redesign spec</li>
+<li>feat: per-icon visibility toggles for panel header</li>
+<li>refactor: split header settings into own Panel Header section</li>
+<li>feat: add optional close button to panel header</li>
+<li>feat: redesign ControlCenterView with Quick Inject section, move out of Settings</li>
+<li>refactor: drop dead --source flag and redundant test-hook.sh</li>
+<li>feat: add native 'Inject Permission Request' button in Developer Settings</li>
+<li>fix: unblock hung xIslandHooks processes on stale permission clear</li>
+</ul>]]></description>
+            <enclosure
+                url="https://github.com/bluedusk/xisland/releases/download/v0.17.0/XIsland.zip"
+                sparkle:version="1297"
+                sparkle:shortVersionString="0.17.0"
+                sparkle:edSignature="e+BxYR+6E5pbFwhAtIS2XvY+Gg0MlaoQL9D4JSMDjjjO2GMVFIbI2qq96IQFNVLVMxk5t09yY2r6TH+LZaIkAg=="
+                length="9824225"
+                type="application/octet-stream"
+            />
+        </item>
+        <item>
             <title>Version 0.16.0</title>
             <pubDate>Sun, 26 Apr 2026 12:20:21 +1000</pubDate>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
