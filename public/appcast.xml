@@ -6,6 +6,25 @@
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
         <item>
+            <title>Version 0.18.0</title>
+            <pubDate>Sun, 03 May 2026 09:27:25 +1000</pubDate>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <description><![CDATA[<ul>
+<li>feat: panel close button quits the app</li>
+<li>fix: source Sparkle auto-update flags from Info.plist</li>
+<li>refactor: make xisland CLI install manual (Settings only)</li>
+<li>fix: remove duplicate version header from CHANGELOG.md</li>
+</ul>]]></description>
+            <enclosure
+                url="https://github.com/bluedusk/xisland/releases/download/v0.18.0/XIsland.zip"
+                sparkle:version="1305"
+                sparkle:shortVersionString="0.18.0"
+                sparkle:edSignature="nCcpO203+7nDcicRZQ5JNvB2Hbgz3YiJGQ2AxQ+yf1nb60/lmJ1ntBgiUGuMflKH740hcJvF6qbqlYYPZw9gBg=="
+                length="9821520"
+                type="application/octet-stream"
+            />
+        </item>
+        <item>
             <title>Version 0.17.0</title>
             <pubDate>Wed, 29 Apr 2026 21:39:41 +1000</pubDate>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
