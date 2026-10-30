@@ -15,15 +15,28 @@ const dateStr = pubDate.toLocaleDateString('en-US', {
   day: 'numeric',
 });
 
+const canonicalPath = Astro.url.pathname;
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'BlogPosting',
-  headline: title,
-  datePublished: pubDate.toISOString(),
-  author: { '@type': 'Person', name: author },
-  publisher: { '@type': 'Organization', name: 'xisland', url: 'https://xisland.app' },
-  mainEntityOfPage: { '@type': 'WebPage', '@id': `https://xisland.app${Astro.url.pathname}` },
-  ...(description && { description }),
+  '@graph': [
+    {
+      '@type': 'BlogPosting',
+      headline: title,
+      datePublished: pubDate.toISOString(),
+      author: { '@type': 'Person', name: author },
+      publisher: { '@type': 'Organization', name: 'xisland', url: 'https://xisland.app' },
+      mainEntityOfPage: { '@type': 'WebPage', '@id': `https://xisland.app${canonicalPath}` },
+      ...(description && { description }),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'xisland', item: 'https://xisland.app/' },
+        { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://xisland.app/blog/' },
+        { '@type': 'ListItem', position: 3, name: title, item: `https://xisland.app${canonicalPath}` },
+      ],
+    },
+  ],
 };
 ---
 
@@ -53,8 +66,8 @@ const jsonLd = {
       <slot />
     </div>
     <nav class="post-nav">
-      <a href="/download" rel="nofollow">xisland download</a>
-      <a href="/blog" rel="nofollow">back to blog</a>
+      <a href="/download">Download xisland for macOS</a>
+      <a href="/blog">More posts</a>
     </nav>
   </article>
 </BaseLayout>

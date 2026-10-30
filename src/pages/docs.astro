@@ -5,8 +5,21 @@ import Footer from '../components/Footer.astro';
 ---
 
 <BaseLayout
-  title="Docs — xisland"
-  description="How to install xisland, connect your AI agents, reinstall hooks, and label sessions."
+  title="xisland Docs — Install & Connect Claude Code, Codex, Gemini CLI on macOS"
+  description="How to install xisland on macOS, connect Claude Code, Codex, Gemini CLI, and OpenCode, reinstall hooks, and label sessions."
+  jsonLd={{
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: 'Install xisland on macOS',
+    description: 'Install xisland and connect your AI coding agents on macOS.',
+    tool: [{ '@type': 'HowToTool', name: 'macOS 14+' }],
+    step: [
+      { '@type': 'HowToStep', name: 'Download', text: 'Download the DMG from xisland.app/download or run brew install --cask bluedusk/xisland/x-island.', url: 'https://xisland.app/docs/#installation' },
+      { '@type': 'HowToStep', name: 'Launch', text: 'Open the DMG and drag xIsland to Applications, then launch it. xisland appears in your menu bar and auto-connects to Claude Code, Codex, OpenCode, and Gemini CLI.', url: 'https://xisland.app/docs/#installation' },
+      { '@type': 'HowToStep', name: 'Reinstall hooks if needed', text: 'If an agent update overwrites your config, open Settings → Setup and toggle the agent off, then on. No restart required.', url: 'https://xisland.app/docs/#reinstall-hooks' },
+      { '@type': 'HowToStep', name: 'Label sessions', text: 'Run !xisland rename "Auth refactor" inside a Claude Code or Gemini CLI session to label the session.', url: 'https://xisland.app/docs/#label-session' },
+    ],
+  }}
 >
   <Nav />
   <div class="docs-root">

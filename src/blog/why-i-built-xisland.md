@@ -1,5 +1,5 @@
 ---
-title: 'xisland: monitor your AI coding agents from the macOS notch'
+title: 'Why I built xisland: a launch story'
 pubDate: 2026-04-10
 description: 'Why I built a free macOS app to monitor Claude Code, Codex, Gemini CLI, and OpenCode from the notch.'
 author: 'dan'

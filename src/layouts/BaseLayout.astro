@@ -10,7 +10,7 @@ interface Props {
 
 const {
   title = 'xisland — The Dynamic Island for AI Coding Agents (macOS)',
-  description = 'Get the ultimate dynamic island for AI coding agents. xisland lets you monitor, approve, and manage Claude Code, Codex, and Gemini CLI right from your macOS notch.',
+  description = 'Monitor, approve, and manage Claude Code, Codex, Gemini CLI, and OpenCode right from your macOS notch. Free native Swift app.',
   ogType = 'website',
   jsonLd,
 } = Astro.props;
@@ -23,8 +23,10 @@ const ogImage = new URL('/og.png', Astro.site);
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <title>{title}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    <meta name="theme-color" content="#0a0a0a" />
     <link rel="canonical" href={canonicalURL.href} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -38,10 +40,14 @@ const ogImage = new URL('/og.png', Astro.site);
     <meta name="twitter:image" content={ogImage.href} />
     {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    {Astro.url.pathname !== '/download/' && Astro.url.pathname !== '/download' && (
+      <link rel="prefetch" href="/download" />
+    )}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-    <title>{title}</title>
   </head>
   <body>
     <slot />

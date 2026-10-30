@@ -26,5 +26,8 @@ pnpm-debug.log*
 # playwright
 .playwright-mcp/
 
-# screenshots
-*.png
+# screenshots (root-level dev screenshots)
+/*.png
+
+# but always ship public assets
+!public/*.png
